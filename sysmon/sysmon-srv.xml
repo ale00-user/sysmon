@@ -172,63 +172,125 @@
     </RuleGroup>
 
     <!-- ============================================
-         EVENT ID 13: REGISTRY EVENT
+         EVENT ID 13: REGISTRY EVENT (EXPANDED)
          ============================================ -->
     <RuleGroup name="RegistryEvent" groupRelation="or">
       <RegistryEvent onmatch="include">
-        <!-- Autorun/Startup persistence -->
+        <!-- Autorun/Startup persistence (T1547.001) -->
         <TargetObject name="T1547.001,RunKey" condition="contains">CurrentVersion\Run</TargetObject>
         <TargetObject name="T1547.001,RunPolicy" condition="contains">Policies\Explorer\Run</TargetObject>
         <TargetObject name="T1484" condition="contains">Group Policy\Scripts</TargetObject>
+        <TargetObject name="T1484" condition="contains">Windows\System\Scripts</TargetObject>
+        <TargetObject name="T1547.001" condition="contains">CurrentVersion\Windows\Load</TargetObject>
+        <TargetObject name="T1547.001" condition="contains">CurrentVersion\Windows\Run</TargetObject>
         <TargetObject name="T1547.001" condition="contains">CurrentVersion\Winlogon\Shell</TargetObject>
         <TargetObject name="T1547.001" condition="contains">CurrentVersion\Winlogon\System</TargetObject>
         <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify</TargetObject>
         <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell</TargetObject>
         <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32</TargetObject>
         <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\BootExecute</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\AeDebug</TargetObject>
+        <TargetObject condition="contains">UserInitMprLogonScript</TargetObject>
+        <TargetObject name="T1112,ChangeStartupFolderPath" condition="end with">user shell folders\startup</TargetObject>
 
-        <!-- Services -->
+        <!-- Services (T1543.003) -->
         <TargetObject name="T1543.003" condition="end with">\ServiceDll</TargetObject>
+        <TargetObject name="T1543.003" condition="end with">\ServiceManifest</TargetObject>
         <TargetObject name="T1543.003" condition="end with">\ImagePath</TargetObject>
         <TargetObject name="T1543.003" condition="end with">\Start</TargetObject>
         <TargetObject name="T1543.003" condition="end with">\Type</TargetObject>
         <TargetObject name="T1543.003" condition="end with">\FailureActions</TargetObject>
 
         <!-- RDP settings -->
-        <TargetObject condition="contains">Terminal Server\WinStations\RDP-Tcp\</TargetObject>
+        <TargetObject name="RDP" condition="contains">Terminal Server\WinStations\RDP-Tcp\</TargetObject>
         <TargetObject condition="end with">fDenyTSConnections</TargetObject>
         <TargetObject condition="end with">PortNumber</TargetObject>
+        <TargetObject condition="end with">fSingleSessionPerUser</TargetObject>
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\InitialProgram</TargetObject>
+        <TargetObject condition="contains">\Microsoft\Terminal Server Client\Default\MRU</TargetObject>
+        <TargetObject condition="contains">\Microsoft\Terminal Server Client\Servers\</TargetObject>
 
-        <!-- Firewall tampering -->
+        <!-- Firewall tampering (T1562.004) -->
         <TargetObject name="T1562.004" condition="end with">\EnableFirewall</TargetObject>
+        <TargetObject name="T1562.004" condition="end with">\DoNotAllowExceptions</TargetObject>
         <TargetObject name="T1562.004" condition="contains">FirewallPolicy\</TargetObject>
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\</TargetObject>
 
-        <!-- LSA protection -->
+        <!-- LSA protection (T1547.002) -->
         <TargetObject name="T1547.002" condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Lsa\</TargetObject>
         <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Netsh</TargetObject>
 
         <!-- Credential providers -->
         <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\Authentication\Credential Provider</TargetObject>
 
-        <!-- COM hijacking -->
+        <!-- COM/CLSID hijacking (T1546.015) -->
         <TargetObject name="T1546.015" condition="end with">\InprocServer32\(Default)</TargetObject>
+        <TargetObject name="T1546.001" condition="contains">\command\</TargetObject>
+        <TargetObject name="T1546.015" condition="contains">\ddeexec\</TargetObject>
+        <TargetObject name="T1546.001" condition="contains">exefile</TargetObject>
+        <TargetObject condition="contains">Classes\*\</TargetObject>
+        <TargetObject condition="contains">Classes\Directory\</TargetObject>
+        <TargetObject condition="contains">Classes\Folder\</TargetObject>
+        <TargetObject condition="contains">ContextMenuHandlers\</TargetObject>
+        <TargetObject condition="contains">CurrentVersion\Shell</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\explorer\ShellExecuteHooks</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\explorer\ShellServiceObjectDelayLoad</TargetObject>
 
-        <!-- AV/Security tampering -->
+        <!-- AppPaths hijacking -->
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\App Paths\</TargetObject>
+
+        <!-- AV/Security tampering (T1562.001) -->
         <TargetObject name="T1562.001" condition="end with">\DisableAntiSpyware</TargetObject>
         <TargetObject name="T1562.001" condition="end with">\DisableAntiVirus</TargetObject>
+        <TargetObject name="T1562.001" condition="end with">\SpynetReporting</TargetObject>
         <TargetObject name="T1562.001" condition="end with">DisableRealtimeMonitoring</TargetObject>
+        <TargetObject name="T1562.001" condition="end with">\SubmitSamplesConsent</TargetObject>
         <TargetObject name="T1562.001" condition="begin with">HKLM\Software\Microsoft\Windows Defender\Exclusions</TargetObject>
         <TargetObject name="T1562.001" condition="begin with">HKLM\SOFTWARE\Policies\Microsoft\Windows Defender</TargetObject>
+        <TargetObject name="T1562.001" condition="begin with">HKLM\Software\Microsoft\Security Center\</TargetObject>
 
-        <!-- UAC bypass -->
+        <!-- UAC bypass (T1548.002) -->
         <TargetObject name="T1548.002" condition="end with">\EnableLUA</TargetObject>
         <TargetObject name="T1548.002" condition="end with">\LocalAccountTokenFilterPolicy</TargetObject>
 
-        <!-- IFEO debugging -->
+        <!-- IFEO debugging (T1546.012) -->
         <TargetObject name="T1546.012" condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\</TargetObject>
 
-        <!-- AppInit DLLs -->
-        <TargetObject name="T1546.010" condition="contains">Windows\Appinit_Dlls</TargetObject>
+        <!-- AppInit DLLs (T1546.010) -->
+        <TargetObject name="T1546.010" condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Windows\Appinit_Dlls\</TargetObject>
+        <TargetObject name="T1546.010" condition="begin with">HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\Appinit_Dlls\</TargetObject>
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCertDlls\</TargetObject>
+
+        <!-- AppCompat Shim (T1546.011) -->
+        <TargetObject name="T1546.011" condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom</TargetObject>
+        <TargetObject name="T1546.011" condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB</TargetObject>
+
+        <!-- Group Policy integrity -->
+        <TargetObject name="T1484" condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\</TargetObject>
+
+        <!-- Winsock -->
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Services\WinSock</TargetObject>
+        <TargetObject condition="end with">\ProxyServer</TargetObject>
+
+        <!-- Networking -->
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\NetworkProvider\Order\</TargetObject>
+        <TargetObject condition="contains">Internet Settings\ProxyEnable</TargetObject>
+
+        <!-- Cryptography tampering -->
+        <TargetObject condition="contains">Microsoft\Cryptography\OID\</TargetObject>
+        <TargetObject condition="contains">Microsoft\Cryptography\Providers\Trust\</TargetObject>
+
+        <!-- Print drivers (PrintNightmare) -->
+        <TargetObject condition="contains">Control\Print\Environments\Windows x64\Drivers</TargetObject>
+
+        <!-- Windows internals -->
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\WINEVT\</TargetObject>
+        <TargetObject name="Tamper-Safemode" condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Safeboot\</TargetObject>
+
+        <!-- Sysinternals tool usage -->
+        <TargetObject name="Alert,Sysinternals" condition="end with">\EulaAccepted</TargetObject>
       </RegistryEvent>
     </RuleGroup>
 

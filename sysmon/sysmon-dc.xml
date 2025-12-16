@@ -145,18 +145,78 @@
       </FileCreate>
     </RuleGroup>
 
-    <!-- EVENT ID 13: REGISTRY -->
+    <!-- EVENT ID 13: REGISTRY - EXPANDED FOR DC -->
     <RuleGroup name="RegistryEvent" groupRelation="or">
       <RegistryEvent onmatch="include">
+        <!-- ===== PERSISTENCE MECHANISMS ===== -->
+        <!-- T1547.001 - Run Keys -->
         <TargetObject condition="contains">CurrentVersion\Run</TargetObject>
+        <TargetObject condition="contains">CurrentVersion\RunOnce</TargetObject>
+        <TargetObject condition="contains">CurrentVersion\RunOnceEx</TargetObject>
+
+        <!-- T1547.004 - Winlogon -->
+        <TargetObject condition="contains">CurrentVersion\Winlogon\Shell</TargetObject>
+        <TargetObject condition="contains">CurrentVersion\Winlogon\Userinit</TargetObject>
+        <TargetObject condition="contains">CurrentVersion\Winlogon\Notify</TargetObject>
+
+        <!-- T1543.003 - Services -->
         <TargetObject condition="end with">\ServiceDll</TargetObject>
         <TargetObject condition="end with">\ImagePath</TargetObject>
+        <TargetObject condition="end with">\FailureCommand</TargetObject>
+        <TargetObject condition="contains">\Parameters\ServiceDll</TargetObject>
+
+        <!-- T1546.015 - COM Hijacking -->
+        <TargetObject condition="contains">\Software\Classes\CLSID\</TargetObject>
+        <TargetObject condition="contains">\InprocServer32</TargetObject>
+        <TargetObject condition="contains">\LocalServer32</TargetObject>
+
+        <!-- T1546.010 - AppInit DLLs -->
+        <TargetObject condition="contains">\Windows\CurrentVersion\Windows\AppInit_DLLs</TargetObject>
+        <TargetObject condition="contains">\Windows\CurrentVersion\Windows\LoadAppInit_DLLs</TargetObject>
+
+        <!-- T1546.012 - IFEO Debugging -->
+        <TargetObject condition="contains">\Image File Execution Options\</TargetObject>
+
+        <!-- ===== DC-SPECIFIC - CRITICAL ===== -->
         <!-- LSA protection - CRITICAL on DC -->
         <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Lsa\</TargetObject>
         <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders</TargetObject>
+        <TargetObject condition="end with">\Security Packages</TargetObject>
+        <TargetObject condition="end with">\Authentication Packages</TargetObject>
+        <TargetObject condition="end with">\Notification Packages</TargetObject>
+
+        <!-- Group Policy integrity -->
+        <TargetObject condition="contains">\Group Policy\</TargetObject>
+        <TargetObject condition="contains">\Policies\Microsoft\</TargetObject>
+
+        <!-- SAM/NTDS protection -->
+        <TargetObject condition="contains">\SAM\</TargetObject>
+        <TargetObject condition="contains">\NTDS\</TargetObject>
+
+        <!-- Kerberos settings -->
+        <TargetObject condition="contains">\kerberos\</TargetObject>
+
+        <!-- ===== SECURITY TAMPERING ===== -->
         <!-- Defender tampering -->
         <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows Defender\Exclusions</TargetObject>
         <TargetObject condition="end with">\DisableAntiSpyware</TargetObject>
+        <TargetObject condition="end with">\DisableAntiVirus</TargetObject>
+        <TargetObject condition="end with">\DisableRealtimeMonitoring</TargetObject>
+
+        <!-- Firewall -->
+        <TargetObject condition="contains">FirewallPolicy\</TargetObject>
+        <TargetObject condition="end with">\EnableFirewall</TargetObject>
+
+        <!-- Event Log tampering -->
+        <TargetObject condition="contains">\EventLog\</TargetObject>
+        <TargetObject condition="end with">\MaxSize</TargetObject>
+
+        <!-- Networking -->
+        <TargetObject condition="contains">\Winsock\</TargetObject>
+        <TargetObject condition="contains">\Internet Settings\ProxyServer</TargetObject>
+
+        <!-- Print Spooler (PrintNightmare) -->
+        <TargetObject condition="contains">\Print\Environments\</TargetObject>
       </RegistryEvent>
     </RuleGroup>
 
@@ -228,6 +288,7 @@
       <DnsQuery onmatch="exclude">
         <QueryName condition="end with">.arpa</QueryName>
         <QueryName condition="end with">.windowsupdate.com</QueryName>
+        <QueryName condition="end with">.update.microsoft.com</QueryName>
         <Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\</Image>
       </DnsQuery>
     </RuleGroup>
@@ -238,10 +299,38 @@
         <Image condition="end with">\MsMpEng.exe</Image>
         <Image condition="contains">CrowdStrike</Image>
         <Image condition="contains">Carbon Black</Image>
+        <Image condition="contains">Cylance</Image>
+        <Image condition="contains">SentinelOne</Image>
         <!-- AD critical services -->
         <Image condition="end with">\lsass.exe</Image>
         <Image condition="end with">\dns.exe</Image>
+        <Image condition="end with">\ntfrs.exe</Image>
+        <Image condition="end with">\dfsr.exe</Image>
       </ProcessTerminate>
+    </RuleGroup>
+
+    <!-- EVENT ID 2: FILE CREATION TIME CHANGED - Timestomping Detection -->
+    <RuleGroup name="FileCreateTime" groupRelation="or">
+      <FileCreateTime onmatch="include">
+        <TargetFilename condition="end with">.exe</TargetFilename>
+        <TargetFilename condition="end with">.dll</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\</TargetFilename>
+        <TargetFilename condition="contains">\SYSVOL\</TargetFilename>
+        <TargetFilename condition="contains">\NTDS\</TargetFilename>
+      </FileCreateTime>
+    </RuleGroup>
+
+    <!-- EVENT ID 15: FILE CREATE STREAM HASH - ADS Detection -->
+    <RuleGroup name="FileCreateStreamHash" groupRelation="or">
+      <FileCreateStreamHash onmatch="include">
+        <TargetFilename condition="contains">:</TargetFilename>
+      </FileCreateStreamHash>
+    </RuleGroup>
+
+    <RuleGroup name="FileCreateStreamHash_Exclude" groupRelation="or">
+      <FileCreateStreamHash onmatch="exclude">
+        <TargetFilename condition="end with">:Zone.Identifier</TargetFilename>
+      </FileCreateStreamHash>
     </RuleGroup>
 
   </EventFiltering>
