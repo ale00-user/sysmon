@@ -1,0 +1,808 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Sysmon schemaversion="4.50">
+
+  <!--Sysmon configuration for Windows Clients -->
+  <!-- FIXED: Unified ProcessCreate blocks to prevent rule conflicts -->
+
+  <HashAlgorithms>sha256</HashAlgorithms>
+  <EventFiltering>
+
+    <!-- ============================================
+         EVENT ID 1: PROCESS CREATE (UNIFIED BLOCK)
+         ============================================ -->
+    <RuleGroup name="ProcessCreate" groupRelation="or">
+      <ProcessCreate onmatch="include">
+        <!--Track suspicious process creation excluding common system binaries-->
+        <Image condition="image">powershell.exe</Image>
+        <Image condition="image">pwsh.exe</Image>
+        <Image condition="image">cmd.exe</Image>
+        <CommandLine condition="contains">Invoke-</CommandLine>
+        <CommandLine condition="contains">-enc</CommandLine>
+        <CommandLine condition="contains">-encodedcommand</CommandLine>
+        <CommandLine condition="contains">-nop</CommandLine>
+        <CommandLine condition="contains">bypass</CommandLine>
+        <CommandLine condition="contains">hidden</CommandLine>
+        <CommandLine condition="contains">downloadstring</CommandLine>
+
+        <!-- Office child processes (T1204.002) -->
+        <ParentImage condition="image">winword.exe</ParentImage>
+        <ParentImage condition="image">excel.exe</ParentImage>
+        <ParentImage condition="image">powerpnt.exe</ParentImage>
+        <ParentImage condition="image">mspub.exe</ParentImage>
+        <ParentImage condition="image">outlook.exe</ParentImage>
+        <ParentImage condition="image">onenote.exe</ParentImage>
+        <ParentImage condition="image">wmic.exe</ParentImage>
+
+        <!-- WMI (T1047) -->
+        <Image condition="image">wmiprvse.exe</Image>
+        <Image condition="image">wmic.exe</Image>
+        <Image condition="image">winrm.exe</Image>
+        <Image condition="image">wbemtest.exe</Image>
+        <Image condition="image">winmgmt.exe</Image>
+        <Image condition="image">scrcons.exe</Image>
+
+        <!-- Credential Access (T1003) -->
+        <Image condition="image">vssadmin.exe</Image>
+        <Image condition="image">ntdsutil.exe</Image>
+        <Image condition="image">procdump.exe</Image>
+        <Image condition="image">procdump64.exe</Image>
+        <!-- rundll32 comsvcs.dll MiniDump for LSASS dumping -->
+        <CommandLine condition="contains">comsvcs.dll</CommandLine>
+        <CommandLine condition="contains">MiniDump</CommandLine>
+
+        <!-- Discovery (T1033, T1087) -->
+        <Image condition="image">whoami.exe</Image>
+        <Image condition="image">hostname.exe</Image>
+        <Image condition="image">net.exe</Image>
+        <Image condition="image">net1.exe</Image>
+        <Image condition="image">nltest.exe</Image>
+        <Image condition="image">systeminfo.exe</Image>
+        <Image condition="image">tasklist.exe</Image>
+        <Image condition="image">quser.exe</Image>
+
+        <!-- LOLBins (T1218) -->
+        <Image condition="image">msiexec.exe</Image>
+        <Image condition="image">regsvr32.exe</Image>
+        <Image condition="image">regsvcs.exe</Image>
+        <Image condition="image">regasm.exe</Image>
+        <Image condition="image">installutil.exe</Image>
+        <Image condition="image">msbuild.exe</Image>
+        <Image condition="image">mshta.exe</Image>
+        <Image condition="image">rundll32.exe</Image>
+        <Image condition="image">certutil.exe</Image>
+        <Image condition="image">bitsadmin.exe</Image>
+        <Image condition="image">cmstp.exe</Image>
+        <Image condition="image">msxsl.exe</Image>
+        <Image condition="image">odbcconf.exe</Image>
+
+        <!-- Scripting (T1059) -->
+        <Image condition="image">wscript.exe</Image>
+        <Image condition="image">cscript.exe</Image>
+
+        <!-- Help system abuse (T1218.001) -->
+        <Image condition="image">hh.exe</Image>
+        <Image condition="image">winhlp32.exe</Image>
+        <Image condition="image">sidebar.exe</Image>
+
+        <!-- Lateral Movement (T1021, T1570) -->
+        <Image condition="image">psexesvc.exe</Image>
+        <Image condition="image">psexec.exe</Image>
+        <Image condition="image">winexesvc.exe</Image>
+
+        <!-- Scheduled Tasks (T1053.005) -->
+        <Image condition="image">schtasks.exe</Image>
+        <Image condition="image">at.exe</Image>
+        <CommandLine condition="contains">/create</CommandLine>
+        <CommandLine condition="contains">/change</CommandLine>
+        <CommandLine condition="contains">/delete</CommandLine>
+
+        <!-- Service manipulation (T1543.003) -->
+        <Image condition="image">sc.exe</Image>
+        <CommandLine condition="contains">create</CommandLine>
+        <CommandLine condition="contains">config</CommandLine>
+        <CommandLine condition="contains">start=</CommandLine>
+
+        <!-- Additional discovery commands (T1018, T1016) -->
+        <!-- WORKSTATION: Removed ping, ipconfig, nslookup - too noisy for endpoints -->
+        <!-- Keep only recon tools rarely used by regular users -->
+        <Image condition="image">arp.exe</Image>
+        <Image condition="image">route.exe</Image>
+        <Image condition="image">netstat.exe</Image>
+        <!-- <Image condition="image">nslookup.exe</Image> REMOVED: Common user activity -->
+        <!-- <Image condition="image">ping.exe</Image> REMOVED: Very common, low value -->
+        <!-- <Image condition="image">tracert.exe</Image> REMOVED: IT support uses this -->
+        <!-- <Image condition="image">pathping.exe</Image> REMOVED: Rarely malicious -->
+
+        <!-- Defense evasion (T1070, T1112) -->
+        <Image condition="image">wevtutil.exe</Image>
+        <Image condition="image">bcdedit.exe</Image>
+        <Image condition="image">fsutil.exe</Image>
+        <CommandLine condition="contains">shadowcopy</CommandLine>
+        <CommandLine condition="contains">delete shadows</CommandLine>
+
+        <!-- Archive/Exfiltration prep (T1560) -->
+        <Image condition="image">rar.exe</Image>
+        <Image condition="image">7z.exe</Image>
+        <Image condition="image">7za.exe</Image>
+        <Image condition="image">winzip.exe</Image>
+        <Image condition="image">tar.exe</Image>
+        <Image condition="image">makecab.exe</Image>
+        <Image condition="image">compact.exe</Image>
+      </ProcessCreate>
+    </RuleGroup>
+
+    <!-- ProcessCreate Exclusions - WORKSTATION OPTIMIZED -->
+    <RuleGroup name="ProcessCreate_Exclude" groupRelation="or">
+      <ProcessCreate onmatch="exclude">
+        <!-- Microsoft Office legitimate activity -->
+        <Image condition="begin with">C:\Program Files\Microsoft Office\</Image>
+        <Image condition="begin with">C:\Program Files (x86)\Microsoft Office\</Image>
+
+        <!-- Splunk Forwarder -->
+        <Image condition="begin with">C:\Program Files\SplunkUniversalForwarder\bin\</Image>
+        <ParentImage condition="is">C:\Program Files\SplunkUniversalForwarder\bin\splunkd.exe</ParentImage>
+        <ParentImage condition="is">C:\Program Files\SplunkUniversalForwarder\bin\splunk.exe</ParentImage>
+
+        <!-- WORKSTATION: Common noisy but benign activity -->
+        <!-- Windows Search indexing -->
+        <ParentImage condition="is">C:\Windows\System32\SearchIndexer.exe</ParentImage>
+        <!-- Windows Update -->
+        <ParentImage condition="is">C:\Windows\System32\wuauclt.exe</ParentImage>
+        <!-- Software distribution -->
+        <Image condition="begin with">C:\Windows\SoftwareDistribution\</Image>
+        <!-- Microsoft Teams background processes -->
+        <ParentImage condition="end with">\Microsoft\Teams\current\Teams.exe</ParentImage>
+        <!-- OneDrive sync -->
+        <ParentImage condition="end with">\Microsoft\OneDrive\OneDrive.exe</ParentImage>
+        <!-- Browser updates - SECURITY FIX: Use exact paths to prevent masquerading attacks -->
+        <!-- Attackers can create paths like C:\Temp\Google\Update\malware.exe to evade detection -->
+        <Image condition="is">C:\Program Files\Google\Update\GoogleUpdate.exe</Image>
+        <Image condition="is">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
+        <Image condition="is">C:\Program Files (x86)\Microsoft\EdgeUpdate\MicrosoftEdgeUpdate.exe</Image>
+      </ProcessCreate>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 7: DRIVER LOAD
+         ============================================ -->
+    <!-- REMOVED: DriverLoad with consent.exe was ineffective (consent.exe is not a driver) -->
+
+    <!-- ============================================
+         EVENT ID 13: REGISTRY EVENT
+         ============================================ -->
+    <RuleGroup name="RegistryEvent" groupRelation="or">
+      <RegistryEvent onmatch="include">
+        <!--Autorun or Startups-->
+        <TargetObject name="T1547.001,RunKey" condition="contains">CurrentVersion\Run</TargetObject>
+        <TargetObject name="T1547.001,RunPolicy" condition="contains">Policies\Explorer\Run</TargetObject>
+        <TargetObject name="T1484" condition="contains">Group Policy\Scripts</TargetObject>
+        <TargetObject name="T1484" condition="contains">Windows\System\Scripts</TargetObject>
+        <TargetObject name="T1547.001" condition="contains">CurrentVersion\Windows\Load</TargetObject>
+        <TargetObject name="T1547.001" condition="contains">CurrentVersion\Windows\Run</TargetObject>
+        <TargetObject name="T1547.001" condition="contains">CurrentVersion\Winlogon\Shell</TargetObject>
+        <TargetObject name="T1547.001" condition="contains">CurrentVersion\Winlogon\System</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32</TargetObject>
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\BootExecute</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\AeDebug</TargetObject>
+        <TargetObject condition="contains">UserInitMprLogonScript</TargetObject>
+        <TargetObject name="T1112,ChangeStartupFolderPath" condition="end with">user shell folders\startup</TargetObject>
+        <!--Services-->
+        <TargetObject name="T1543.003" condition="end with">\ServiceDll</TargetObject>
+        <TargetObject name="T1543.003" condition="end with">\ServiceManifest</TargetObject>
+        <TargetObject name="T1543.003" condition="end with">\ImagePath</TargetObject>
+        <TargetObject name="T1543.003" condition="end with">\Start</TargetObject>
+        <!--RDP-->
+        <TargetObject name="RDP port change" condition="end with">Control\Terminal Server\WinStations\RDP-Tcp\PortNumber</TargetObject>
+        <TargetObject name="RDP port change" condition="end with">Control\Terminal Server\fSingleSessionPerUser</TargetObject>
+        <TargetObject name="ModifyRemoteDesktopState" condition="end with">fDenyTSConnections</TargetObject>
+        <TargetObject condition="end with">LastLoggedOnUser</TargetObject>
+        <TargetObject name="ModifyRemoteDesktopPort" condition="end with">RDP-tcp\PortNumber</TargetObject>
+        <TargetObject condition="end with">Services\PortProxy\v4tov4</TargetObject>
+        <TargetObject condition="contains">\Microsoft\Terminal Server Client\Default\MRU</TargetObject>
+        <TargetObject condition="contains">\Microsoft\Terminal Server Client\Servers\</TargetObject>
+        <!--CLSID launch commands and Default File Association changes-->
+        <TargetObject name="T1546.001" condition="contains">\command\</TargetObject>
+        <TargetObject name="T1546.015" condition="contains">\ddeexec\</TargetObject>
+        <TargetObject name="T1546.015" condition="contains">{86C86720-42A0-1069-A2E8-08002B30309D}</TargetObject>
+        <TargetObject name="T1546.001" condition="contains">exefile</TargetObject>
+        <!--Windows COM-->
+        <TargetObject name="T1546.015" condition="end with">\InprocServer32\(Default)</TargetObject>
+        <!--Windows shell visual modifications used by malware-->
+        <TargetObject name="T1564.001" condition="end with">\Hidden</TargetObject>
+        <TargetObject name="T1564.001" condition="end with">\ShowSuperHidden</TargetObject>
+        <TargetObject name="T1564.001" condition="end with">\HideFileExt</TargetObject>
+        <!--Windows shell hijack and modifications-->
+        <TargetObject condition="contains">Classes\*\</TargetObject>
+        <TargetObject condition="contains">Classes\AllFilesystemObjects\</TargetObject>
+        <TargetObject condition="contains">Classes\Directory\</TargetObject>
+        <TargetObject condition="contains">Classes\Drive\</TargetObject>
+        <TargetObject condition="contains">Classes\Folder\</TargetObject>
+        <TargetObject condition="contains">Classes\PROTOCOLS\</TargetObject>
+        <TargetObject condition="contains">ContextMenuHandlers\</TargetObject>
+        <TargetObject condition="contains">CurrentVersion\Shell</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\explorer\ShellExecuteHooks</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\explorer\ShellServiceObjectDelayLoad</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\explorer\ShellIconOverlayIdentifiers</TargetObject>
+        <!--AppPaths hijacking-->
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\App Paths\</TargetObject>
+        <!--Terminal service boobytrap-->
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\InitialProgram</TargetObject>
+        <!--Group Policy integrity-->
+        <TargetObject name="T1484" condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\</TargetObject>
+        <!--Winsock and Winsock2-->
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Services\WinSock</TargetObject>
+        <TargetObject condition="end with">\ProxyServer</TargetObject>
+        <!--Credential providers-->
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\Authentication\Credential Provider</TargetObject>
+        <TargetObject name="T1547.002" condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Lsa\</TargetObject>
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Netsh</TargetObject>
+        <TargetObject condition="contains">Software\Microsoft\Windows\CurrentVersion\Internet Settings\ProxyEnable</TargetObject>
+        <!--Networking-->
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\NetworkProvider\Order\</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles</TargetObject>
+        <TargetObject name="T1562.004" condition="end with">\EnableFirewall</TargetObject>
+        <TargetObject name="T1562.004" condition="end with">\DoNotAllowExceptions</TargetObject>
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile\AuthorizedApplications\List</TargetObject>
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\DomainProfile\AuthorizedApplications\List</TargetObject>
+        <!--DLLs that get injected into every process at launch-->
+        <TargetObject name="T1546.010" condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Windows\Appinit_Dlls\</TargetObject>
+        <TargetObject name="T1546.010" condition="begin with">HKLM\Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\Appinit_Dlls\</TargetObject>
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCertDlls\</TargetObject>
+        <!--Office-->
+        <TargetObject name="T1137" condition="contains">Microsoft\Office\Outlook\Addins\</TargetObject>
+        <TargetObject name="T1137" condition="contains">Office Test\</TargetObject>
+        <TargetObject name="Suspicious,ChangedURLOutlook" condition="contains all">\Software\Microsoft\Office\;\Outlook\WebView\;URL</TargetObject>
+        <TargetObject name="Context,ProtectedModeExitOrMacrosUsed" condition="contains">Security\Trusted Documents\TrustRecords</TargetObject>
+        <TargetObject name="Context,ContactedDomain" condition="end with">\EnableBHO</TargetObject>
+        <!--Magic registry keys-->
+        <TargetObject condition="begin with">HKLM\Software\Classes\CLSID\{AB8902B4-09CA-4BB6-B78D-A8F59079A8D5}\</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Classes\WOW6432Node\CLSID\{AB8902B4-09CA-4BB6-B78D-A8F59079A8D5}\</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Classes\CLSID\{083863F1-70DE-11d0-BD40-00A0C911CE86}\</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Classes\WOW6432Node\CLSID\{083863F1-70DE-11d0-BD40-00A0C911CE86}\</TargetObject>
+        <!--Install/Run artifacts-->
+        <TargetObject condition="end with">\UrlUpdateInfo</TargetObject>
+        <TargetObject condition="end with">\InstallSource</TargetObject>
+        <TargetObject name="Alert,Sysinternals Tool Used" condition="end with">\EulaAccepted</TargetObject>
+        <!--Antivirus tampering-->
+        <TargetObject name="T1562.001,Tamper-Defender" condition="end with">\DisableAntiSpyware</TargetObject>
+        <TargetObject name="T1562.001,Tamper-Defender" condition="end with">\DisableAntiVirus</TargetObject>
+        <TargetObject name="T1562.001,Tamper-Defender" condition="end with">\SpynetReporting</TargetObject>
+        <TargetObject name="T1562.001,Tamper-Defender" condition="end with">DisableRealtimeMonitoring</TargetObject>
+        <TargetObject name="T1562.001,Tamper-Defender" condition="end with">\SubmitSamplesConsent</TargetObject>
+        <TargetObject name="T1562.001,Tamper-Defender" condition="begin with">HKLM\Software\Microsoft\Windows Defender\Exclusions</TargetObject>
+        <TargetObject name="T1562.001,Tamper-Defender" condition="begin with">HKLM\SOFTWARE\Policies\Microsoft\Windows Defender</TargetObject>
+        <!--Windows UAC tampering-->
+        <TargetObject name="T1548.002" condition="end with">HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA</TargetObject>
+        <TargetObject name="T1548.002" condition="end with">HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy</TargetObject>
+        <!--Microsoft Security Center tampering-->
+        <TargetObject name="T1562.001,Tamper-SecCenter" condition="end with">HKLM\Software\Microsoft\Security Center\</TargetObject>
+        <TargetObject name="T1562.001,Tamper-SecCenter" condition="end with">SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\HideSCAHealth</TargetObject>
+        <!--Windows application compatibility-->
+        <TargetObject name="T1546.011,AppCompatShim" condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom</TargetObject>
+        <TargetObject name="T1546.011,AppCompatShim" condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB</TargetObject>
+        <TargetObject condition="contains">VirtualStore</TargetObject>
+        <!--Windows internals integrity monitoring-->
+        <TargetObject name="T1546.012,IFEO" condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\WINEVT\</TargetObject>
+        <TargetObject name="Tamper-Safemode" condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Safeboot\</TargetObject>
+        <TargetObject name="Tamper-Winlogon" condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Winlogon\</TargetObject>
+        <TargetObject name="Context,DeviceConnectedOrUpdated" condition="end with">\FriendlyName</TargetObject>
+        <TargetObject name="Context,MsiInstallerStarted" condition="is">HKLM\Software\Microsoft\Windows\CurrentVersion\Installer\InProgress\(Default)</TargetObject>
+        <TargetObject name="Tamper-Tracing" condition="begin with">HKLM\Software\Microsoft\Tracing\RASAPI32</TargetObject>
+        <TargetObject name="Context,ProcessAccessedPrivateResource" condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\</TargetObject>
+        <TargetObject condition="contains">\Keyboard Layout\Preload</TargetObject>
+        <TargetObject condition="contains">\Keyboard Layout\Substitutes</TargetObject>
+        <!--Suspicious sources-->
+        <Image name="Suspicious,ImageBeginWithBackslash" condition="end with">regedit.exe</Image>
+        <Image name="Suspicious,ImageBeginWithBackslash" condition="begin with">\</Image>
+        <TargetObject condition="begin with">HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\</TargetObject>
+        <TargetObject condition="begin with">HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\</TargetObject>
+        <!--ADDITIONAL -->
+        <TargetObject condition="contains">Microsoft\Cryptography\OID\</TargetObject>
+        <TargetObject condition="contains">WOW6432Node\Microsoft\Cryptography\OID\</TargetObject>
+        <TargetObject condition="contains">Microsoft\Cryptography\Providers\Trust\</TargetObject>
+        <TargetObject condition="contains">WOW6432Node\Microsoft\Cryptography\Providers\Trust\</TargetObject>
+        <TargetObject condition="contains">Control\Print\Environments\Windows x64\Drivers</TargetObject>
+        <TargetObject name="Context,ContactedDomain" condition="end with">\EnableBHO</TargetObject>
+      </RegistryEvent>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 2: FILE CREATION TIME CHANGED
+         ============================================ -->
+    <RuleGroup name="FileCreateTime" groupRelation="or">
+      <FileCreateTime onmatch="include">
+        <Image name="T1070.006" condition="begin with">C:\Users</Image>
+        <TargetFilename name="T1070.006" condition="end with">.exe</TargetFilename>
+        <Image name="T1070.006" condition="begin with">\Device\HarddiskVolumeShadowCopy</Image>
+      </FileCreateTime>
+    </RuleGroup>
+
+    <RuleGroup name="FileCreateTime_Exclude" groupRelation="or">
+      <FileCreateTime onmatch="exclude">
+        <Image condition="image">OneDrive.exe</Image>
+        <Image condition="image">C:\Windows\system32\backgroundTaskHost.exe</Image>
+        <Image condition="contains">setup</Image>
+        <Image condition="contains">install</Image>
+        <Image condition="contains">Update\</Image>
+        <Image condition="end with">redist.exe</Image>
+        <Image condition="is">msiexec.exe</Image>
+        <Image condition="is">TrustedInstaller.exe</Image>
+        <Image condition="image">C:\Windows\FileManager\FileManager.exe</Image>
+        <Image condition="is">C:\Windows\System32\SearchIndexer.exe</Image>
+        <Image condition="is">C:\Windows\System32\WUDFHost.exe</Image>
+        <Image condition="is">C:\Windows\System32\audiodg.exe</Image>
+        <Image condition="is">C:\Windows\System32\dllhost.exe</Image>
+      </FileCreateTime>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 3: NETWORK CONNECTION
+         WORKSTATION OPTIMIZED: Removed C:\Users broad rule
+         ============================================ -->
+    <RuleGroup name="NetworkConnect" groupRelation="or">
+      <NetworkConnect onmatch="include">
+        <!-- WORKSTATION: Removed "C:\Users" - too noisy (Chrome, Teams, Slack, etc.) -->
+        <!-- Keep only truly suspicious locations -->
+        <Image condition="begin with">C:\ProgramData\</Image>
+        <Image condition="begin with">C:\Windows\Temp\</Image>
+        <Image condition="begin with">C:\Temp\</Image>
+        <Image condition="begin with">C:\Users\Public\</Image>
+
+        <!-- LOLBins making network connections - HIGH VALUE -->
+        <Image condition="image">cmd.exe</Image>
+        <Image condition="image">powershell.exe</Image>
+        <Image condition="image">certutil.exe</Image>
+        <Image condition="image">mshta.exe</Image>
+        <Image condition="image">wscript.exe</Image>
+        <Image condition="image">cscript.exe</Image>
+        <Image condition="image">regsvr32.exe</Image>
+        <Image condition="image">rundll32.exe</Image>
+        <Image condition="image">msbuild.exe</Image>
+        <Image condition="image">wmic.exe</Image>
+        <Image condition="image">wmiprvse.exe</Image>
+
+        <!-- Lateral movement tools -->
+        <Image condition="image">psexec.exe</Image>
+        <Image condition="image">psexesvc.exe</Image>
+        <Image condition="image">winexesvc.exe</Image>
+
+        <!-- Suspicious applications -->
+        <Image condition="image">tor.exe</Image>
+        <Image condition="image">notepad.exe</Image>
+
+        <!-- WORKSTATION: Removed common ports 22, 25 - may generate noise -->
+        <!-- Keep high-value suspicious ports -->
+        <DestinationPort condition="is">23</DestinationPort>
+        <DestinationPort condition="is">3389</DestinationPort>
+        <DestinationPort condition="is">5800</DestinationPort>
+        <DestinationPort condition="is">5900</DestinationPort>
+        <DestinationPort condition="is">9001</DestinationPort>
+        <DestinationPort condition="is">9030</DestinationPort>
+        <DestinationPort condition="is">4444</DestinationPort>
+        <DestinationPort condition="is">4445</DestinationPort>
+        <DestinationPort condition="is">5555</DestinationPort>
+        <DestinationPort condition="is">6666</DestinationPort>
+        <DestinationPort condition="is">7777</DestinationPort>
+        <DestinationPort condition="is">8888</DestinationPort>
+        <DestinationPort condition="is">31337</DestinationPort>
+      </NetworkConnect>
+    </RuleGroup>
+
+    <RuleGroup name="NetworkConnect_Exclude" groupRelation="or">
+      <NetworkConnect onmatch="exclude">
+        <!-- Legitimate applications - use full paths for security -->
+        <Image condition="is">C:\Program Files\Spotify\Spotify.exe</Image>
+        <Image condition="is">C:\Program Files (x86)\Dropbox\Client\Dropbox.exe</Image>
+        <Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\Platform\</Image>
+
+        <!-- Microsoft domains - RESTRICTED to specific trusted endpoints -->
+        <!-- WARNING: Broad .microsoft.com exclusions removed - can be abused for C2 via Azure/O365 -->
+        <DestinationHostname condition="is">update.microsoft.com</DestinationHostname>
+        <DestinationHostname condition="is">download.microsoft.com</DestinationHostname>
+        <DestinationHostname condition="is">go.microsoft.com</DestinationHostname>
+        <DestinationHostname condition="is">www.microsoft.com</DestinationHostname>
+        <DestinationHostname condition="is">login.microsoftonline.com</DestinationHostname>
+        <DestinationHostname condition="is">login.live.com</DestinationHostname>
+        <DestinationHostname condition="is">clientconfig.microsoftonline-p.net</DestinationHostname>
+
+        <!-- Windows Update specific -->
+        <DestinationHostname condition="is">windowsupdate.microsoft.com</DestinationHostname>
+        <DestinationHostname condition="is">download.windowsupdate.com</DestinationHostname>
+        <DestinationHostname condition="is">update.microsoft.com</DestinationHostname>
+        <DestinationHostname condition="end with">.windowsupdate.com</DestinationHostname>
+        <DestinationHostname condition="end with">.update.microsoft.com</DestinationHostname>
+
+        <!-- Defender specific -->
+        <DestinationHostname condition="is">wdcp.microsoft.com</DestinationHostname>
+        <DestinationHostname condition="is">wdcpalt.microsoft.com</DestinationHostname>
+        <DestinationHostname condition="end with">.wd.microsoft.com</DestinationHostname>
+
+        <!-- Telemetry (consider if you want to monitor this) -->
+        <DestinationHostname condition="is">vortex.data.microsoft.com</DestinationHostname>
+        <DestinationHostname condition="is">settings-win.data.microsoft.com</DestinationHostname>
+
+        <!-- Internal proxy/SIEM - DOCUMENT YOUR IPS -->
+        <!-- <DestinationIp condition="is">192.168.1.100</DestinationIp> -->
+      </NetworkConnect>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 8: CREATE REMOTE THREAD
+         ============================================ -->
+    <RuleGroup name="CreateRemoteThread" groupRelation="or">
+      <CreateRemoteThread onmatch="exclude">
+        <SourceImage condition="is">C:\Windows\system32\wbem\WmiPrvSE.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\svchost.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\wininit.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\csrss.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\services.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\winlogon.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\audiodg.exe</SourceImage>
+        <StartModule condition="is">C:\Windows\system32\kernel32.dll</StartModule>
+        <TargetImage condition="end with">Google\Chrome\Application\chrome.exe</TargetImage>
+        <SourceImage condition="is">C:\Program Files (x86)\Webroot\WRSA.exe</SourceImage>
+      </CreateRemoteThread>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 11: FILE CREATE
+         WORKSTATION OPTIMIZED: Removed Downloads catch-all
+         ============================================ -->
+    <RuleGroup name="FileCreate" groupRelation="or">
+      <FileCreate onmatch="include">
+        <!-- Persistence locations - HIGH VALUE -->
+        <TargetFilename condition="contains">\Start Menu</TargetFilename>
+        <TargetFilename condition="contains">\Startup\</TargetFilename>
+
+        <!-- Outlook attachments - keep for phishing detection -->
+        <TargetFilename condition="contains">\Content.Outlook\</TargetFilename>
+
+        <!-- WORKSTATION: Removed generic Downloads - too noisy -->
+        <!-- Instead, monitor only dangerous extensions in Downloads -->
+        <TargetFilename condition="contains">\Downloads\</TargetFilename>
+
+        <!-- Dangerous file extensions - HIGH VALUE -->
+        <TargetFilename condition="end with">.exe</TargetFilename>
+        <TargetFilename condition="end with">.dll</TargetFilename>
+        <TargetFilename condition="end with">.sys</TargetFilename>
+        <TargetFilename condition="end with">.scr</TargetFilename>
+        <TargetFilename condition="end with">.bat</TargetFilename>
+        <TargetFilename condition="end with">.cmd</TargetFilename>
+        <TargetFilename condition="end with">.ps1</TargetFilename>
+        <TargetFilename condition="end with">.vbs</TargetFilename>
+        <TargetFilename condition="end with">.vbe</TargetFilename>
+        <TargetFilename condition="end with">.jse</TargetFilename>
+        <TargetFilename condition="end with">.hta</TargetFilename>
+        <TargetFilename condition="end with">.jar</TargetFilename>
+        <TargetFilename condition="end with">.application</TargetFilename>
+
+        <!-- Macro-enabled Office docs -->
+        <TargetFilename condition="end with">.docm</TargetFilename>
+        <TargetFilename condition="end with">.xlsm</TargetFilename>
+        <TargetFilename condition="end with">.pptm</TargetFilename>
+
+        <!-- System directories - HIGH VALUE -->
+        <TargetFilename condition="begin with">C:\Windows\system32\Drivers</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\SysWOW64\Drivers</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\system32\GroupPolicy\</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\system32\Wbem</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\Tasks\</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\system32\Tasks</TargetFilename>
+
+        <!-- WORKSTATION: Removed .xls, .ppt, .rtf - too common for normal work -->
+      </FileCreate>
+    </RuleGroup>
+
+    <!-- FileCreate Exclusions for Workstation -->
+    <RuleGroup name="FileCreate_Exclude" groupRelation="or">
+      <FileCreate onmatch="exclude">
+        <!-- Browser downloads/cache - very noisy -->
+        <Image condition="image">chrome.exe</Image>
+        <Image condition="image">msedge.exe</Image>
+        <Image condition="image">firefox.exe</Image>
+        <!-- Windows Update -->
+        <Image condition="is">C:\Windows\System32\svchost.exe</Image>
+        <!-- Office normal operations -->
+        <TargetFilename condition="contains">\AppData\Local\Microsoft\Office\</TargetFilename>
+        <TargetFilename condition="contains">\AppData\Local\Temp\</TargetFilename>
+      </FileCreate>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 15: FILE STREAM HASH (ADS)
+         ============================================ -->
+    <RuleGroup name="FileCreateStreamHash" groupRelation="or">
+      <FileCreateStreamHash onmatch="include">
+        <TargetFilename condition="contains">Temp\7z</TargetFilename>
+        <TargetFilename condition="contains">Startup</TargetFilename>
+        <TargetFilename condition="end with">.bat</TargetFilename>
+        <TargetFilename condition="end with">.cmd</TargetFilename>
+        <TargetFilename condition="end with">.hta</TargetFilename>
+        <TargetFilename condition="end with">.lnk</TargetFilename>
+        <TargetFilename condition="end with">.ps1</TargetFilename>
+        <TargetFilename condition="end with">.ps2</TargetFilename>
+        <TargetFilename condition="end with">.reg</TargetFilename>
+        <TargetFilename condition="end with">.js</TargetFilename>
+        <TargetFilename condition="end with">.jse</TargetFilename>
+        <TargetFilename condition="end with">.vb</TargetFilename>
+        <TargetFilename condition="end with">.vbe</TargetFilename>
+        <TargetFilename condition="end with">.vbs</TargetFilename>
+        <TargetFilename condition="end with">.wsf</TargetFilename>
+        <TargetFilename condition="end with">.wsh</TargetFilename>
+      </FileCreateStreamHash>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 22: DNS QUERY
+         ============================================ -->
+    <RuleGroup name="DnsQuery" groupRelation="or">
+      <DnsQuery onmatch="exclude">
+        <!--Network noise-->
+        <QueryName condition="end with">.arpa.</QueryName>
+        <QueryName condition="end with">.arpa</QueryName>
+        <QueryName condition="end with">.msftncsi.com</QueryName>
+        <QueryName condition="is">..localmachine</QueryName>
+        <QueryName condition="is">localhost</QueryName>
+        <!--Microsoft-->
+        <QueryName condition="end with">-pushp.svc.ms</QueryName>
+        <QueryName condition="end with">.b-msedge.net</QueryName>
+        <QueryName condition="end with">.bing.com</QueryName>
+        <QueryName condition="end with">.hotmail.com</QueryName>
+        <QueryName condition="end with">.live.com</QueryName>
+        <QueryName condition="end with">.live.net</QueryName>
+        <QueryName condition="end with">.s-microsoft.com</QueryName>
+        <QueryName condition="end with">.microsoft.com</QueryName>
+        <QueryName condition="end with">.microsoftonline.com</QueryName>
+        <QueryName condition="end with">.microsoftstore.com</QueryName>
+        <QueryName condition="end with">.ms-acdc.office.com</QueryName>
+        <QueryName condition="end with">.msedge.net</QueryName>
+        <QueryName condition="end with">.msn.com</QueryName>
+        <QueryName condition="end with">.msocdn.com</QueryName>
+        <QueryName condition="end with">.skype.com</QueryName>
+        <QueryName condition="end with">.skype.net</QueryName>
+        <QueryName condition="end with">.windows.com</QueryName>
+        <QueryName condition="end with">.windows.net.nsatc.net</QueryName>
+        <QueryName condition="end with">.windowsupdate.com</QueryName>
+        <QueryName condition="end with">.xboxlive.com</QueryName>
+        <QueryName condition="is">login.windows.net</QueryName>
+        <Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\Platform\</Image>
+        <!--Microsoft:Office365/AzureAD-->
+        <QueryName condition="end with">.activedirectory.windowsazure.com</QueryName>
+        <QueryName condition="end with">.aria.microsoft.com</QueryName>
+        <QueryName condition="end with">.msauth.net</QueryName>
+        <QueryName condition="end with">.msftauth.net</QueryName>
+        <QueryName condition="end with">.office.net</QueryName>
+        <QueryName condition="end with">.opinsights.azure.com</QueryName>
+        <QueryName condition="end with">.res.office365.com</QueryName>
+        <QueryName condition="is">acdc-direct.office.com</QueryName>
+        <QueryName condition="is">atm-fp-direct.office.com</QueryName>
+        <QueryName condition="is">loki.delve.office.com</QueryName>
+        <QueryName condition="is">management.azure.com</QueryName>
+        <QueryName condition="is">messaging.office.com</QueryName>
+        <QueryName condition="is">outlook.office365.com</QueryName>
+        <QueryName condition="is">portal.azure.com</QueryName>
+        <QueryName condition="is">protection.outlook.com</QueryName>
+        <QueryName condition="is">substrate.office.com</QueryName>
+        <QueryName condition="end with">.measure.office.com</QueryName>
+        <!--3rd-party applications-->
+        <QueryName condition="end with">.adobe.com</QueryName>
+        <QueryName condition="end with">.adobe.io</QueryName>
+        <QueryName condition="end with">.mozaws.net</QueryName>
+        <QueryName condition="end with">.mozilla.com</QueryName>
+        <QueryName condition="end with">.mozilla.net</QueryName>
+        <QueryName condition="end with">.mozilla.org</QueryName>
+        <QueryName condition="end with">.spotify.com</QueryName>
+        <QueryName condition="end with">.spotify.map.fastly.net</QueryName>
+        <QueryName condition="end with">.wbx2.com</QueryName>
+        <QueryName condition="end with">.webex.com</QueryName>
+        <QueryName condition="is">clients1.google.com</QueryName>
+        <QueryName condition="is">clients2.google.com</QueryName>
+        <QueryName condition="is">clients3.google.com</QueryName>
+        <QueryName condition="is">clients4.google.com</QueryName>
+        <QueryName condition="is">clients5.google.com</QueryName>
+        <QueryName condition="is">clients6.google.com</QueryName>
+        <QueryName condition="is">safebrowsing.googleapis.com</QueryName>
+        <!--CDN-->
+        <QueryName condition="end with">.akadns.net</QueryName>
+        <QueryName condition="end with">.netflix.com</QueryName>
+        <QueryName condition="is">aspnetcdn.com</QueryName>
+        <QueryName condition="end with">.aspnetcdn.com</QueryName>
+        <QueryName condition="is">ajax.googleapis.com</QueryName>
+        <QueryName condition="is">cdnjs.cloudflare.com</QueryName>
+        <QueryName condition="is">fonts.googleapis.com</QueryName>
+        <QueryName condition="end with">.typekit.net</QueryName>
+        <QueryName condition="end with">.stackassets.com</QueryName>
+        <QueryName condition="end with">.steamcontent.com</QueryName>
+        <QueryName condition="is">play.google.com</QueryName>
+        <QueryName condition="is">content-autofill.googleapis.com</QueryName>
+        <!--OCSP/CRL-->
+        <QueryName condition="end with">.amazontrust.com</QueryName>
+        <QueryName condition="end with">.digicert.com</QueryName>
+        <QueryName condition="end with">.globalsign.com</QueryName>
+        <QueryName condition="end with">.globalsign.net</QueryName>
+        <QueryName condition="end with">.intel.com</QueryName>
+        <QueryName condition="end with">.symcb.com</QueryName>
+        <QueryName condition="end with">.symcd.com</QueryName>
+        <QueryName condition="end with">.thawte.com</QueryName>
+        <QueryName condition="end with">.usertrust.com</QueryName>
+        <QueryName condition="end with">.verisign.com</QueryName>
+        <QueryName condition="end with">ocsp.identrust.com</QueryName>
+        <QueryName condition="end with">pki.goog</QueryName>
+        <QueryName condition="is">msocsp.com</QueryName>
+        <QueryName condition="is">ocsp.comodoca.com</QueryName>
+        <QueryName condition="is">ocsp.entrust.net</QueryName>
+        <QueryName condition="is">ocsp.godaddy.com</QueryName>
+        <QueryName condition="is">ocsp.int-x3.letsencrypt.org</QueryName>
+        <QueryName condition="is">ocsp.msocsp.com</QueryName>
+        <QueryName condition="is">pki.goog</QueryName>
+        <QueryName condition="end with">.pki.goog</QueryName>
+        <QueryName condition="is">amazontrust.com</QueryName>
+        <QueryName condition="is">ocsp.sectigo.com</QueryName>
+        <QueryName condition="is">pki-goog.l.google.com</QueryName>
+        <QueryName condition="is">ocsp.verisign.com</QueryName>
+        <QueryName condition="end with">.ocsp.identrust.com</QueryName>
+        <QueryName condition="is">status.rapidssl.com</QueryName>
+        <QueryName condition="is">status.thawte.com</QueryName>
+      </DnsQuery>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 19, 20, 21: WMI EVENT SUBSCRIPTION (T1546.003)
+         ============================================ -->
+    <RuleGroup name="WmiEvent" groupRelation="or">
+      <WmiEvent onmatch="include">
+        <!-- Monitor ALL WMI permanent event subscriptions - common persistence technique -->
+        <Operation condition="is">Created</Operation>
+        <Operation condition="is">Modified</Operation>
+        <Operation condition="is">Deleted</Operation>
+      </WmiEvent>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 7: IMAGE LOAD (DLL)
+         WORKSTATION OPTIMIZED: Removed broad C:\Users rule
+         ============================================ -->
+    <RuleGroup name="ImageLoad" groupRelation="or">
+      <ImageLoad onmatch="include">
+        <!-- WORKSTATION: Removed C:\Users\ - generates massive noise from .NET apps -->
+        <!-- Focus on truly suspicious DLL loading -->
+
+        <!-- DLL loaded from temp/public locations only -->
+        <ImageLoaded condition="begin with">C:\Windows\Temp\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\Temp\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\Users\Public\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\ProgramData\</ImageLoaded>
+
+        <!-- PowerShell DLLs loaded by suspicious processes - HIGH VALUE -->
+        <ImageLoaded condition="end with">\System.Management.Automation.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\System.Management.Automation.ni.dll</ImageLoaded>
+
+        <!-- Credential access DLLs - HIGH VALUE -->
+        <ImageLoaded condition="end with">\samlib.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\vaultcli.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\comsvcs.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\dbghelp.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\dbgcore.dll</ImageLoaded>
+
+        <!-- WORKSTATION: Removed CLR/WMI DLLs - too noisy for workstations -->
+      </ImageLoad>
+    </RuleGroup>
+
+    <RuleGroup name="ImageLoad_Exclude" groupRelation="or">
+      <ImageLoad onmatch="exclude">
+        <!-- SECURITY FIX: Removed broad C:\Program Files exclusion - defeats credential DLL monitoring -->
+        <!-- Only exclude specific trusted processes that legitimately load credential/PS DLLs -->
+
+        <!-- PowerShell legitimately loads System.Management.Automation.dll -->
+        <Image condition="is">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Image>
+        <Image condition="is">C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe</Image>
+        <Image condition="is">C:\Program Files\PowerShell\7\pwsh.exe</Image>
+
+        <!-- LSASS legitimately loads credential DLLs -->
+        <Image condition="is">C:\Windows\System32\lsass.exe</Image>
+
+        <!-- Specific trusted system processes only -->
+        <Image condition="is">C:\Windows\System32\svchost.exe</Image>
+        <Image condition="is">C:\Windows\System32\services.exe</Image>
+        <Image condition="is">C:\Windows\System32\csrss.exe</Image>
+
+        <!-- Common workstation apps - keep for noise reduction -->
+        <Image condition="is">C:\Program Files\Google\Chrome\Application\chrome.exe</Image>
+        <Image condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
+        <Image condition="is">C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe</Image>
+        <Image condition="is">C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE</Image>
+        <Image condition="end with">\Microsoft\Teams\current\Teams.exe</Image>
+        <Image condition="end with">\slack\Slack.exe</Image>
+      </ImageLoad>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 17, 18: PIPE CREATED/CONNECTED
+         ============================================ -->
+    <RuleGroup name="PipeEvent" groupRelation="or">
+      <PipeEvent onmatch="include">
+        <!-- Cobalt Strike default pipes -->
+        <PipeName condition="begin with">\msagent_</PipeName>
+        <PipeName condition="begin with">\MSSE-</PipeName>
+        <PipeName condition="begin with">\postex_</PipeName>
+        <PipeName condition="begin with">\status_</PipeName>
+        <!-- Metasploit pipes -->
+        <PipeName condition="begin with">\meterpreter</PipeName>
+        <!-- PsExec -->
+        <PipeName condition="begin with">\psexec</PipeName>
+        <PipeName condition="is">\PSEXESVC</PipeName>
+        <!-- Credential dumping tools -->
+        <PipeName condition="contains">mimikatz</PipeName>
+        <PipeName condition="contains">lsadump</PipeName>
+        <!-- Lateral movement -->
+        <PipeName condition="begin with">\csexec</PipeName>
+        <!-- Generic suspicious patterns -->
+        <PipeName condition="begin with">\\.\pipe\</PipeName>
+      </PipeEvent>
+    </RuleGroup>
+
+    <RuleGroup name="PipeEvent_Exclude" groupRelation="or">
+      <PipeEvent onmatch="exclude">
+        <!-- Windows legitimate pipes -->
+        <PipeName condition="is">\lsass</PipeName>
+        <PipeName condition="is">\wkssvc</PipeName>
+        <PipeName condition="is">\srvsvc</PipeName>
+        <PipeName condition="is">\netlogon</PipeName>
+        <PipeName condition="is">\samr</PipeName>
+        <PipeName condition="begin with">\chrome.</PipeName>
+        <PipeName condition="begin with">\crashpad_</PipeName>
+        <PipeName condition="begin with">\mojo.</PipeName>
+      </PipeEvent>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 5: PROCESS TERMINATED
+         ============================================ -->
+    <RuleGroup name="ProcessTerminate" groupRelation="or">
+      <ProcessTerminate onmatch="include">
+        <!-- Track termination of security tools (T1562.001) -->
+        <Image condition="end with">\MsMpEng.exe</Image>
+        <Image condition="end with">\MpCmdRun.exe</Image>
+        <Image condition="end with">\NisSrv.exe</Image>
+        <Image condition="end with">\SecurityHealthService.exe</Image>
+        <Image condition="end with">\SenseIR.exe</Image>
+        <Image condition="end with">\SenseCncProxy.exe</Image>
+        <Image condition="end with">\MsSense.exe</Image>
+        <!-- EDR/AV common processes -->
+        <Image condition="contains">CrowdStrike</Image>
+        <Image condition="contains">Carbon Black</Image>
+        <Image condition="contains">Cylance</Image>
+        <Image condition="contains">Sentinel</Image>
+      </ProcessTerminate>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 10: PROCESS ACCESS
+         ============================================ -->
+    <RuleGroup name="ProcessAccess" groupRelation="or">
+      <ProcessAccess onmatch="include">
+        <CallTrace condition="begin with">UNKNOWN</CallTrace>
+        <Rule groupRelation="and">
+          <CallTrace condition="contains">UNKNOWN</CallTrace>
+          <GrantedAccess condition="contains any">0x1028;0x1fffff</GrantedAccess>
+        </Rule>
+        <!-- lsass.exe access with critical permission (T1003) -->
+        <Rule groupRelation="and">
+          <TargetImage condition="end with">lsass.exe</TargetImage>
+          <GrantedAccess condition="contains any">0x40;0x1000;0x1010;0x1038;0x1410;0x1418;0x1438;0x143a;0x100000;0x1f0fff;0x1f1fff;0x1f2fff;0x1f3fff;0x1fffff</GrantedAccess>
+        </Rule>
+        <Rule groupRelation="and">
+          <SourceImage condition="contains">winword.exe</SourceImage>
+          <CallTrace condition="contains">:\Windows\Microsoft.NET\Framework64\v2.</CallTrace>
+          <CallTrace condition="contains">UNKNOWN</CallTrace>
+        </Rule>
+      </ProcessAccess>
+    </RuleGroup>
+
+  </EventFiltering>
+</Sysmon>
