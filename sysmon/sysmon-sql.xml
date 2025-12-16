@@ -15,70 +15,85 @@
 
     <!-- ============================================
          EVENT ID 1: PROCESS CREATE
-         SQL SERVER: Focus on SQL spawning child processes
+         SQL SERVER: Refactored with AND rules for precision
          ============================================ -->
     <RuleGroup name="ProcessCreate" groupRelation="or">
       <ProcessCreate onmatch="include">
-        <!-- CRITICAL: SQL Server spawning cmd/powershell = xp_cmdshell abuse -->
-        <ParentImage condition="end with">\sqlservr.exe</ParentImage>
-        <ParentImage condition="end with">\SQLAGENT.EXE</ParentImage>
-        <ParentImage condition="end with">\sqlceip.exe</ParentImage>
+        <!-- ===== CRITICAL: xp_cmdshell detection (AND rules) ===== -->
+        <!-- SQL Server spawning shells = xp_cmdshell abuse -->
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\sqlservr.exe</ParentImage>
+          <Image condition="image">cmd.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\sqlservr.exe</ParentImage>
+          <Image condition="image">powershell.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\sqlservr.exe</ParentImage>
+          <Image condition="image">pwsh.exe</Image>
+        </Rule>
 
-        <!-- PowerShell/CMD -->
-        <Image condition="image">powershell.exe</Image>
-        <Image condition="image">pwsh.exe</Image>
-        <Image condition="image">cmd.exe</Image>
-        <CommandLine condition="contains">Invoke-</CommandLine>
-        <CommandLine condition="contains">-enc</CommandLine>
-        <CommandLine condition="contains">-encodedcommand</CommandLine>
-        <CommandLine condition="contains">downloadstring</CommandLine>
+        <!-- SQL Agent spawning shells = Agent Job abuse -->
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\SQLAGENT.EXE</ParentImage>
+          <Image condition="image">cmd.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\SQLAGENT.EXE</ParentImage>
+          <Image condition="image">powershell.exe</Image>
+        </Rule>
 
-        <!-- SQL-specific attacks -->
+        <!-- SQL spawning discovery tools -->
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\sqlservr.exe</ParentImage>
+          <Image condition="image">whoami.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\sqlservr.exe</ParentImage>
+          <Image condition="image">net.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\sqlservr.exe</ParentImage>
+          <Image condition="image">hostname.exe</Image>
+        </Rule>
+
+        <!-- ===== Processes from suspicious locations ===== -->
+        <Image condition="begin with">C:\Users\</Image>
+        <Image condition="begin with">C:\Windows\Temp\</Image>
+        <Image condition="begin with">C:\Temp\</Image>
+
+        <!-- ===== SQL-specific attack commands (always monitor) ===== -->
         <CommandLine condition="contains">xp_cmdshell</CommandLine>
         <CommandLine condition="contains">sp_configure</CommandLine>
         <CommandLine condition="contains">OPENROWSET</CommandLine>
         <CommandLine condition="contains">OPENDATASOURCE</CommandLine>
-        <CommandLine condition="contains">bcp</CommandLine>
-        <CommandLine condition="contains">BULK INSERT</CommandLine>
         <CommandLine condition="contains">xp_regread</CommandLine>
         <CommandLine condition="contains">xp_regwrite</CommandLine>
         <CommandLine condition="contains">xp_dirtree</CommandLine>
         <CommandLine condition="contains">xp_fileexist</CommandLine>
         <CommandLine condition="contains">xp_subdirs</CommandLine>
 
-        <!-- WMI -->
-        <Image condition="image">wmic.exe</Image>
-        <Image condition="image">wmiprvse.exe</Image>
+        <!-- PowerShell download cradles (always suspicious on server) -->
+        <CommandLine condition="contains">Invoke-</CommandLine>
+        <CommandLine condition="contains">-enc</CommandLine>
+        <CommandLine condition="contains">-encodedcommand</CommandLine>
+        <CommandLine condition="contains">downloadstring</CommandLine>
+        <CommandLine condition="contains">IEX</CommandLine>
+        <CommandLine condition="contains">Net.WebClient</CommandLine>
 
-        <!-- Credential Access -->
+        <!-- Credential Access (always monitor) -->
         <Image condition="image">vssadmin.exe</Image>
         <Image condition="image">procdump.exe</Image>
         <Image condition="image">procdump64.exe</Image>
         <CommandLine condition="contains">comsvcs.dll</CommandLine>
         <CommandLine condition="contains">MiniDump</CommandLine>
 
-        <!-- Discovery - ALL monitored on SQL server -->
-        <Image condition="image">whoami.exe</Image>
-        <Image condition="image">hostname.exe</Image>
-        <Image condition="image">net.exe</Image>
-        <Image condition="image">net1.exe</Image>
-        <Image condition="image">nltest.exe</Image>
-        <Image condition="image">systeminfo.exe</Image>
-        <Image condition="image">tasklist.exe</Image>
-        <Image condition="image">ipconfig.exe</Image>
-        <Image condition="image">netstat.exe</Image>
-        <Image condition="image">nslookup.exe</Image>
-        <Image condition="image">ping.exe</Image>
-
-        <!-- LOLBins -->
+        <!-- LOLBins (always suspicious on SQL server) -->
         <Image condition="image">certutil.exe</Image>
         <Image condition="image">mshta.exe</Image>
         <Image condition="image">regsvr32.exe</Image>
-        <Image condition="image">rundll32.exe</Image>
-        <Image condition="image">bitsadmin.exe</Image>
         <Image condition="image">msbuild.exe</Image>
-
-        <!-- Scripting -->
         <Image condition="image">wscript.exe</Image>
         <Image condition="image">cscript.exe</Image>
 
@@ -90,16 +105,10 @@
         <Image condition="image">schtasks.exe</Image>
         <Image condition="image">sc.exe</Image>
 
-        <!-- SQL utilities that may indicate attack -->
-        <Image condition="image">sqlcmd.exe</Image>
-        <Image condition="image">osql.exe</Image>
-        <Image condition="image">isql.exe</Image>
-
         <!-- Data exfiltration indicators -->
         <Image condition="image">rar.exe</Image>
         <Image condition="image">7z.exe</Image>
         <Image condition="image">7za.exe</Image>
-        <CommandLine condition="contains">.bak</CommandLine>
       </ProcessCreate>
     </RuleGroup>
 
@@ -173,6 +182,19 @@
         <!-- ===== SQL-SPECIFIC ===== -->
         <TargetObject condition="contains">Microsoft\Microsoft SQL Server\</TargetObject>
         <TargetObject condition="contains">Microsoft\MSSQLServer\</TargetObject>
+
+        <!-- SQL Network Configuration (tampering enables remote access) -->
+        <TargetObject condition="contains">\SuperSocketNetLib\</TargetObject>
+        <TargetObject condition="contains">\MSSQLServer\SuperSocketNetLib\Tcp</TargetObject>
+        <TargetObject condition="end with">\Enabled</TargetObject>
+        <TargetObject condition="end with">\TcpPort</TargetObject>
+        <TargetObject condition="end with">\TcpDynamicPorts</TargetObject>
+
+        <!-- SQL Security settings -->
+        <TargetObject condition="contains">\MSSQLServer\LoginMode</TargetObject>
+        <TargetObject condition="contains">\MSSQLServer\xp_cmdshell</TargetObject>
+        <TargetObject condition="contains">\MSSQLServer\Ole Automation Procedures</TargetObject>
+        <TargetObject condition="contains">\MSSQLServer\Ad Hoc Distributed Queries</TargetObject>
 
         <!-- ===== SECURITY TAMPERING ===== -->
         <!-- Defender -->
@@ -265,37 +287,101 @@
 
     <!-- ============================================
          EVENT ID 11: FILE CREATE
-         SQL SERVER: Monitor data paths and backups
+         SQL SERVER: Focused on suspicious paths to reduce patching noise
          ============================================ -->
     <RuleGroup name="FileCreate" groupRelation="or">
       <FileCreate onmatch="include">
-        <!-- Executables anywhere -->
-        <TargetFilename condition="end with">.exe</TargetFilename>
-        <TargetFilename condition="end with">.dll</TargetFilename>
-        <TargetFilename condition="end with">.bat</TargetFilename>
-        <TargetFilename condition="end with">.cmd</TargetFilename>
-        <TargetFilename condition="end with">.ps1</TargetFilename>
-        <TargetFilename condition="end with">.vbs</TargetFilename>
+        <!-- ===== EXECUTABLES ONLY IN SUSPICIOUS PATHS (AND rules) ===== -->
+        <!-- Reduces patching noise while catching staged malware -->
 
-        <!-- System directories -->
+        <!-- exe/dll in user profiles -->
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+          <TargetFilename condition="end with">.exe</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+          <TargetFilename condition="end with">.dll</TargetFilename>
+        </Rule>
+
+        <!-- exe/dll in temp directories -->
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.exe</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.dll</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.exe</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.dll</TargetFilename>
+        </Rule>
+
+        <!-- exe/dll in ProgramData (staging location) -->
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\ProgramData\</TargetFilename>
+          <TargetFilename condition="end with">.exe</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\ProgramData\</TargetFilename>
+          <TargetFilename condition="end with">.dll</TargetFilename>
+        </Rule>
+
+        <!-- ===== SCRIPTS IN SUSPICIOUS PATHS ===== -->
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+          <TargetFilename condition="end with">.ps1</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+          <TargetFilename condition="end with">.bat</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+          <TargetFilename condition="end with">.vbs</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.ps1</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.bat</TargetFilename>
+        </Rule>
+
+        <!-- ===== SYSTEM DIRECTORIES (always suspicious) ===== -->
         <TargetFilename condition="begin with">C:\Windows\system32\</TargetFilename>
         <TargetFilename condition="begin with">C:\Windows\Tasks\</TargetFilename>
 
-        <!-- User profile (unusual on SQL server) -->
-        <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+        <!-- ===== SQL-SPECIFIC: Backup/DB files in SUSPICIOUS locations ===== -->
+        <!-- Normal backup location excluded below, unusual = exfil attempt -->
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+          <TargetFilename condition="end with">.bak</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.bak</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.bak</TargetFilename>
+        </Rule>
 
-        <!-- Temp directories -->
-        <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
-        <TargetFilename condition="begin with">C:\Temp\</TargetFilename>
-
-        <!-- SQL-SPECIFIC: Backup file creation outside normal paths (data exfil) -->
-        <!-- Monitor backup creation in unusual locations -->
-        <TargetFilename condition="end with">.bak</TargetFilename>
-
-        <!-- SQL data files in unusual locations -->
-        <TargetFilename condition="end with">.mdf</TargetFilename>
-        <TargetFilename condition="end with">.ldf</TargetFilename>
-        <TargetFilename condition="end with">.ndf</TargetFilename>
+        <!-- MDF/LDF outside data directories = suspicious -->
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+          <TargetFilename condition="end with">.mdf</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+          <TargetFilename condition="end with">.ldf</TargetFilename>
+        </Rule>
       </FileCreate>
     </RuleGroup>
 
@@ -313,37 +399,85 @@
 
         <!-- SQL internal temp -->
         <Image condition="end with">\sqlservr.exe</Image>
+
+        <!-- Patching processes (reduce noise during updates) -->
+        <Image condition="is">C:\Windows\System32\TiWorker.exe</Image>
+        <Image condition="is">C:\Windows\System32\wuauclt.exe</Image>
+        <TargetFilename condition="contains">\WinSxS\</TargetFilename>
+        <TargetFilename condition="contains">\SoftwareDistribution\</TargetFilename>
       </FileCreate>
     </RuleGroup>
 
     <!-- ============================================
          EVENT ID 8: CREATE REMOTE THREAD
+         Expanded AV/EDR exclusions to reduce false positives
          ============================================ -->
     <RuleGroup name="CreateRemoteThread" groupRelation="or">
       <CreateRemoteThread onmatch="exclude">
+        <!-- System processes -->
         <SourceImage condition="is">C:\Windows\system32\wbem\WmiPrvSE.exe</SourceImage>
         <SourceImage condition="is">C:\Windows\system32\svchost.exe</SourceImage>
         <SourceImage condition="is">C:\Windows\system32\csrss.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\lsass.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\services.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\wininit.exe</SourceImage>
+
+        <!-- SQL Server internal thread operations -->
         <SourceImage condition="end with">\sqlservr.exe</SourceImage>
+
+        <!-- Windows Defender -->
+        <SourceImage condition="begin with">C:\ProgramData\Microsoft\Windows Defender\Platform\</SourceImage>
+        <SourceImage condition="begin with">C:\Program Files\Windows Defender\</SourceImage>
+        <SourceImage condition="end with">\MsMpEng.exe</SourceImage>
+
+        <!-- CrowdStrike Falcon -->
+        <SourceImage condition="begin with">C:\Program Files\CrowdStrike\</SourceImage>
+        <SourceImage condition="end with">\CSFalconService.exe</SourceImage>
+
+        <!-- Carbon Black -->
+        <SourceImage condition="begin with">C:\Program Files\Carbon Black\</SourceImage>
+        <SourceImage condition="begin with">C:\Program Files (x86)\Carbon Black\</SourceImage>
+
+        <!-- SentinelOne -->
+        <SourceImage condition="begin with">C:\Program Files\SentinelOne\</SourceImage>
+
+        <!-- Symantec/Broadcom -->
+        <SourceImage condition="begin with">C:\Program Files\Symantec\</SourceImage>
+        <SourceImage condition="begin with">C:\Program Files (x86)\Symantec\</SourceImage>
+
+        <!-- Microsoft Monitoring Agent -->
+        <SourceImage condition="begin with">C:\Program Files\Microsoft Monitoring Agent\</SourceImage>
       </CreateRemoteThread>
     </RuleGroup>
 
     <!-- ============================================
          EVENT ID 22: DNS QUERY
-         SECURITY FIX: Removed *.microsoft.com wildcard - too broad for C2 hiding
+         SQL SERVER: Include-based for suspicious processes only
+         Reduces noise from svchost/sqlservr while catching LOLBins
          ============================================ -->
     <RuleGroup name="DnsQuery" groupRelation="or">
-      <DnsQuery onmatch="exclude">
-        <QueryName condition="end with">.arpa</QueryName>
-        <QueryName condition="is">localhost</QueryName>
-        <Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\</Image>
-        <QueryName condition="end with">.windowsupdate.com</QueryName>
+      <DnsQuery onmatch="include">
+        <!-- LOLBins making DNS queries = suspicious -->
+        <Image condition="image">powershell.exe</Image>
+        <Image condition="image">pwsh.exe</Image>
+        <Image condition="image">cmd.exe</Image>
+        <Image condition="image">mshta.exe</Image>
+        <Image condition="image">wscript.exe</Image>
+        <Image condition="image">cscript.exe</Image>
+        <Image condition="image">rundll32.exe</Image>
+        <Image condition="image">regsvr32.exe</Image>
+        <Image condition="image">certutil.exe</Image>
+        <Image condition="image">bitsadmin.exe</Image>
 
-        <!-- SQL telemetry - SPECIFIC endpoints only (not *.microsoft.com) -->
-        <QueryName condition="is">settings-win.data.microsoft.com</QueryName>
-        <QueryName condition="is">vortex.data.microsoft.com</QueryName>
-        <QueryName condition="is">watson.telemetry.microsoft.com</QueryName>
-        <QueryName condition="end with">.update.microsoft.com</QueryName>
+        <!-- SQL utilities making external queries -->
+        <Image condition="image">bcp.exe</Image>
+        <Image condition="image">sqlcmd.exe</Image>
+        <Image condition="image">osql.exe</Image>
+
+        <!-- Processes from suspicious locations -->
+        <Image condition="begin with">C:\Users\</Image>
+        <Image condition="begin with">C:\Windows\Temp\</Image>
+        <Image condition="begin with">C:\Temp\</Image>
       </DnsQuery>
     </RuleGroup>
 
@@ -446,20 +580,40 @@
 
     <!-- ============================================
          EVENT ID 10: PROCESS ACCESS
+         Expanded LSASS masks for credential theft detection
          ============================================ -->
     <RuleGroup name="ProcessAccess" groupRelation="or">
       <ProcessAccess onmatch="include">
         <CallTrace condition="begin with">UNKNOWN</CallTrace>
-        <!-- LSASS access -->
+        <!-- LSASS access - expanded masks for comprehensive detection -->
+        <!-- 0x40 = VM_READ, 0x1000 = VM_WRITE, 0x1010 = READ+WRITE -->
+        <!-- 0x1038 = READ+WRITE+EXECUTE, 0x1410 = READ+QUERY, 0x1438 = FULL -->
+        <!-- 0x143a = FULL_CONTROL, 0x1fffff = ALL_ACCESS -->
         <Rule groupRelation="and">
           <TargetImage condition="end with">lsass.exe</TargetImage>
-          <GrantedAccess condition="contains any">0x40;0x1000;0x1010;0x1fffff</GrantedAccess>
+          <GrantedAccess condition="contains any">0x40;0x1000;0x1010;0x1038;0x1410;0x1438;0x143a;0x1fffff</GrantedAccess>
         </Rule>
         <!-- SQL Server process access (injection attempts) -->
         <Rule groupRelation="and">
           <TargetImage condition="end with">\sqlservr.exe</TargetImage>
           <GrantedAccess condition="contains any">0x1fffff</GrantedAccess>
         </Rule>
+      </ProcessAccess>
+    </RuleGroup>
+
+    <RuleGroup name="ProcessAccess_Exclude" groupRelation="or">
+      <ProcessAccess onmatch="exclude">
+        <!-- Legitimate system processes -->
+        <SourceImage condition="is">C:\Windows\system32\wbem\wmiprvse.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\svchost.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\csrss.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\lsass.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\services.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\wininit.exe</SourceImage>
+
+        <!-- Windows Defender -->
+        <SourceImage condition="begin with">C:\ProgramData\Microsoft\Windows Defender\</SourceImage>
+        <SourceImage condition="begin with">C:\Program Files\Windows Defender\</SourceImage>
       </ProcessAccess>
     </RuleGroup>
 
@@ -490,6 +644,108 @@
         <!-- Zone.Identifier is normal from downloads -->
         <TargetFilename condition="end with">:Zone.Identifier</TargetFilename>
       </FileCreateStreamHash>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 6: DRIVER LOAD
+         Detects unsigned/suspicious kernel drivers - T1543.003, T1014
+         SQL SERVER: Important for rootkit detection
+         ============================================ -->
+    <RuleGroup name="DriverLoad" groupRelation="or">
+      <DriverLoad onmatch="include">
+        <!-- Unsigned drivers = suspicious -->
+        <Signed condition="is">false</Signed>
+
+        <!-- Drivers from suspicious locations -->
+        <ImageLoaded condition="begin with">C:\Users\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\Windows\Temp\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\Temp\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\ProgramData\</ImageLoaded>
+
+        <!-- Known vulnerable drivers (BYOVD attacks) -->
+        <ImageLoaded condition="end with">\gdrv.sys</ImageLoaded>
+        <ImageLoaded condition="end with">\dbutil_2_3.sys</ImageLoaded>
+        <ImageLoaded condition="end with">\RTCore64.sys</ImageLoaded>
+        <ImageLoaded condition="end with">\RTCore32.sys</ImageLoaded>
+        <ImageLoaded condition="end with">\PROCEXP152.SYS</ImageLoaded>
+      </DriverLoad>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 9: RAW ACCESS READ
+         Detects raw disk access - T1006
+         SQL SERVER: Critical for offline data theft (VSS abuse)
+         ============================================ -->
+    <RuleGroup name="RawAccessRead" groupRelation="or">
+      <RawAccessRead onmatch="include">
+        <!-- Raw disk access on SQL Server = highly suspicious -->
+        <!-- Used for: offline NTDS.dit extraction, backup file theft -->
+        <Device condition="begin with">\Device\HarddiskVolume</Device>
+      </RawAccessRead>
+    </RuleGroup>
+
+    <RuleGroup name="RawAccessRead_Exclude" groupRelation="or">
+      <RawAccessRead onmatch="exclude">
+        <!-- Backup software - CUSTOMIZE FOR YOUR ENVIRONMENT -->
+        <!-- <Image condition="begin with">C:\Program Files\Veeam\</Image> -->
+        <!-- <Image condition="begin with">C:\Program Files\Commvault\</Image> -->
+
+        <!-- Windows Defender -->
+        <Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\</Image>
+
+        <!-- Volume Shadow Copy Service -->
+        <Image condition="is">C:\Windows\System32\vssvc.exe</Image>
+      </RawAccessRead>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 25: PROCESS TAMPERING
+         Detects process hollowing, herpaderping - T1055.012
+         ============================================ -->
+    <RuleGroup name="ProcessTampering" groupRelation="or">
+      <ProcessTampering onmatch="include">
+        <!-- All process tampering types are suspicious -->
+        <Type condition="contains">Image</Type>
+      </ProcessTampering>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 26: FILE DELETE DETECTED
+         Detects anti-forensics and evidence deletion - T1070.004
+         ============================================ -->
+    <RuleGroup name="FileDelete" groupRelation="or">
+      <FileDelete onmatch="include">
+        <!-- Executables deleted (covering tracks) -->
+        <TargetFilename condition="end with">.exe</TargetFilename>
+        <TargetFilename condition="end with">.dll</TargetFilename>
+
+        <!-- Scripts deleted (covering tracks) -->
+        <TargetFilename condition="end with">.ps1</TargetFilename>
+        <TargetFilename condition="end with">.bat</TargetFilename>
+        <TargetFilename condition="end with">.vbs</TargetFilename>
+
+        <!-- SQL backup files deleted (covering exfil tracks) -->
+        <TargetFilename condition="end with">.bak</TargetFilename>
+
+        <!-- Deletions in suspicious locations -->
+        <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+        <TargetFilename condition="begin with">C:\Temp\</TargetFilename>
+
+        <!-- Log file deletion (anti-forensics) -->
+        <TargetFilename condition="end with">.log</TargetFilename>
+        <TargetFilename condition="end with">.evtx</TargetFilename>
+      </FileDelete>
+    </RuleGroup>
+
+    <RuleGroup name="FileDelete_Exclude" groupRelation="or">
+      <FileDelete onmatch="exclude">
+        <!-- Windows cleanup -->
+        <Image condition="is">C:\Windows\System32\cleanmgr.exe</Image>
+        <Image condition="is">C:\Windows\System32\TiWorker.exe</Image>
+
+        <!-- SQL Server log rotation -->
+        <TargetFilename condition="begin with">C:\Program Files\Microsoft SQL Server\MSSQL</TargetFilename>
+      </FileDelete>
     </RuleGroup>
 
   </EventFiltering>

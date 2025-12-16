@@ -31,19 +31,23 @@ sqlservr.exe → bcp.exe       = Potential data exfil
 
 | Event ID | Name | Status | Notes |
 |----------|------|--------|-------|
-| 1 | ProcessCreate | Active | SQL parent process focus |
+| 1 | ProcessCreate | Active | AND rules for xp_cmdshell |
 | 2 | FileCreateTime | Active | Timestomping detection |
 | 3 | NetworkConnect | Active | Linked server abuse |
 | 5 | ProcessTerminate | Active | SQL service termination |
+| 6 | DriverLoad | Active | Unsigned/BYOVD drivers |
 | 7 | ImageLoad | Active | DLL injection into SQL |
-| 8 | CreateRemoteThread | Active | SQL process injection |
-| 10 | ProcessAccess | Active | LSASS + SQL process |
-| 11 | FileCreate | Active | Backup files in unusual paths |
-| 13 | RegistryEvent | Active | SQL-specific + persistence |
+| 8 | CreateRemoteThread | Active | AV/EDR exclusions added |
+| 9 | RawAccessRead | Active | VSS abuse detection |
+| 10 | ProcessAccess | Active | 8 LSASS masks |
+| 11 | FileCreate | Active | Path-scoped with AND rules |
+| 13 | RegistryEvent | Active | SQL network config monitoring |
 | 15 | FileCreateStreamHash | Active | ADS detection |
 | 17/18 | PipeEvent | Active | SQL named pipes |
 | 19/20/21 | WmiEvent | Active | WMI persistence |
-| 22 | DnsQuery | Active | **Fixed: Specific endpoints only** |
+| 22 | DnsQuery | Active | Include-based (LOLBins only) |
+| 25 | ProcessTampering | Active | Hollowing/herpaderping |
+| 26 | FileDelete | Active | Anti-forensics detection |
 
 ## SQL-Specific Detections
 
@@ -77,16 +81,21 @@ sqlservr.exe → bcp.exe       = Potential data exfil
 <Image condition="image">bcp.exe</Image>
 ```
 
-## Security Fix Applied
+## Security Fixes Applied (v2.1)
 
-**Removed dangerous DNS exclusion:**
-```xml
-<!-- REMOVED: *.microsoft.com - C2 hiding risk -->
-<!-- REPLACED WITH: Specific endpoints only -->
-<QueryName condition="is">settings-win.data.microsoft.com</QueryName>
-<QueryName condition="is">vortex.data.microsoft.com</QueryName>
-<QueryName condition="end with">.update.microsoft.com</QueryName>
-```
+### Volume Optimization
+1. **ProcessCreate** - Refactored with AND rules for xp_cmdshell (sqlservr→cmd/powershell)
+2. **DnsQuery** - Changed to include-based: only monitors LOLBins, SQL utilities, suspicious paths
+3. **FileCreate** - exe/dll/scripts restricted to suspicious paths only (C:\Users\, C:\Temp\, etc.)
+4. **CreateRemoteThread** - Added comprehensive AV/EDR exclusions
+
+### Detection Improvements
+5. **ProcessAccess** - Expanded LSASS masks: 0x40, 0x1000, 0x1010, 0x1038, 0x1410, 0x1438, 0x143a, 0x1fffff
+6. **Added Event 6** - DriverLoad for BYOVD/rootkit detection
+7. **Added Event 9** - RawAccessRead for VSS abuse
+8. **Added Event 25** - ProcessTampering for hollowing/herpaderping
+9. **Added Event 26** - FileDelete for anti-forensics detection
+10. **Registry** - Added SQL network config keys (SuperSocketNetLib, TCP ports, security settings)
 
 ## MITRE ATT&CK Coverage
 
@@ -166,5 +175,6 @@ index=sysmon EventCode=3 Image IN ("*sqlcmd.exe", "*bcp.exe", "*osql.exe")
 4. **SQL process accessing LSASS** = Credential theft
 
 ---
-**Version:** 2.0
+**Version:** 2.1
 **Last Updated:** December 2025
+**Threat Level:** HIGH - Critical Database Asset
