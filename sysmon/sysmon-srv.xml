@@ -1,0 +1,528 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Sysmon schemaversion="4.50">
+
+  <!-- ================================================================
+       SYSMON CONFIGURATION FOR GENERIC WINDOWS SERVER
+       ================================================================
+       Target: Windows Server 2016/2019/2022
+       Focus: Lateral movement detection, service abuse, admin tool monitoring
+       Noise Level: Lower than workstation (no user activity)
+       ================================================================ -->
+
+  <HashAlgorithms>sha256</HashAlgorithms>
+  <EventFiltering>
+
+    <!-- ============================================
+         EVENT ID 1: PROCESS CREATE
+         SERVER: More aggressive monitoring than workstation
+         ============================================ -->
+    <RuleGroup name="ProcessCreate" groupRelation="or">
+      <ProcessCreate onmatch="include">
+        <!-- PowerShell/CMD - always suspicious on servers -->
+        <Image condition="image">powershell.exe</Image>
+        <Image condition="image">pwsh.exe</Image>
+        <Image condition="image">cmd.exe</Image>
+        <CommandLine condition="contains">Invoke-</CommandLine>
+        <CommandLine condition="contains">-enc</CommandLine>
+        <CommandLine condition="contains">-encodedcommand</CommandLine>
+        <CommandLine condition="contains">-nop</CommandLine>
+        <CommandLine condition="contains">bypass</CommandLine>
+        <CommandLine condition="contains">hidden</CommandLine>
+        <CommandLine condition="contains">downloadstring</CommandLine>
+        <CommandLine condition="contains">IEX</CommandLine>
+        <CommandLine condition="contains">Net.WebClient</CommandLine>
+
+        <!-- WMI (T1047) -->
+        <Image condition="image">wmiprvse.exe</Image>
+        <Image condition="image">wmic.exe</Image>
+        <Image condition="image">winrm.exe</Image>
+        <Image condition="image">wbemtest.exe</Image>
+        <Image condition="image">winmgmt.exe</Image>
+        <Image condition="image">scrcons.exe</Image>
+
+        <!-- Credential Access (T1003) -->
+        <Image condition="image">vssadmin.exe</Image>
+        <Image condition="image">ntdsutil.exe</Image>
+        <Image condition="image">procdump.exe</Image>
+        <Image condition="image">procdump64.exe</Image>
+        <Image condition="image">mimikatz.exe</Image>
+        <Image condition="image">sekurlsa.exe</Image>
+        <CommandLine condition="contains">comsvcs.dll</CommandLine>
+        <CommandLine condition="contains">MiniDump</CommandLine>
+        <CommandLine condition="contains">sekurlsa</CommandLine>
+        <CommandLine condition="contains">lsadump</CommandLine>
+
+        <!-- SERVER: ALL discovery commands monitored (unusual on servers) -->
+        <Image condition="image">whoami.exe</Image>
+        <Image condition="image">hostname.exe</Image>
+        <Image condition="image">net.exe</Image>
+        <Image condition="image">net1.exe</Image>
+        <Image condition="image">nltest.exe</Image>
+        <Image condition="image">systeminfo.exe</Image>
+        <Image condition="image">tasklist.exe</Image>
+        <Image condition="image">quser.exe</Image>
+        <Image condition="image">query.exe</Image>
+        <Image condition="image">arp.exe</Image>
+        <Image condition="image">route.exe</Image>
+        <Image condition="image">netstat.exe</Image>
+        <Image condition="image">ipconfig.exe</Image>
+        <Image condition="image">nslookup.exe</Image>
+        <Image condition="image">ping.exe</Image>
+        <Image condition="image">tracert.exe</Image>
+        <Image condition="image">pathping.exe</Image>
+        <Image condition="image">nbtstat.exe</Image>
+        <Image condition="image">netsh.exe</Image>
+
+        <!-- LOLBins (T1218) -->
+        <Image condition="image">msiexec.exe</Image>
+        <Image condition="image">regsvr32.exe</Image>
+        <Image condition="image">regsvcs.exe</Image>
+        <Image condition="image">regasm.exe</Image>
+        <Image condition="image">installutil.exe</Image>
+        <Image condition="image">msbuild.exe</Image>
+        <Image condition="image">mshta.exe</Image>
+        <Image condition="image">rundll32.exe</Image>
+        <Image condition="image">certutil.exe</Image>
+        <Image condition="image">bitsadmin.exe</Image>
+        <Image condition="image">cmstp.exe</Image>
+        <Image condition="image">msxsl.exe</Image>
+        <Image condition="image">odbcconf.exe</Image>
+        <Image condition="image">pcalua.exe</Image>
+        <Image condition="image">presentationhost.exe</Image>
+        <Image condition="image">syncappvpublishingserver.exe</Image>
+
+        <!-- Scripting (T1059) -->
+        <Image condition="image">wscript.exe</Image>
+        <Image condition="image">cscript.exe</Image>
+
+        <!-- Lateral Movement (T1021, T1570) -->
+        <Image condition="image">psexesvc.exe</Image>
+        <Image condition="image">psexec.exe</Image>
+        <Image condition="image">winexesvc.exe</Image>
+        <Image condition="image">paexec.exe</Image>
+        <Image condition="image">csexec.exe</Image>
+
+        <!-- Remote access -->
+        <Image condition="image">mstsc.exe</Image>
+        <Image condition="image">tscon.exe</Image>
+
+        <!-- Scheduled Tasks (T1053.005) -->
+        <Image condition="image">schtasks.exe</Image>
+        <Image condition="image">at.exe</Image>
+
+        <!-- Service manipulation (T1543.003) -->
+        <Image condition="image">sc.exe</Image>
+
+        <!-- Defense evasion (T1070, T1112) -->
+        <Image condition="image">wevtutil.exe</Image>
+        <Image condition="image">bcdedit.exe</Image>
+        <Image condition="image">fsutil.exe</Image>
+        <Image condition="image">icacls.exe</Image>
+        <Image condition="image">takeown.exe</Image>
+        <CommandLine condition="contains">shadowcopy</CommandLine>
+        <CommandLine condition="contains">delete shadows</CommandLine>
+
+        <!-- Archive/Exfiltration prep (T1560) -->
+        <Image condition="image">rar.exe</Image>
+        <Image condition="image">7z.exe</Image>
+        <Image condition="image">7za.exe</Image>
+        <Image condition="image">winzip.exe</Image>
+        <Image condition="image">tar.exe</Image>
+        <Image condition="image">makecab.exe</Image>
+        <Image condition="image">compact.exe</Image>
+
+        <!-- Remote admin tools -->
+        <Image condition="image">ssh.exe</Image>
+        <Image condition="image">scp.exe</Image>
+        <Image condition="image">sftp.exe</Image>
+
+        <!-- SERVER: User management (unusual automated activity) -->
+        <CommandLine condition="contains">net user</CommandLine>
+        <CommandLine condition="contains">net localgroup</CommandLine>
+        <CommandLine condition="contains">net group</CommandLine>
+        <CommandLine condition="contains">/add</CommandLine>
+
+        <!-- SERVER: Network share access -->
+        <CommandLine condition="contains">net use</CommandLine>
+        <CommandLine condition="contains">net share</CommandLine>
+
+        <!-- Help system abuse (T1218.001) -->
+        <Image condition="image">hh.exe</Image>
+      </ProcessCreate>
+    </RuleGroup>
+
+    <!-- ProcessCreate Exclusions - SERVER (minimal) -->
+    <RuleGroup name="ProcessCreate_Exclude" groupRelation="or">
+      <ProcessCreate onmatch="exclude">
+        <!-- Splunk Forwarder -->
+        <Image condition="begin with">C:\Program Files\SplunkUniversalForwarder\bin\</Image>
+        <ParentImage condition="is">C:\Program Files\SplunkUniversalForwarder\bin\splunkd.exe</ParentImage>
+
+        <!-- Windows Update -->
+        <Image condition="begin with">C:\Windows\SoftwareDistribution\</Image>
+
+        <!-- SCCM/MECM -->
+        <Image condition="begin with">C:\Windows\CCM\</Image>
+        <ParentImage condition="is">C:\Windows\CCM\CcmExec.exe</ParentImage>
+
+        <!-- Backup software (customize for your environment) -->
+        <!-- <Image condition="begin with">C:\Program Files\Veeam\</Image> -->
+        <!-- <Image condition="begin with">C:\Program Files\Veritas\</Image> -->
+      </ProcessCreate>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 13: REGISTRY EVENT
+         ============================================ -->
+    <RuleGroup name="RegistryEvent" groupRelation="or">
+      <RegistryEvent onmatch="include">
+        <!-- Autorun/Startup persistence -->
+        <TargetObject name="T1547.001,RunKey" condition="contains">CurrentVersion\Run</TargetObject>
+        <TargetObject name="T1547.001,RunPolicy" condition="contains">Policies\Explorer\Run</TargetObject>
+        <TargetObject name="T1484" condition="contains">Group Policy\Scripts</TargetObject>
+        <TargetObject name="T1547.001" condition="contains">CurrentVersion\Winlogon\Shell</TargetObject>
+        <TargetObject name="T1547.001" condition="contains">CurrentVersion\Winlogon\System</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit</TargetObject>
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\BootExecute</TargetObject>
+
+        <!-- Services -->
+        <TargetObject name="T1543.003" condition="end with">\ServiceDll</TargetObject>
+        <TargetObject name="T1543.003" condition="end with">\ImagePath</TargetObject>
+        <TargetObject name="T1543.003" condition="end with">\Start</TargetObject>
+        <TargetObject name="T1543.003" condition="end with">\Type</TargetObject>
+        <TargetObject name="T1543.003" condition="end with">\FailureActions</TargetObject>
+
+        <!-- RDP settings -->
+        <TargetObject condition="contains">Terminal Server\WinStations\RDP-Tcp\</TargetObject>
+        <TargetObject condition="end with">fDenyTSConnections</TargetObject>
+        <TargetObject condition="end with">PortNumber</TargetObject>
+
+        <!-- Firewall tampering -->
+        <TargetObject name="T1562.004" condition="end with">\EnableFirewall</TargetObject>
+        <TargetObject name="T1562.004" condition="contains">FirewallPolicy\</TargetObject>
+
+        <!-- LSA protection -->
+        <TargetObject name="T1547.002" condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Lsa\</TargetObject>
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders</TargetObject>
+
+        <!-- Credential providers -->
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows\CurrentVersion\Authentication\Credential Provider</TargetObject>
+
+        <!-- COM hijacking -->
+        <TargetObject name="T1546.015" condition="end with">\InprocServer32\(Default)</TargetObject>
+
+        <!-- AV/Security tampering -->
+        <TargetObject name="T1562.001" condition="end with">\DisableAntiSpyware</TargetObject>
+        <TargetObject name="T1562.001" condition="end with">\DisableAntiVirus</TargetObject>
+        <TargetObject name="T1562.001" condition="end with">DisableRealtimeMonitoring</TargetObject>
+        <TargetObject name="T1562.001" condition="begin with">HKLM\Software\Microsoft\Windows Defender\Exclusions</TargetObject>
+        <TargetObject name="T1562.001" condition="begin with">HKLM\SOFTWARE\Policies\Microsoft\Windows Defender</TargetObject>
+
+        <!-- UAC bypass -->
+        <TargetObject name="T1548.002" condition="end with">\EnableLUA</TargetObject>
+        <TargetObject name="T1548.002" condition="end with">\LocalAccountTokenFilterPolicy</TargetObject>
+
+        <!-- IFEO debugging -->
+        <TargetObject name="T1546.012" condition="begin with">HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\</TargetObject>
+
+        <!-- AppInit DLLs -->
+        <TargetObject name="T1546.010" condition="contains">Windows\Appinit_Dlls</TargetObject>
+      </RegistryEvent>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 2: FILE CREATION TIME CHANGED
+         ============================================ -->
+    <RuleGroup name="FileCreateTime" groupRelation="or">
+      <FileCreateTime onmatch="include">
+        <TargetFilename condition="end with">.exe</TargetFilename>
+        <TargetFilename condition="end with">.dll</TargetFilename>
+        <TargetFilename condition="end with">.sys</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\</TargetFilename>
+      </FileCreateTime>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 3: NETWORK CONNECTION
+         SERVER: More permissive monitoring
+         ============================================ -->
+    <RuleGroup name="NetworkConnect" groupRelation="or">
+      <NetworkConnect onmatch="include">
+        <!-- SERVER: Monitor ALL user profile connections (unusual on server) -->
+        <Image condition="begin with">C:\Users\</Image>
+
+        <!-- Suspicious locations -->
+        <Image condition="begin with">C:\ProgramData\</Image>
+        <Image condition="begin with">C:\Windows\Temp\</Image>
+        <Image condition="begin with">C:\Temp\</Image>
+
+        <!-- LOLBins making connections -->
+        <Image condition="image">cmd.exe</Image>
+        <Image condition="image">powershell.exe</Image>
+        <Image condition="image">pwsh.exe</Image>
+        <Image condition="image">certutil.exe</Image>
+        <Image condition="image">mshta.exe</Image>
+        <Image condition="image">wscript.exe</Image>
+        <Image condition="image">cscript.exe</Image>
+        <Image condition="image">regsvr32.exe</Image>
+        <Image condition="image">rundll32.exe</Image>
+        <Image condition="image">msbuild.exe</Image>
+        <Image condition="image">wmic.exe</Image>
+        <Image condition="image">wmiprvse.exe</Image>
+        <Image condition="image">msiexec.exe</Image>
+        <Image condition="image">bitsadmin.exe</Image>
+
+        <!-- Lateral movement tools -->
+        <Image condition="image">psexec.exe</Image>
+        <Image condition="image">psexesvc.exe</Image>
+
+        <!-- SERVER: Monitor SSH (may be normal but worth logging) -->
+        <DestinationPort condition="is">22</DestinationPort>
+
+        <!-- Suspicious ports -->
+        <DestinationPort condition="is">23</DestinationPort>
+        <DestinationPort condition="is">4444</DestinationPort>
+        <DestinationPort condition="is">4445</DestinationPort>
+        <DestinationPort condition="is">5555</DestinationPort>
+        <DestinationPort condition="is">6666</DestinationPort>
+        <DestinationPort condition="is">7777</DestinationPort>
+        <DestinationPort condition="is">8888</DestinationPort>
+        <DestinationPort condition="is">31337</DestinationPort>
+        <DestinationPort condition="is">9001</DestinationPort>
+        <DestinationPort condition="is">9030</DestinationPort>
+
+        <!-- VNC -->
+        <DestinationPort condition="is">5800</DestinationPort>
+        <DestinationPort condition="is">5900</DestinationPort>
+
+        <!-- SERVER: RDP from server = suspicious (lateral movement) -->
+        <Image condition="image">mstsc.exe</Image>
+      </NetworkConnect>
+    </RuleGroup>
+
+    <RuleGroup name="NetworkConnect_Exclude" groupRelation="or">
+      <NetworkConnect onmatch="exclude">
+        <!-- Windows Defender -->
+        <Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\Platform\</Image>
+
+        <!-- Windows Update -->
+        <DestinationHostname condition="end with">.windowsupdate.com</DestinationHostname>
+        <DestinationHostname condition="end with">.update.microsoft.com</DestinationHostname>
+
+        <!-- Defender cloud -->
+        <DestinationHostname condition="end with">.wd.microsoft.com</DestinationHostname>
+      </NetworkConnect>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 8: CREATE REMOTE THREAD
+         ============================================ -->
+    <RuleGroup name="CreateRemoteThread" groupRelation="or">
+      <CreateRemoteThread onmatch="exclude">
+        <SourceImage condition="is">C:\Windows\system32\wbem\WmiPrvSE.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\svchost.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\csrss.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\services.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\winlogon.exe</SourceImage>
+        <StartModule condition="is">C:\Windows\system32\kernel32.dll</StartModule>
+      </CreateRemoteThread>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 11: FILE CREATE
+         SERVER: Focus on sensitive locations
+         ============================================ -->
+    <RuleGroup name="FileCreate" groupRelation="or">
+      <FileCreate onmatch="include">
+        <!-- Persistence locations -->
+        <TargetFilename condition="contains">\Startup\</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\Tasks\</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\system32\Tasks</TargetFilename>
+
+        <!-- System directories -->
+        <TargetFilename condition="begin with">C:\Windows\system32\Drivers</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\SysWOW64\Drivers</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\system32\GroupPolicy\</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\system32\Wbem</TargetFilename>
+
+        <!-- Executables/Scripts anywhere -->
+        <TargetFilename condition="end with">.exe</TargetFilename>
+        <TargetFilename condition="end with">.dll</TargetFilename>
+        <TargetFilename condition="end with">.sys</TargetFilename>
+        <TargetFilename condition="end with">.bat</TargetFilename>
+        <TargetFilename condition="end with">.cmd</TargetFilename>
+        <TargetFilename condition="end with">.ps1</TargetFilename>
+        <TargetFilename condition="end with">.vbs</TargetFilename>
+        <TargetFilename condition="end with">.hta</TargetFilename>
+        <TargetFilename condition="end with">.scr</TargetFilename>
+
+        <!-- SERVER: Log file tampering -->
+        <TargetFilename condition="begin with">C:\Windows\System32\winevt\Logs\</TargetFilename>
+
+        <!-- SERVER: User profile file creation (unusual) -->
+        <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+      </FileCreate>
+    </RuleGroup>
+
+    <RuleGroup name="FileCreate_Exclude" groupRelation="or">
+      <FileCreate onmatch="exclude">
+        <!-- Windows Update -->
+        <Image condition="is">C:\Windows\System32\svchost.exe</Image>
+        <TargetFilename condition="begin with">C:\Windows\SoftwareDistribution\</TargetFilename>
+
+        <!-- Temp files -->
+        <TargetFilename condition="contains">\AppData\Local\Temp\</TargetFilename>
+      </FileCreate>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 15: FILE STREAM HASH (ADS)
+         ============================================ -->
+    <RuleGroup name="FileCreateStreamHash" groupRelation="or">
+      <FileCreateStreamHash onmatch="include">
+        <TargetFilename condition="contains">Startup</TargetFilename>
+        <TargetFilename condition="end with">.exe</TargetFilename>
+        <TargetFilename condition="end with">.dll</TargetFilename>
+        <TargetFilename condition="end with">.bat</TargetFilename>
+        <TargetFilename condition="end with">.ps1</TargetFilename>
+        <TargetFilename condition="end with">.vbs</TargetFilename>
+      </FileCreateStreamHash>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 22: DNS QUERY
+         SERVER: Less exclusions than workstation
+         ============================================ -->
+    <RuleGroup name="DnsQuery" groupRelation="or">
+      <DnsQuery onmatch="exclude">
+        <!-- Basic noise only -->
+        <QueryName condition="end with">.arpa</QueryName>
+        <QueryName condition="is">localhost</QueryName>
+        <Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\Platform\</Image>
+
+        <!-- Windows Update -->
+        <QueryName condition="end with">.windowsupdate.com</QueryName>
+        <QueryName condition="end with">.update.microsoft.com</QueryName>
+
+        <!-- OCSP/CRL -->
+        <QueryName condition="end with">.digicert.com</QueryName>
+        <QueryName condition="end with">.verisign.com</QueryName>
+        <QueryName condition="is">ocsp.msocsp.com</QueryName>
+      </DnsQuery>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 19, 20, 21: WMI EVENT SUBSCRIPTION
+         ============================================ -->
+    <RuleGroup name="WmiEvent" groupRelation="or">
+      <WmiEvent onmatch="include">
+        <Operation condition="is">Created</Operation>
+        <Operation condition="is">Modified</Operation>
+        <Operation condition="is">Deleted</Operation>
+      </WmiEvent>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 7: IMAGE LOAD (DLL)
+         SERVER: Monitor more locations
+         ============================================ -->
+    <RuleGroup name="ImageLoad" groupRelation="or">
+      <ImageLoad onmatch="include">
+        <!-- DLLs from suspicious locations -->
+        <ImageLoaded condition="begin with">C:\Windows\Temp\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\Temp\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\Users\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\ProgramData\</ImageLoaded>
+
+        <!-- Credential DLLs -->
+        <ImageLoaded condition="end with">\samlib.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\vaultcli.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\comsvcs.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\dbghelp.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\dbgcore.dll</ImageLoaded>
+
+        <!-- PowerShell DLLs -->
+        <ImageLoaded condition="end with">\System.Management.Automation.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\System.Management.Automation.ni.dll</ImageLoaded>
+
+        <!-- CLR (may indicate .NET malware) -->
+        <ImageLoaded condition="end with">\clr.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\clrjit.dll</ImageLoaded>
+      </ImageLoad>
+    </RuleGroup>
+
+    <RuleGroup name="ImageLoad_Exclude" groupRelation="or">
+      <ImageLoad onmatch="exclude">
+        <Image condition="is">C:\Windows\System32\lsass.exe</Image>
+        <Image condition="is">C:\Windows\System32\svchost.exe</Image>
+        <Image condition="is">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Image>
+      </ImageLoad>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 17, 18: PIPE CREATED/CONNECTED
+         ============================================ -->
+    <RuleGroup name="PipeEvent" groupRelation="or">
+      <PipeEvent onmatch="include">
+        <!-- Cobalt Strike -->
+        <PipeName condition="begin with">\msagent_</PipeName>
+        <PipeName condition="begin with">\MSSE-</PipeName>
+        <PipeName condition="begin with">\postex_</PipeName>
+        <PipeName condition="begin with">\status_</PipeName>
+        <!-- Metasploit -->
+        <PipeName condition="begin with">\meterpreter</PipeName>
+        <!-- PsExec -->
+        <PipeName condition="begin with">\psexec</PipeName>
+        <PipeName condition="is">\PSEXESVC</PipeName>
+        <!-- Lateral movement -->
+        <PipeName condition="begin with">\csexec</PipeName>
+        <PipeName condition="begin with">\paexec</PipeName>
+        <!-- Credential tools -->
+        <PipeName condition="contains">mimikatz</PipeName>
+      </PipeEvent>
+    </RuleGroup>
+
+    <RuleGroup name="PipeEvent_Exclude" groupRelation="or">
+      <PipeEvent onmatch="exclude">
+        <PipeName condition="is">\lsass</PipeName>
+        <PipeName condition="is">\wkssvc</PipeName>
+        <PipeName condition="is">\srvsvc</PipeName>
+        <PipeName condition="is">\netlogon</PipeName>
+        <PipeName condition="is">\samr</PipeName>
+      </PipeEvent>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 5: PROCESS TERMINATED
+         ============================================ -->
+    <RuleGroup name="ProcessTerminate" groupRelation="or">
+      <ProcessTerminate onmatch="include">
+        <!-- Security tools -->
+        <Image condition="end with">\MsMpEng.exe</Image>
+        <Image condition="end with">\MpCmdRun.exe</Image>
+        <Image condition="end with">\NisSrv.exe</Image>
+        <Image condition="end with">\SecurityHealthService.exe</Image>
+        <Image condition="contains">CrowdStrike</Image>
+        <Image condition="contains">Carbon Black</Image>
+        <Image condition="contains">Sentinel</Image>
+      </ProcessTerminate>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 10: PROCESS ACCESS
+         ============================================ -->
+    <RuleGroup name="ProcessAccess" groupRelation="or">
+      <ProcessAccess onmatch="include">
+        <CallTrace condition="begin with">UNKNOWN</CallTrace>
+        <!-- LSASS access -->
+        <Rule groupRelation="and">
+          <TargetImage condition="end with">lsass.exe</TargetImage>
+          <GrantedAccess condition="contains any">0x40;0x1000;0x1010;0x1038;0x1410;0x1fffff</GrantedAccess>
+        </Rule>
+      </ProcessAccess>
+    </RuleGroup>
+
+  </EventFiltering>
+</Sysmon>

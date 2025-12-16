@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Sysmon schemaversion="4.50">
+
+  <!-- ================================================================
+       SYSMON CONFIGURATION FOR EXCHANGE SERVER
+       ================================================================
+       Target: Exchange Server 2016/2019
+       Focus: ProxyLogon/ProxyShell, webshells, OWA abuse
+       Critical: w3wp.exe child processes = WEBSHELL INDICATOR
+       ================================================================ -->
+
+  <HashAlgorithms>sha256</HashAlgorithms>
+  <EventFiltering>
+
+    <!-- EVENT ID 1: PROCESS CREATE -->
+    <RuleGroup name="ProcessCreate" groupRelation="or">
+      <ProcessCreate onmatch="include">
+        <!-- CRITICAL: IIS spawning processes = WEBSHELL -->
+        <ParentImage condition="is">C:\Windows\System32\inetsrv\w3wp.exe</ParentImage>
+
+        <!-- Exchange processes spawning cmd/powershell -->
+        <ParentImage condition="contains">\Exchange Server\</ParentImage>
+        <ParentImage condition="end with">\UMWorkerProcess.exe</ParentImage>
+        <ParentImage condition="end with">\UMService.exe</ParentImage>
+        <ParentImage condition="end with">\MSExchangeTransport.exe</ParentImage>
+
+        <!-- PowerShell/CMD -->
+        <Image condition="image">powershell.exe</Image>
+        <Image condition="image">pwsh.exe</Image>
+        <Image condition="image">cmd.exe</Image>
+        <CommandLine condition="contains">-enc</CommandLine>
+        <CommandLine condition="contains">downloadstring</CommandLine>
+        <CommandLine condition="contains">Invoke-</CommandLine>
+
+        <!-- Discovery -->
+        <Image condition="image">whoami.exe</Image>
+        <Image condition="image">net.exe</Image>
+        <Image condition="image">nltest.exe</Image>
+        <Image condition="image">systeminfo.exe</Image>
+        <Image condition="image">tasklist.exe</Image>
+        <Image condition="image">ipconfig.exe</Image>
+        <Image condition="image">netstat.exe</Image>
+
+        <!-- Credential Access -->
+        <Image condition="image">procdump.exe</Image>
+        <CommandLine condition="contains">comsvcs.dll</CommandLine>
+        <CommandLine condition="contains">MiniDump</CommandLine>
+
+        <!-- LOLBins -->
+        <Image condition="image">certutil.exe</Image>
+        <Image condition="image">mshta.exe</Image>
+        <Image condition="image">regsvr32.exe</Image>
+        <Image condition="image">rundll32.exe</Image>
+        <Image condition="image">bitsadmin.exe</Image>
+        <Image condition="image">wscript.exe</Image>
+        <Image condition="image">cscript.exe</Image>
+
+        <!-- Lateral Movement -->
+        <Image condition="image">psexec.exe</Image>
+        <Image condition="image">psexesvc.exe</Image>
+
+        <!-- Service/Task -->
+        <Image condition="image">schtasks.exe</Image>
+        <Image condition="image">sc.exe</Image>
+
+        <!-- Archive (exfil) -->
+        <Image condition="image">rar.exe</Image>
+        <Image condition="image">7z.exe</Image>
+      </ProcessCreate>
+    </RuleGroup>
+
+    <RuleGroup name="ProcessCreate_Exclude" groupRelation="or">
+      <ProcessCreate onmatch="exclude">
+        <!-- Exchange legitimate processes -->
+        <Image condition="begin with">C:\Program Files\Microsoft\Exchange Server\V15\Bin\</Image>
+        <!-- Splunk -->
+        <Image condition="begin with">C:\Program Files\SplunkUniversalForwarder\</Image>
+      </ProcessCreate>
+    </RuleGroup>
+
+    <!-- EVENT ID 11: FILE CREATE - WEBSHELL DETECTION -->
+    <RuleGroup name="FileCreate" groupRelation="or">
+      <FileCreate onmatch="include">
+        <!-- CRITICAL: Webshell file types in web directories -->
+        <TargetFilename condition="end with">.aspx</TargetFilename>
+        <TargetFilename condition="end with">.ashx</TargetFilename>
+        <TargetFilename condition="end with">.asmx</TargetFilename>
+        <TargetFilename condition="end with">.asp</TargetFilename>
+        <TargetFilename condition="end with">.jsp</TargetFilename>
+        <TargetFilename condition="end with">.php</TargetFilename>
+
+        <!-- ProxyLogon/ProxyShell paths -->
+        <TargetFilename condition="contains">\inetpub\wwwroot\aspnet_client\</TargetFilename>
+        <TargetFilename condition="contains">\FrontEnd\HttpProxy\</TargetFilename>
+        <TargetFilename condition="contains">\Autodiscover\</TargetFilename>
+        <TargetFilename condition="contains">\ecp\</TargetFilename>
+        <TargetFilename condition="contains">\OWA\</TargetFilename>
+        <TargetFilename condition="contains">\EWS\</TargetFilename>
+
+        <!-- Executables -->
+        <TargetFilename condition="end with">.exe</TargetFilename>
+        <TargetFilename condition="end with">.dll</TargetFilename>
+        <TargetFilename condition="end with">.bat</TargetFilename>
+        <TargetFilename condition="end with">.ps1</TargetFilename>
+
+        <!-- System/Persistence -->
+        <TargetFilename condition="begin with">C:\Windows\system32\</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\Tasks\</TargetFilename>
+        <TargetFilename condition="contains">\Startup\</TargetFilename>
+      </FileCreate>
+    </RuleGroup>
+
+    <RuleGroup name="FileCreate_Exclude" groupRelation="or">
+      <FileCreate onmatch="exclude">
+        <!-- Exchange transport queue -->
+        <TargetFilename condition="begin with">C:\Program Files\Microsoft\Exchange Server\V15\TransportRoles\</TargetFilename>
+        <!-- Exchange logs -->
+        <TargetFilename condition="begin with">C:\Program Files\Microsoft\Exchange Server\V15\Logging\</TargetFilename>
+      </FileCreate>
+    </RuleGroup>
+
+    <!-- EVENT ID 3: NETWORK CONNECTION -->
+    <RuleGroup name="NetworkConnect" groupRelation="or">
+      <NetworkConnect onmatch="include">
+        <Image condition="begin with">C:\Users\</Image>
+        <Image condition="begin with">C:\Windows\Temp\</Image>
+        <Image condition="image">cmd.exe</Image>
+        <Image condition="image">powershell.exe</Image>
+        <Image condition="image">certutil.exe</Image>
+        <Image condition="image">bitsadmin.exe</Image>
+        <!-- Suspicious ports -->
+        <DestinationPort condition="is">4444</DestinationPort>
+        <DestinationPort condition="is">5555</DestinationPort>
+        <DestinationPort condition="is">31337</DestinationPort>
+      </NetworkConnect>
+    </RuleGroup>
+
+    <!-- EVENT ID 13: REGISTRY -->
+    <RuleGroup name="RegistryEvent" groupRelation="or">
+      <RegistryEvent onmatch="include">
+        <TargetObject condition="contains">CurrentVersion\Run</TargetObject>
+        <TargetObject condition="end with">\ServiceDll</TargetObject>
+        <TargetObject condition="end with">\ImagePath</TargetObject>
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Lsa\</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows Defender\Exclusions</TargetObject>
+      </RegistryEvent>
+    </RuleGroup>
+
+    <!-- EVENT ID 19-21: WMI -->
+    <RuleGroup name="WmiEvent" groupRelation="or">
+      <WmiEvent onmatch="include">
+        <Operation condition="is">Created</Operation>
+        <Operation condition="is">Modified</Operation>
+      </WmiEvent>
+    </RuleGroup>
+
+    <!-- EVENT ID 7: IMAGE LOAD -->
+    <RuleGroup name="ImageLoad" groupRelation="or">
+      <ImageLoad onmatch="include">
+        <ImageLoaded condition="begin with">C:\Windows\Temp\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\Users\</ImageLoaded>
+        <ImageLoaded condition="end with">\samlib.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\comsvcs.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\System.Management.Automation.dll</ImageLoaded>
+      </ImageLoad>
+    </RuleGroup>
+
+    <!-- EVENT ID 17-18: PIPES -->
+    <RuleGroup name="PipeEvent" groupRelation="or">
+      <PipeEvent onmatch="include">
+        <PipeName condition="begin with">\msagent_</PipeName>
+        <PipeName condition="begin with">\MSSE-</PipeName>
+        <PipeName condition="begin with">\postex_</PipeName>
+        <PipeName condition="begin with">\meterpreter</PipeName>
+        <PipeName condition="begin with">\psexec</PipeName>
+      </PipeEvent>
+    </RuleGroup>
+
+    <!-- EVENT ID 8: REMOTE THREAD -->
+    <RuleGroup name="CreateRemoteThread" groupRelation="or">
+      <CreateRemoteThread onmatch="exclude">
+        <SourceImage condition="is">C:\Windows\system32\svchost.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\csrss.exe</SourceImage>
+      </CreateRemoteThread>
+    </RuleGroup>
+
+    <!-- EVENT ID 10: PROCESS ACCESS -->
+    <RuleGroup name="ProcessAccess" groupRelation="or">
+      <ProcessAccess onmatch="include">
+        <Rule groupRelation="and">
+          <TargetImage condition="end with">lsass.exe</TargetImage>
+          <GrantedAccess condition="contains any">0x1010;0x1fffff</GrantedAccess>
+        </Rule>
+      </ProcessAccess>
+    </RuleGroup>
+
+    <!-- EVENT ID 22: DNS -->
+    <RuleGroup name="DnsQuery" groupRelation="or">
+      <DnsQuery onmatch="exclude">
+        <QueryName condition="end with">.arpa</QueryName>
+        <QueryName condition="end with">.windowsupdate.com</QueryName>
+        <QueryName condition="end with">.microsoft.com</QueryName>
+      </DnsQuery>
+    </RuleGroup>
+
+  </EventFiltering>
+</Sysmon>

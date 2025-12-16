@@ -10,7 +10,23 @@ This repository contains hardened Sysmon configurations designed for enterprise 
 
 | File | Target | Description |
 |------|--------|-------------|
-| `sysmon/sysmon-ws.xml` | Workstations | Optimized for Windows 10/11 client endpoints |
+| `sysmon/sysmon-ws.xml` | Workstations | Windows 10/11 client endpoints |
+| `sysmon/sysmon-srv.xml` | Generic Server | Windows Server 2016/2019/2022 |
+| `sysmon/sysmon-sql.xml` | SQL Server | SQL Server 2016/2019/2022 |
+| `sysmon/sysmon-exch.xml` | Exchange | Exchange Server 2016/2019 |
+| `sysmon/sysmon-dc.xml` | Domain Controller | AD DS servers |
+| `sysmon/sysmon-iis.xml` | Web Server | IIS web servers |
+
+## Role-Specific Focus
+
+| Config | Key Threats | Critical Detection |
+|--------|-------------|-------------------|
+| **Workstation** | Phishing, LOLBins | Office macro → cmd/ps |
+| **Generic Server** | Lateral movement | Discovery commands |
+| **SQL Server** | SQL injection, xp_cmdshell | sqlservr.exe → cmd |
+| **Exchange** | ProxyLogon/Shell, webshell | w3wp.exe → cmd |
+| **Domain Controller** | DCSync, Golden Ticket | ntdsutil, LSASS access |
+| **IIS** | Webshell, RCE | w3wp.exe child process |
 
 ## Features
 

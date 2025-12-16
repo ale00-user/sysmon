@@ -1,0 +1,428 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Sysmon schemaversion="4.50">
+
+  <!-- ================================================================
+       SYSMON CONFIGURATION FOR SQL SERVER
+       ================================================================
+       Target: SQL Server 2016/2019/2022
+       Focus: SQL injection, xp_cmdshell abuse, credential theft, data exfil
+       Noise Level: High (SQL engine is very active)
+       Key Exclusions: sqlservr.exe, SQLAGENT.EXE, backup operations
+       ================================================================ -->
+
+  <HashAlgorithms>sha256</HashAlgorithms>
+  <EventFiltering>
+
+    <!-- ============================================
+         EVENT ID 1: PROCESS CREATE
+         SQL SERVER: Focus on SQL spawning child processes
+         ============================================ -->
+    <RuleGroup name="ProcessCreate" groupRelation="or">
+      <ProcessCreate onmatch="include">
+        <!-- CRITICAL: SQL Server spawning cmd/powershell = xp_cmdshell abuse -->
+        <ParentImage condition="end with">\sqlservr.exe</ParentImage>
+        <ParentImage condition="end with">\SQLAGENT.EXE</ParentImage>
+        <ParentImage condition="end with">\sqlceip.exe</ParentImage>
+
+        <!-- PowerShell/CMD -->
+        <Image condition="image">powershell.exe</Image>
+        <Image condition="image">pwsh.exe</Image>
+        <Image condition="image">cmd.exe</Image>
+        <CommandLine condition="contains">Invoke-</CommandLine>
+        <CommandLine condition="contains">-enc</CommandLine>
+        <CommandLine condition="contains">-encodedcommand</CommandLine>
+        <CommandLine condition="contains">downloadstring</CommandLine>
+
+        <!-- SQL-specific attacks -->
+        <CommandLine condition="contains">xp_cmdshell</CommandLine>
+        <CommandLine condition="contains">sp_configure</CommandLine>
+        <CommandLine condition="contains">OPENROWSET</CommandLine>
+        <CommandLine condition="contains">OPENDATASOURCE</CommandLine>
+        <CommandLine condition="contains">bcp</CommandLine>
+        <CommandLine condition="contains">BULK INSERT</CommandLine>
+        <CommandLine condition="contains">xp_regread</CommandLine>
+        <CommandLine condition="contains">xp_regwrite</CommandLine>
+        <CommandLine condition="contains">xp_dirtree</CommandLine>
+        <CommandLine condition="contains">xp_fileexist</CommandLine>
+        <CommandLine condition="contains">xp_subdirs</CommandLine>
+
+        <!-- WMI -->
+        <Image condition="image">wmic.exe</Image>
+        <Image condition="image">wmiprvse.exe</Image>
+
+        <!-- Credential Access -->
+        <Image condition="image">vssadmin.exe</Image>
+        <Image condition="image">procdump.exe</Image>
+        <Image condition="image">procdump64.exe</Image>
+        <CommandLine condition="contains">comsvcs.dll</CommandLine>
+        <CommandLine condition="contains">MiniDump</CommandLine>
+
+        <!-- Discovery - ALL monitored on SQL server -->
+        <Image condition="image">whoami.exe</Image>
+        <Image condition="image">hostname.exe</Image>
+        <Image condition="image">net.exe</Image>
+        <Image condition="image">net1.exe</Image>
+        <Image condition="image">nltest.exe</Image>
+        <Image condition="image">systeminfo.exe</Image>
+        <Image condition="image">tasklist.exe</Image>
+        <Image condition="image">ipconfig.exe</Image>
+        <Image condition="image">netstat.exe</Image>
+        <Image condition="image">nslookup.exe</Image>
+        <Image condition="image">ping.exe</Image>
+
+        <!-- LOLBins -->
+        <Image condition="image">certutil.exe</Image>
+        <Image condition="image">mshta.exe</Image>
+        <Image condition="image">regsvr32.exe</Image>
+        <Image condition="image">rundll32.exe</Image>
+        <Image condition="image">bitsadmin.exe</Image>
+        <Image condition="image">msbuild.exe</Image>
+
+        <!-- Scripting -->
+        <Image condition="image">wscript.exe</Image>
+        <Image condition="image">cscript.exe</Image>
+
+        <!-- Lateral Movement -->
+        <Image condition="image">psexec.exe</Image>
+        <Image condition="image">psexesvc.exe</Image>
+
+        <!-- Service/Task manipulation -->
+        <Image condition="image">schtasks.exe</Image>
+        <Image condition="image">sc.exe</Image>
+
+        <!-- SQL utilities that may indicate attack -->
+        <Image condition="image">sqlcmd.exe</Image>
+        <Image condition="image">osql.exe</Image>
+        <Image condition="image">isql.exe</Image>
+
+        <!-- Data exfiltration indicators -->
+        <Image condition="image">rar.exe</Image>
+        <Image condition="image">7z.exe</Image>
+        <Image condition="image">7za.exe</Image>
+        <CommandLine condition="contains">.bak</CommandLine>
+      </ProcessCreate>
+    </RuleGroup>
+
+    <!-- ProcessCreate Exclusions - SQL SERVER -->
+    <RuleGroup name="ProcessCreate_Exclude" groupRelation="or">
+      <ProcessCreate onmatch="exclude">
+        <!-- SQL Server internal processes - EXACT PATHS -->
+        <!-- Customize version number for your environment -->
+        <Image condition="begin with">C:\Program Files\Microsoft SQL Server\MSSQL</Image>
+        <Image condition="end with">\sqlservr.exe</Image>
+        <Image condition="end with">\SQLAGENT.EXE</Image>
+        <Image condition="end with">\fdhost.exe</Image>
+        <Image condition="end with">\fdlauncher.exe</Image>
+        <Image condition="end with">\sqlceip.exe</Image>
+        <Image condition="end with">\sqlwriter.exe</Image>
+
+        <!-- SSMS (only from Program Files) -->
+        <Image condition="is">C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Ssms.exe</Image>
+        <Image condition="is">C:\Program Files (x86)\Microsoft SQL Server Management Studio 19\Common7\IDE\Ssms.exe</Image>
+
+        <!-- Splunk Forwarder -->
+        <Image condition="begin with">C:\Program Files\SplunkUniversalForwarder\</Image>
+        <ParentImage condition="is">C:\Program Files\SplunkUniversalForwarder\bin\splunkd.exe</ParentImage>
+
+        <!-- Backup software - CUSTOMIZE FOR YOUR ENVIRONMENT -->
+        <!-- <ParentImage condition="begin with">C:\Program Files\Veeam\</ParentImage> -->
+        <!-- <ParentImage condition="begin with">C:\Program Files\Commvault\</ParentImage> -->
+      </ProcessCreate>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 13: REGISTRY EVENT
+         ============================================ -->
+    <RuleGroup name="RegistryEvent" groupRelation="or">
+      <RegistryEvent onmatch="include">
+        <!-- Persistence -->
+        <TargetObject condition="contains">CurrentVersion\Run</TargetObject>
+        <TargetObject condition="contains">CurrentVersion\Winlogon\Shell</TargetObject>
+        <TargetObject condition="end with">\ServiceDll</TargetObject>
+        <TargetObject condition="end with">\ImagePath</TargetObject>
+
+        <!-- SQL-specific registry keys -->
+        <TargetObject condition="contains">Microsoft\Microsoft SQL Server\</TargetObject>
+
+        <!-- Security tampering -->
+        <TargetObject condition="end with">\DisableAntiSpyware</TargetObject>
+        <TargetObject condition="end with">\DisableAntiVirus</TargetObject>
+        <TargetObject condition="begin with">HKLM\SYSTEM\CurrentControlSet\Control\Lsa\</TargetObject>
+        <TargetObject condition="begin with">HKLM\Software\Microsoft\Windows Defender\Exclusions</TargetObject>
+
+        <!-- Firewall -->
+        <TargetObject condition="contains">FirewallPolicy\</TargetObject>
+        <TargetObject condition="end with">\EnableFirewall</TargetObject>
+      </RegistryEvent>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 3: NETWORK CONNECTION
+         SQL SERVER: Monitor unusual outbound connections
+         ============================================ -->
+    <RuleGroup name="NetworkConnect" groupRelation="or">
+      <NetworkConnect onmatch="include">
+        <!-- User profile connections (should be rare) -->
+        <Image condition="begin with">C:\Users\</Image>
+
+        <!-- SQL Server making connections outside normal ports -->
+        <Image condition="end with">\sqlservr.exe</Image>
+
+        <!-- Suspicious locations -->
+        <Image condition="begin with">C:\Windows\Temp\</Image>
+        <Image condition="begin with">C:\Temp\</Image>
+        <Image condition="begin with">C:\ProgramData\</Image>
+
+        <!-- LOLBins -->
+        <Image condition="image">cmd.exe</Image>
+        <Image condition="image">powershell.exe</Image>
+        <Image condition="image">certutil.exe</Image>
+        <Image condition="image">mshta.exe</Image>
+        <Image condition="image">bitsadmin.exe</Image>
+
+        <!-- SQL utilities (may indicate linked server abuse) -->
+        <Image condition="image">sqlcmd.exe</Image>
+        <Image condition="image">osql.exe</Image>
+
+        <!-- BCP for data exfil -->
+        <Image condition="image">bcp.exe</Image>
+
+        <!-- Suspicious ports -->
+        <DestinationPort condition="is">4444</DestinationPort>
+        <DestinationPort condition="is">5555</DestinationPort>
+        <DestinationPort condition="is">6666</DestinationPort>
+        <DestinationPort condition="is">31337</DestinationPort>
+        <DestinationPort condition="is">9001</DestinationPort>
+        <DestinationPort condition="is">9030</DestinationPort>
+
+        <!-- FTP (data exfil) -->
+        <DestinationPort condition="is">21</DestinationPort>
+
+        <!-- Non-standard SQL ports -->
+        <DestinationPort condition="is">1434</DestinationPort>
+      </NetworkConnect>
+    </RuleGroup>
+
+    <RuleGroup name="NetworkConnect_Exclude" groupRelation="or">
+      <NetworkConnect onmatch="exclude">
+        <!-- SQL Server normal ports - within datacenter only -->
+        <!-- Consider IP-based exclusions for your environment -->
+        <DestinationPort condition="is">1433</DestinationPort>
+
+        <!-- Windows Defender -->
+        <Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\Platform\</Image>
+
+        <!-- Windows Update -->
+        <DestinationHostname condition="end with">.windowsupdate.com</DestinationHostname>
+      </NetworkConnect>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 11: FILE CREATE
+         SQL SERVER: Monitor data paths and backups
+         ============================================ -->
+    <RuleGroup name="FileCreate" groupRelation="or">
+      <FileCreate onmatch="include">
+        <!-- Executables anywhere -->
+        <TargetFilename condition="end with">.exe</TargetFilename>
+        <TargetFilename condition="end with">.dll</TargetFilename>
+        <TargetFilename condition="end with">.bat</TargetFilename>
+        <TargetFilename condition="end with">.cmd</TargetFilename>
+        <TargetFilename condition="end with">.ps1</TargetFilename>
+        <TargetFilename condition="end with">.vbs</TargetFilename>
+
+        <!-- System directories -->
+        <TargetFilename condition="begin with">C:\Windows\system32\</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\Tasks\</TargetFilename>
+
+        <!-- User profile (unusual on SQL server) -->
+        <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+
+        <!-- Temp directories -->
+        <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+        <TargetFilename condition="begin with">C:\Temp\</TargetFilename>
+
+        <!-- SQL-SPECIFIC: Backup file creation outside normal paths (data exfil) -->
+        <!-- Monitor backup creation in unusual locations -->
+        <TargetFilename condition="end with">.bak</TargetFilename>
+
+        <!-- SQL data files in unusual locations -->
+        <TargetFilename condition="end with">.mdf</TargetFilename>
+        <TargetFilename condition="end with">.ldf</TargetFilename>
+        <TargetFilename condition="end with">.ndf</TargetFilename>
+      </FileCreate>
+    </RuleGroup>
+
+    <RuleGroup name="FileCreate_Exclude" groupRelation="or">
+      <FileCreate onmatch="exclude">
+        <!-- SQL Server data directories - CUSTOMIZE FOR YOUR ENVIRONMENT -->
+        <TargetFilename condition="begin with">C:\Program Files\Microsoft SQL Server\MSSQL</TargetFilename>
+
+        <!-- Normal backup location - CUSTOMIZE -->
+        <!-- <TargetFilename condition="begin with">D:\SQLBackups\</TargetFilename> -->
+        <!-- <TargetFilename condition="begin with">E:\Backups\</TargetFilename> -->
+
+        <!-- Transaction logs -->
+        <TargetFilename condition="end with">.trn</TargetFilename>
+
+        <!-- SQL internal temp -->
+        <Image condition="end with">\sqlservr.exe</Image>
+      </FileCreate>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 8: CREATE REMOTE THREAD
+         ============================================ -->
+    <RuleGroup name="CreateRemoteThread" groupRelation="or">
+      <CreateRemoteThread onmatch="exclude">
+        <SourceImage condition="is">C:\Windows\system32\wbem\WmiPrvSE.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\svchost.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\csrss.exe</SourceImage>
+        <SourceImage condition="end with">\sqlservr.exe</SourceImage>
+      </CreateRemoteThread>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 22: DNS QUERY
+         ============================================ -->
+    <RuleGroup name="DnsQuery" groupRelation="or">
+      <DnsQuery onmatch="exclude">
+        <QueryName condition="end with">.arpa</QueryName>
+        <QueryName condition="is">localhost</QueryName>
+        <Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\</Image>
+        <QueryName condition="end with">.windowsupdate.com</QueryName>
+
+        <!-- SQL telemetry -->
+        <QueryName condition="end with">.microsoft.com</QueryName>
+      </DnsQuery>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 19, 20, 21: WMI EVENT SUBSCRIPTION
+         ============================================ -->
+    <RuleGroup name="WmiEvent" groupRelation="or">
+      <WmiEvent onmatch="include">
+        <Operation condition="is">Created</Operation>
+        <Operation condition="is">Modified</Operation>
+        <Operation condition="is">Deleted</Operation>
+      </WmiEvent>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 7: IMAGE LOAD (DLL)
+         SQL SERVER: Monitor for injection
+         ============================================ -->
+    <RuleGroup name="ImageLoad" groupRelation="or">
+      <ImageLoad onmatch="include">
+        <!-- DLLs loaded by SQL Server from unusual locations -->
+        <Rule groupRelation="and">
+          <Image condition="end with">\sqlservr.exe</Image>
+          <ImageLoaded condition="begin with">C:\Users\</ImageLoaded>
+        </Rule>
+        <Rule groupRelation="and">
+          <Image condition="end with">\sqlservr.exe</Image>
+          <ImageLoaded condition="begin with">C:\Temp\</ImageLoaded>
+        </Rule>
+        <Rule groupRelation="and">
+          <Image condition="end with">\sqlservr.exe</Image>
+          <ImageLoaded condition="begin with">C:\Windows\Temp\</ImageLoaded>
+        </Rule>
+
+        <!-- Credential DLLs -->
+        <ImageLoaded condition="end with">\samlib.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\vaultcli.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\comsvcs.dll</ImageLoaded>
+        <ImageLoaded condition="end with">\dbghelp.dll</ImageLoaded>
+
+        <!-- PowerShell DLLs in non-PowerShell processes -->
+        <ImageLoaded condition="end with">\System.Management.Automation.dll</ImageLoaded>
+      </ImageLoad>
+    </RuleGroup>
+
+    <RuleGroup name="ImageLoad_Exclude" groupRelation="or">
+      <ImageLoad onmatch="exclude">
+        <Image condition="is">C:\Windows\System32\lsass.exe</Image>
+        <Image condition="is">C:\Windows\System32\svchost.exe</Image>
+        <Image condition="is">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Image>
+
+        <!-- SQL Server normal DLL loading from install dir -->
+        <ImageLoaded condition="begin with">C:\Program Files\Microsoft SQL Server\</ImageLoaded>
+      </ImageLoad>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 17, 18: PIPE CREATED/CONNECTED
+         SQL SERVER: Important for linked server attacks
+         ============================================ -->
+    <RuleGroup name="PipeEvent" groupRelation="or">
+      <PipeEvent onmatch="include">
+        <!-- Attack frameworks -->
+        <PipeName condition="begin with">\msagent_</PipeName>
+        <PipeName condition="begin with">\MSSE-</PipeName>
+        <PipeName condition="begin with">\postex_</PipeName>
+        <PipeName condition="begin with">\meterpreter</PipeName>
+        <PipeName condition="begin with">\psexec</PipeName>
+        <PipeName condition="is">\PSEXESVC</PipeName>
+        <PipeName condition="contains">mimikatz</PipeName>
+
+        <!-- SQL Server pipe access -->
+        <PipeName condition="contains">\sql\query</PipeName>
+      </PipeEvent>
+    </RuleGroup>
+
+    <RuleGroup name="PipeEvent_Exclude" groupRelation="or">
+      <PipeEvent onmatch="exclude">
+        <PipeName condition="is">\lsass</PipeName>
+        <PipeName condition="is">\netlogon</PipeName>
+        <PipeName condition="is">\samr</PipeName>
+      </PipeEvent>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 5: PROCESS TERMINATED
+         ============================================ -->
+    <RuleGroup name="ProcessTerminate" groupRelation="or">
+      <ProcessTerminate onmatch="include">
+        <!-- Security tools -->
+        <Image condition="end with">\MsMpEng.exe</Image>
+        <Image condition="contains">CrowdStrike</Image>
+        <Image condition="contains">Carbon Black</Image>
+
+        <!-- SQL Server unexpected termination -->
+        <Image condition="end with">\sqlservr.exe</Image>
+        <Image condition="end with">\SQLAGENT.EXE</Image>
+      </ProcessTerminate>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 10: PROCESS ACCESS
+         ============================================ -->
+    <RuleGroup name="ProcessAccess" groupRelation="or">
+      <ProcessAccess onmatch="include">
+        <CallTrace condition="begin with">UNKNOWN</CallTrace>
+        <!-- LSASS access -->
+        <Rule groupRelation="and">
+          <TargetImage condition="end with">lsass.exe</TargetImage>
+          <GrantedAccess condition="contains any">0x40;0x1000;0x1010;0x1fffff</GrantedAccess>
+        </Rule>
+        <!-- SQL Server process access (injection attempts) -->
+        <Rule groupRelation="and">
+          <TargetImage condition="end with">\sqlservr.exe</TargetImage>
+          <GrantedAccess condition="contains any">0x1fffff</GrantedAccess>
+        </Rule>
+      </ProcessAccess>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 2: FILE CREATION TIME CHANGED
+         ============================================ -->
+    <RuleGroup name="FileCreateTime" groupRelation="or">
+      <FileCreateTime onmatch="include">
+        <TargetFilename condition="end with">.exe</TargetFilename>
+        <TargetFilename condition="end with">.dll</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\</TargetFilename>
+      </FileCreateTime>
+    </RuleGroup>
+
+  </EventFiltering>
+</Sysmon>
