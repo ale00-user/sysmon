@@ -218,48 +218,156 @@ jobs:
           Install-AtomicRedTeam -getAtomics -Force -ErrorAction SilentlyContinue
           Write-Host "Atomic Red Team installed"
 
-      - name: Run Atomic Tests (Safe Subset)
+      - name: Run Atomic Tests with Detection Matching
         shell: powershell
         run: |
-          Write-Host "Running safe Atomic Red Team tests..."
+          Write-Host "Running Atomic Red Team tests with detection matching..."
+          Write-Host "Configuration: ${{ matrix.config }}"
+          Write-Host ""
 
           # Import module
           Import-Module "C:\AtomicRedTeam\invoke-atomicredteam\Invoke-AtomicRedTeam.psd1" -Force
 
-          # Safe techniques that don't require cleanup or cause damage
-          $safeTechniques = @(
-            "T1059.001"  # PowerShell
-            "T1082"      # System Information Discovery
-            "T1057"      # Process Discovery
-            "T1087.001"  # Local Account Discovery
-            "T1018"      # Remote System Discovery
-          )
+          # Techniques per configuration - expanded coverage
+          $techniquesByConfig = @{
+            "ws" = @(
+              "T1059.001", "T1059.003", "T1087.001", "T1057", "T1082",
+              "T1547.001", "T1053.005", "T1003.001", "T1218.010", "T1218.011",
+              "T1218.005", "T1027", "T1140", "T1055", "T1036"
+            )
+            "srv" = @(
+              "T1059.001", "T1059.003", "T1087.001", "T1087.002", "T1018",
+              "T1057", "T1082", "T1547.001", "T1053.005", "T1543.003",
+              "T1003.001", "T1070.001", "T1562.001", "T1218.010", "T1218.011"
+            )
+            "dc" = @(
+              "T1059.001", "T1087.002", "T1482", "T1069.002", "T1003.001",
+              "T1003.002", "T1003.003", "T1558.003", "T1547.001", "T1484.001",
+              "T1018", "T1016", "T1049", "T1033", "T1007"
+            )
+            "sql" = @(
+              "T1059.001", "T1059.003", "T1087.001", "T1005", "T1003.001",
+              "T1547.001", "T1543.003", "T1082", "T1057", "T1018"
+            )
+            "exch" = @(
+              "T1059.001", "T1003.001", "T1087.002", "T1070.006", "T1547.001",
+              "T1082", "T1057", "T1018", "T1016", "T1049"
+            )
+            "iis" = @(
+              "T1059.001", "T1059.003", "T1003.001", "T1070.006", "T1547.001",
+              "T1082", "T1057", "T1018", "T1016", "T1027"
+            )
+          }
+
+          $config = "${{ matrix.config }}"
+          $techniques = $techniquesByConfig[$config]
+
+          Write-Host "Testing $($techniques.Count) techniques for $config configuration"
+          Write-Host "=" * 60
 
           $results = @()
-          foreach ($technique in $safeTechniques) {
-            Write-Host "`nTesting $technique..." -ForegroundColor Cyan
+
+          foreach ($technique in $techniques) {
+            Write-Host "`n[*] Testing $technique..." -ForegroundColor Cyan
+
+            # Record start time
+            $startTime = Get-Date
+
+            # Get events before test
+            $eventsBefore = (Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" -MaxEvents 5000 -ErrorAction SilentlyContinue).Count
 
             try {
-              # Run with ShowDetails but capture output
-              Invoke-AtomicTest -AtomicTechnique $technique -ShowDetails -ErrorAction SilentlyContinue | Out-Null
+              # Execute atomic test
+              $ErrorActionPreference = 'SilentlyContinue'
+              Invoke-AtomicTest -AtomicTechnique $technique -ErrorAction SilentlyContinue *>&1 | Out-Null
+
+              # Wait for Sysmon to process
+              Start-Sleep -Seconds 3
+
+              # Get events after test
+              $eventsAfter = Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" -MaxEvents 5000 -ErrorAction SilentlyContinue
+              $newEvents = $eventsAfter | Where-Object { $_.TimeCreated -ge $startTime }
+              $eventCount = $newEvents.Count
+
+              # Get event types generated
+              $eventTypes = ($newEvents | Group-Object Id | ForEach-Object { $_.Name }) -join ","
+
+              $detected = $eventCount -gt 0
+              $status = if ($detected) { "DETECTED" } else { "NOT_DETECTED" }
+
+              Write-Host "    Events generated: $eventCount [$eventTypes]" -ForegroundColor $(if($detected){'Green'}else{'Yellow'})
+
               $results += [PSCustomObject]@{
                 Technique = $technique
-                Status = "Executed"
+                Config = $config
+                Status = $status
+                EventCount = $eventCount
+                EventTypes = $eventTypes
+                Timestamp = $startTime.ToString("yyyy-MM-dd HH:mm:ss")
               }
+
+              # Cleanup after each test
+              Invoke-AtomicTest -AtomicTechnique $technique -Cleanup -ErrorAction SilentlyContinue *>&1 | Out-Null
             }
             catch {
+              Write-Host "    Error: $($_.Exception.Message)" -ForegroundColor Red
               $results += [PSCustomObject]@{
                 Technique = $technique
-                Status = "Failed: $($_.Exception.Message)"
+                Config = $config
+                Status = "ERROR"
+                EventCount = 0
+                EventTypes = ""
+                Timestamp = $startTime.ToString("yyyy-MM-dd HH:mm:ss")
               }
             }
           }
 
           # Summary
-          Write-Host "`n" + "=" * 50
-          Write-Host "ATOMIC TEST RESULTS"
-          Write-Host "=" * 50
-          $results | Format-Table -AutoSize
+          Write-Host "`n" + "=" * 60
+          Write-Host "DETECTION COVERAGE SUMMARY - $config"
+          Write-Host "=" * 60
+
+          $detected = ($results | Where-Object { $_.Status -eq "DETECTED" }).Count
+          $notDetected = ($results | Where-Object { $_.Status -eq "NOT_DETECTED" }).Count
+          $errors = ($results | Where-Object { $_.Status -eq "ERROR" }).Count
+          $total = $results.Count
+          $rate = if ($total -gt 0) { [math]::Round(($detected / $total) * 100, 1) } else { 0 }
+
+          Write-Host "Techniques Tested: $total"
+          Write-Host "Detected: $detected" -ForegroundColor Green
+          Write-Host "Not Detected: $notDetected" -ForegroundColor Yellow
+          Write-Host "Errors: $errors" -ForegroundColor Red
+          Write-Host "Detection Rate: $rate%" -ForegroundColor Cyan
+
+          # Export detailed results
+          $results | Export-Csv -Path "detection-coverage-${{ matrix.config }}.csv" -NoTypeInformation
+
+          # Create markdown summary
+          $mdContent = @"
+          # Detection Coverage Report - $config
+
+          **Date:** $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
+          **Configuration:** $config
+          **Detection Rate:** $rate%
+
+          ## Summary
+          | Metric | Count |
+          |--------|-------|
+          | Techniques Tested | $total |
+          | Detected | $detected |
+          | Not Detected | $notDetected |
+          | Errors | $errors |
+
+          ## Detailed Results
+          | Technique | Status | Events | Event Types |
+          |-----------|--------|--------|-------------|
+          "@
+
+          foreach ($r in $results) {
+            $mdContent += "`n| $($r.Technique) | $($r.Status) | $($r.EventCount) | $($r.EventTypes) |"
+          }
+
+          $mdContent | Out-File -FilePath "detection-report-${{ matrix.config }}.md" -Encoding UTF8
 
       - name: Collect Detection Results
         if: always()
@@ -277,12 +385,15 @@ jobs:
           $events | Select-Object TimeCreated, Id, Message |
             Export-Csv -Path "atomic-events-${{ matrix.config }}.csv" -NoTypeInformation
 
-      - name: Upload Atomic Results
+      - name: Upload Detection Results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: atomic-events-${{ matrix.config }}
-          path: atomic-events-${{ matrix.config }}.csv
+          name: detection-results-${{ matrix.config }}
+          path: |
+            detection-coverage-${{ matrix.config }}.csv
+            detection-report-${{ matrix.config }}.md
+            atomic-events-${{ matrix.config }}.csv
           if-no-files-found: ignore
 
       - name: Cleanup
