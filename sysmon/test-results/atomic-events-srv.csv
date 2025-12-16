@@ -1,0 +1,1809 @@
+"TimeCreated","Id","Message"
+"12/16/2025 9:48:42 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:42.822
+ProcessGuid: {f995aebf-d3ba-6941-5602-000000000e00}
+ProcessId: 5880
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: ""C:\Windows\system32\whoami.exe""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=23240EF9F8B0A9A324110B1C2331DE31DC1B0E08F5359CB707E51A939AF56CD3
+ParentProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ParentProcessId: 9476
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\5e152a4d-5a74-48ad-a150-59994598a786.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:42 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:42.804
+ProcessGuid: {f995aebf-d3ba-6941-5502-000000000e00}
+ProcessId: 1952
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ParentProcessId: 9476
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\5e152a4d-5a74-48ad-a150-59994598a786.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:42 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:42.547
+ProcessGuid: {f995aebf-d3ba-6941-5402-000000000e00}
+ProcessId: 1092
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: ""C:\Windows\system32\whoami.exe""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=23240EF9F8B0A9A324110B1C2331DE31DC1B0E08F5359CB707E51A939AF56CD3
+ParentProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ParentProcessId: 9476
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\5e152a4d-5a74-48ad-a150-59994598a786.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:42 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:42.529
+ProcessGuid: {f995aebf-d3ba-6941-5302-000000000e00}
+ProcessId: 7784
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ParentProcessId: 9476
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\5e152a4d-5a74-48ad-a150-59994598a786.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:42 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:42.150
+ProcessGuid: {f995aebf-d3ba-6941-5202-000000000e00}
+ProcessId: 3036
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: ""C:\Windows\system32\whoami.exe""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=23240EF9F8B0A9A324110B1C2331DE31DC1B0E08F5359CB707E51A939AF56CD3
+ParentProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ParentProcessId: 9476
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\5e152a4d-5a74-48ad-a150-59994598a786.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:42 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:42.132
+ProcessGuid: {f995aebf-d3ba-6941-5102-000000000e00}
+ProcessId: 7028
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ParentProcessId: 9476
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\5e152a4d-5a74-48ad-a150-59994598a786.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:40 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:40.786
+ProcessGuid: {f995aebf-d3b8-6941-5002-000000000e00}
+ProcessId: 2276
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: ""C:\Windows\system32\whoami.exe""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=23240EF9F8B0A9A324110B1C2331DE31DC1B0E08F5359CB707E51A939AF56CD3
+ParentProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ParentProcessId: 9476
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\5e152a4d-5a74-48ad-a150-59994598a786.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:40 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:40.768
+ProcessGuid: {f995aebf-d3b8-6941-4f02-000000000e00}
+ProcessId: 4852
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ParentProcessId: 9476
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\5e152a4d-5a74-48ad-a150-59994598a786.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:38 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:38.696
+ProcessGuid: {f995aebf-d3b6-6941-4e02-000000000e00}
+ProcessId: 3144
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: ""C:\Windows\system32\whoami.exe""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=23240EF9F8B0A9A324110B1C2331DE31DC1B0E08F5359CB707E51A939AF56CD3
+ParentProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ParentProcessId: 9476
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\5e152a4d-5a74-48ad-a150-59994598a786.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:38 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:38.669
+ProcessGuid: {f995aebf-d3b6-6941-4d02-000000000e00}
+ProcessId: 7844
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ParentProcessId: 9476
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\5e152a4d-5a74-48ad-a150-59994598a786.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:38 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:38.438
+ProcessGuid: {f995aebf-d3b6-6941-4c02-000000000e00}
+ProcessId: 3364
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ParentProcessId: 9476
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\5e152a4d-5a74-48ad-a150-59994598a786.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:38 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:38.317
+ProcessGuid: {f995aebf-d3b6-6941-4b02-000000000e00}
+ProcessId: 600
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ParentProcessId: 9476
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\5e152a4d-5a74-48ad-a150-59994598a786.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:37 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:48:37.872
+ProcessGuid: {f995aebf-d334-6941-7401-000000000e00}
+ProcessId: 1980
+User: runnervm8j6r3\runneradmin
+Image: C:\actions-runner\cached\2.330.0\bin\Runner.Worker.exe
+TargetFilename: C:\actions-runner\cached\2.330.0\_diag\pages\58f22c36-37c8-4d04-9e19-282756eabd0b_02053310-886c-4f16-92cc-43a3f0f8de7d_1.log
+Hashes: SHA256=C357CB50568C88D45C65937706DDE3AF525A31CC31937C2E4151A5F838D6A548
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:48:37 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:48:37.840
+ProcessGuid: {f995aebf-d3b5-6941-4a02-000000000e00}
+ProcessId: 9476
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_4nnrtxgh.j3x.ps1
+Hashes: SHA256=96AD1146EB96877EAB5942AE0736B82D8B5E2039A80D3D6932665C1A4C87DCF7
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:48:37 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:48:37.618
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\.devcontainer\setup.ps1
+Hashes: SHA256=A3219C9CEFFB8E6C6497426226BEA0A4FC0A6701AC9EA509E4C12E86D426ABE7
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:48:27 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:48:26.521
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50385
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 140.82.113.4
+DestinationHostname: lb-140-82-113-4-iad.github.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:48:26 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:26.243
+ProcessGuid: {f995aebf-d3aa-6941-4802-000000000e00}
+ProcessId: 2856
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ParentProcessId: 6240
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\24e2a439-48b2-40d9-9e6d-a08dc47f8e88.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:26 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:26.138
+ProcessGuid: {f995aebf-d3aa-6941-4702-000000000e00}
+ProcessId: 1148
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-d2ff-6941-f269-0b0000000000}
+LogonId: 0xB69F2
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ParentProcessId: 6240
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\24e2a439-48b2-40d9-9e6d-a08dc47f8e88.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:48:25.920
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\1713331903\powershell-yaml.0.4.12\build.ps1
+Hashes: SHA256=1B239ED96F566421B9AD8B49EF36B2586D3DAD41D4555397B539C4691B729124
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:48:25 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:48:25.919
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\1713331903\powershell-yaml.0.4.12\Tests\powershell-yaml.Tests.ps1
+Hashes: SHA256=29602F1E025EA0986C5286718E4E5F090F3B813BFD81A7876AEFAFCF943DEABD
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:48:25 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:48:25.917
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\1713331903\powershell-yaml.0.4.12\lib\netstandard2.1\YamlDotNet.dll
+Hashes: SHA256=D7543A03A69F14CA1E302AA2BBB09777200B72E0C6DB0D0EB7614593F5C33E0F
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:48:25 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:48:25.915
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\1713331903\powershell-yaml.0.4.12\lib\netstandard2.1\PowerShellYamlSerializer.dll
+Hashes: SHA256=C9193F2FB5AFA40AF61D908589FDD0929AB58472BE215FC2AFB692194D53210D
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:48:25 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:48:25.913
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\1713331903\powershell-yaml.0.4.12\lib\net47\YamlDotNet.dll
+Hashes: SHA256=D35C770D92632BD94BBA4203DB05EEE5EBCE6E6EA6D92E7EBE8997A942B5321C
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:48:25 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:48:25.912
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\1713331903\powershell-yaml.0.4.12\lib\net47\PowerShellYamlSerializer.dll
+Hashes: SHA256=A5BDD33675629CA88CF05CD08150A19A69BC20B21CBE1D1E5E55FE63A332062A
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:48:25 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:25.843
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\Documents\WindowsPowerShell\Modules\powershell-yaml\0.4.12\build.ps1
+CreationUtcTime: 2025-12-16 21:48:25.843
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:25.841
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\Documents\WindowsPowerShell\Modules\powershell-yaml\0.4.12\Tests\powershell-yaml.Tests.ps1
+CreationUtcTime: 2025-12-16 21:48:25.841
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:25.839
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\Documents\WindowsPowerShell\Modules\powershell-yaml\0.4.12\lib\netstandard2.1\YamlDotNet.dll
+CreationUtcTime: 2025-12-16 21:48:25.835
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:25.835
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\Documents\WindowsPowerShell\Modules\powershell-yaml\0.4.12\lib\netstandard2.1\PowerShellYamlSerializer.dll
+CreationUtcTime: 2025-12-16 21:48:25.835
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:25.829
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\Documents\WindowsPowerShell\Modules\powershell-yaml\0.4.12\lib\net47\YamlDotNet.dll
+CreationUtcTime: 2025-12-16 21:48:25.827
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:25.827
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\Documents\WindowsPowerShell\Modules\powershell-yaml\0.4.12\lib\net47\PowerShellYamlSerializer.dll
+CreationUtcTime: 2025-12-16 21:48:25.827
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:24 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:48:24.858
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_iqhm1wvy.gyr.ps1
+Hashes: SHA256=96AD1146EB96877EAB5942AE0736B82D8B5E2039A80D3D6932665C1A4C87DCF7
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:48:24 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:48:24.421
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_nztctyu5.tos.ps1
+Hashes: SHA256=96AD1146EB96877EAB5942AE0736B82D8B5E2039A80D3D6932665C1A4C87DCF7
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:48:23 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:48:23.787
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_d4utw5sy.apy.ps1
+Hashes: SHA256=96AD1146EB96877EAB5942AE0736B82D8B5E2039A80D3D6932665C1A4C87DCF7
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:59 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:59.228
+ProcessGuid: {f995aebf-d2da-6941-eb03-000000000000}
+ProcessId: 4
+User: NT AUTHORITY\SYSTEM
+Image: System
+TargetFilename: C:\Windows\System32\LogFiles\WMI\RtBackup\EtwRTAdmin_PS_Provider.etl
+Hashes: SHA256=EE805C08DEFDDD6BA516D26F742ECAC346F6891DADC07C3BCD3FF39D0B9EC3A9
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:29 PM","13","Registry value set:
+RuleName: T1543.003
+EventType: SetValue
+UtcTime: 2025-12-16 21:47:29.219
+ProcessGuid: {f995aebf-d2e2-6941-0c00-000000000e00}
+ProcessId: 972
+Image: C:\Windows\system32\services.exe
+TargetObject: HKLM\System\CurrentControlSet\Services\BITS\Start
+Details: DWORD (0x00000003)
+User: NT AUTHORITY\SYSTEM"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.600
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=BD35D4A34392395FBF35030A69D8916DB02DEBED6014D2F5CA33191E2B3AD603
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.509
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=81FE63F2A0D10856717D514749DD237F8BD1DF4625432E94556D83630989A236
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.484
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=26E7B96F3A7C96C5F068B95C17D1C250A45652C55CBF4B3C430054C67BFE8174
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.456
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=40907999C5473714B7BD1BAFBF5BAC974CB3E42CF1997E4F4C45514F60E79C1F
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.423
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=E5F6DBB2FD49E5B9607CB89E1CD1302A3EB300E68837052A89A195F079756D32
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.386
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=9FDA5772DB0A461622234E5B33E7F569A1590BD48F54FDC4EE79427632155903
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.365
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=9699720793F21692A57A6C22CDEC7F5E948EBAD17EB00A419FD984A7D34777FB
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.325
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=0E31720D401105A92F25E90C86D9CCA084A42325BEA3C5D622ED0EB088EC2079
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.265
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=1A1886A29DCDE8B8A51DA01F9A756FB275CB0E0564EC0D41AE5B6DC398E71719
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.238
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=7D30BE622BCA6EA984A19513F6C4345423015E5E06D16FDACB925984D69DBBF4
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.207
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=3546AACEE7342541EE5B4D94DF5F1AB1A8C3270940F64BEFE00D41794DE09B31
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.179
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=5EAC50AAD39201F82C05F1330602F0FA24161B371097B2888CF3139F07341096
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.151
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=400DB63D74B48B6A57F5A5FE9C0C6028FEF9640C5F4C8820997715C086C08BFF
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.125
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=22A9B7ECCA421B2A6EA64CF01B7EBDCF1EEAEE82D1582526D6620F4BAB062620
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:21 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:21.100
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=802F472DE79BC5DBA0AEFE7585E6A2F35A3F72A74894AAED86F86972273210D1
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:20 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:20.048
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=2B1B3A35647E903303336C56C4476E15187906408CEC22C5F0C3FDA88ABA3C01
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:20 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:20.004
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=E84DBD4FD14B86799691AD699CF21829E0985E28DB25FE797FB51FC261F80D35
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:19 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:19.977
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=D47741B36B8EDC07D90D3304E2F9896188353D4ECB5F8D692AA3A341B2DC11B8
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:19 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:19.950
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=FB3C716B00C75219087D9858EDB34FA8E44DF821AFA1D1E747BA2EC6314EA43F
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:19 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:19.923
+ProcessGuid: {f995aebf-d367-6941-4102-000000000e00}
+ProcessId: 9692
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\uus\AMD64\MoUsoCoreWorker.exe
+TargetFilename: C:\ProgramData\USOPrivate\UpdateStore\store.db-journal
+Hashes: SHA256=04C15163A1D68D36DE9EA9A45228198D6EC9A66191C0341756BD74073B60E8EC
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:19 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:19.246
+ProcessGuid: {f995aebf-d364-6941-3e02-000000000e00}
+ProcessId: 3968
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\system32\svchost.exe
+TargetFilename: C:\Windows\System32\LogFiles\WMI\SUM.etl
+Hashes: SHA256=FA68C967972ECF298A3F97807AF14A2B72033DBFF01972E60898C3DCBDEA723A
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:15 PM","5","Process terminated:
+RuleName: ProcessTerminate
+UtcTime: 2025-12-16 21:47:15.282
+ProcessGuid: {f995aebf-d2f3-6941-9a00-000000000e00}
+ProcessId: 5944
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25100.9008-0\MpCmdRun.exe
+User: NT AUTHORITY\SYSTEM"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.931
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Definition Updates\{048F74E4-9638-4874-BC2F-742B31287D1B}\mpengine.dll
+Hashes: SHA256=928E171C60A44BB326776D2A356412AE98D78469BDF8C94EBFBFA09F8EC4B4B3
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.903
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Definition Updates\{048F74E4-9638-4874-BC2F-742B31287D1B}\mpavdlta.vdm
+Hashes: SHA256=831E3E8630F17D1AD9B2A7A75BAD3DDBA639F2A58B80EBC8B344B6C9314527E1
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.897
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Definition Updates\{048F74E4-9638-4874-BC2F-742B31287D1B}\mpavbase.vdm
+Hashes: SHA256=5F83E7E3BC84A9DB30A1551F9CB93CA8D4252138E9344951121CFA4AB2B2AFB9
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.814
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Definition Updates\{048F74E4-9638-4874-BC2F-742B31287D1B}\mpasdlta.vdm
+Hashes: SHA256=158010CC2BE429B05F18DB51085489D56BA6E79DF24D7BC34A2B9310A0B9FE85
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.808
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Definition Updates\{048F74E4-9638-4874-BC2F-742B31287D1B}\mpasbase.vdm
+Hashes: SHA256=2504DC0493E3C55EEE97B11F2714D1922BCC0B100DFC9DB0BB3B120E4AE0B677
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:14 PM","5","Process terminated:
+RuleName: ProcessTerminate
+UtcTime: 2025-12-16 21:47:14.781
+ProcessGuid: {f995aebf-d33e-6941-1e02-000000000e00}
+ProcessId: 8112
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MpCmdRun.exe
+User: NT AUTHORITY\SYSTEM"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.617
+ProcessGuid: {f995aebf-d33e-6941-1e02-000000000e00}
+ProcessId: 8112
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MpCmdRun.exe
+TargetFilename: C:\Windows\SystemTemp\BD023AD4-6AC4-4BE8-B423-2753758E55F8MpCommU\D83FA27C-16FA-49D0-81A1-211D90D47D5B
+Hashes: SHA256=E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.608
+ProcessGuid: {f995aebf-d33e-6941-1e02-000000000e00}
+ProcessId: 8112
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MpCmdRun.exe
+TargetFilename: C:\Windows\SystemTemp\377DA873-5A9C-470A-8A1F-CCBD3D44A0C3MpCommU\mpam-b_bd.exe
+Hashes: SHA256=3845A75DD410D6288E2F2AFB6022B4AF367824CC5A45A6CB8A8735CBF0F2D751
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.589
+ProcessGuid: {f995aebf-d33e-6941-2202-000000000e00}
+ProcessId: 388
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\SystemTemp\377DA873-5A9C-470A-8A1F-CCBD3D44A0C3MpCommU\mpam-b_bd.exe
+TargetFilename: C:\Windows\SystemTemp\F7207A7F-E78D-4E55-9A46-F503255AB5C9\MpSigStub.exe
+Hashes: SHA256=071B0D3A08503A8B88AEEDA1D20F371A563377028F6E252DC66CCE60AB8F823E
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.586
+ProcessGuid: {f995aebf-d33e-6941-2202-000000000e00}
+ProcessId: 388
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\SystemTemp\377DA873-5A9C-470A-8A1F-CCBD3D44A0C3MpCommU\mpam-b_bd.exe
+TargetFilename: C:\Windows\SystemTemp\F7207A7F-E78D-4E55-9A46-F503255AB5C9\1.441.0.0_to_1.443.0.0_mpasbase.vdm._p
+Hashes: SHA256=7456118A4D373BA595F786053762C6FB584556FB737AA3D28CF0844AD5479DA1
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.582
+ProcessGuid: {f995aebf-d33e-6941-2202-000000000e00}
+ProcessId: 388
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\SystemTemp\377DA873-5A9C-470A-8A1F-CCBD3D44A0C3MpCommU\mpam-b_bd.exe
+TargetFilename: C:\Windows\SystemTemp\F7207A7F-E78D-4E55-9A46-F503255AB5C9\mpasdlta.vdm
+Hashes: SHA256=2EAB29A1377E4F648C25BF0AE301396645D56B2BDDB8A0430EBD2A07437F0277
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.578
+ProcessGuid: {f995aebf-d33e-6941-2202-000000000e00}
+ProcessId: 388
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\SystemTemp\377DA873-5A9C-470A-8A1F-CCBD3D44A0C3MpCommU\mpam-b_bd.exe
+TargetFilename: C:\Windows\SystemTemp\F7207A7F-E78D-4E55-9A46-F503255AB5C9\1.441.0.0_to_1.443.0.0_mpavbase.vdm._p
+Hashes: SHA256=D63A0B53B3B84A901ED527504898084B0944041851006EDDAE74C260EA1EF88E
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.572
+ProcessGuid: {f995aebf-d33e-6941-2202-000000000e00}
+ProcessId: 388
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\SystemTemp\377DA873-5A9C-470A-8A1F-CCBD3D44A0C3MpCommU\mpam-b_bd.exe
+TargetFilename: C:\Windows\SystemTemp\F7207A7F-E78D-4E55-9A46-F503255AB5C9\mpavdlta.vdm
+Hashes: SHA256=6425735E11D7B371F7E92A275672EF2C9DDFC1F80BBA7F27B6CE3A8509E1288C
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.564
+ProcessGuid: {f995aebf-d33f-6941-2402-000000000e00}
+ProcessId: 6108
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\SystemTemp\F7207A7F-E78D-4E55-9A46-F503255AB5C9\MpSigStub.exe
+TargetFilename: C:\Windows\SystemTemp\F7207A7F-E78D-4E55-9A46-F503255AB5C9\mpasbase.vdm
+Hashes: SHA256=6348D48F099EEDBA7E0611CDC9361F3F425E5236E4D74E04BED80AC0E660FEEB
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.408
+ProcessGuid: {f995aebf-d33f-6941-2402-000000000e00}
+ProcessId: 6108
+User: NT AUTHORITY\SYSTEM
+Image: C:\Windows\SystemTemp\F7207A7F-E78D-4E55-9A46-F503255AB5C9\MpSigStub.exe
+TargetFilename: C:\Windows\SystemTemp\F7207A7F-E78D-4E55-9A46-F503255AB5C9\mpavbase.vdm
+Hashes: SHA256=9B513E43CB243FEDF729F36F99C28D1AB37844F3B088450C62DC9BBB60EB538C
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.203
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Definition Updates\Backup\mpavdlta.vdm
+Hashes: SHA256=6B717A54BF2C0A633FA8D5BEE30075F3137651758DA12B4FA1A6C8EDF9696491
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:14 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:14.026
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Definition Updates\Backup\mpavbase.vdm
+Hashes: SHA256=5F83E7E3BC84A9DB30A1551F9CB93CA8D4252138E9344951121CFA4AB2B2AFB9
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:13 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:13.938
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Definition Updates\Backup\mpasdlta.vdm
+Hashes: SHA256=0F54439173E9B3A5C0652BC3E3A9CA8B12CA6D5E7408E690B6C3525BD580703C
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:13 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:13.759
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Definition Updates\Backup\mpasbase.vdm
+Hashes: SHA256=2504DC0493E3C55EEE97B11F2714D1922BCC0B100DFC9DB0BB3B120E4AE0B677
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:13 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:13.620
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Definition Updates\Backup\mpengine.dll
+Hashes: SHA256=928E171C60A44BB326776D2A356412AE98D78469BDF8C94EBFBFA09F8EC4B4B3
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.666
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.E6
+Hashes: SHA256=9AB217BC652E1F6822B35DF8A5C00FF0115EA105787F51C12C87BBAC48BF25DB
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.665
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.DB
+Hashes: SHA256=AD66226959B4DD0550B871454C215E64BD69E653AA312D46218A66BD32647A32
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.663
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.A0
+Hashes: SHA256=DFEB463E86CA153B9244C1D9B215592EE84D0B4151625672534599EC396AB44D
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.618
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.9C
+Hashes: SHA256=6D06E791BBF8A32B5938B844BFC487ABECDAC46714528EF300D8BBAF52783789
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.616
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.91
+Hashes: SHA256=1E17CE0AB3E627B63894DB2AFDA8D122F55F2FF24BB40740F5BCC7BBFE8FB698
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.614
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.87
+Hashes: SHA256=86D88987D401CB2639C3364935B0CFFDE031C8EAEB3B7752A8DF78BFAE03DB6F
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.598
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.83
+Hashes: SHA256=E7616D6DE2933437FF7E1BF89D1A249CAB4850239D94D942E0A64AB7284D6803
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.596
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.80
+Hashes: SHA256=03857D2BBD8A703951B11A3ABD9698B7E236AD112FE6FC38825AD39CE1FEA70D
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.566
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.7E
+Hashes: SHA256=FB8B207ADB1B26CDABAC831AD1D65E4EB5BDAA161CE4BDB0E03F501DF3AFCEF7
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:47:00.419
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50028
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 23.49.251.238
+DestinationHostname: a23-49-251-238.deploy.static.akamaitechnologies.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:47:02 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:47:00.208
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50027
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.38
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.491
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.7C
+Hashes: SHA256=5AE429AFF53F4599D82B71B6C71583A4BF90D2D3A00B92720BECB2F75A8E092C
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.477
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.79
+Hashes: SHA256=E4533670B3A1A8E17B99EA231DF2458EB469B055AD12266A93565DE9F42B9A98
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.403
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.6C
+Hashes: SHA256=8B4CCD21A17ED1C83DF8ABEC40D09AC3865885656F06461E1F8382DD4AC5D68C
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.397
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.67
+Hashes: SHA256=3DDD49F3EE24B24D1E72F653BFB37EA4619537D0642589DE94C99901B343432F
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.316
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin.01
+Hashes: SHA256=8D9C522BDFFCA50A166703E4B2B0DCD0B64BECF03942B286BA3E618827090A48
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.312
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+User: NT AUTHORITY\SYSTEM
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Scans\mpcache-093E9A96E85FA5161833DC852DB8B9200D341B19.bin
+Hashes: SHA256=35AC897FB8EFED258D243676C6EC8CE56D388DCFE58715F960AE6B986031F173
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","7","Image loaded:
+RuleName: ImageLoad
+UtcTime: 2025-12-16 21:47:02.259
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+ImageLoaded: C:\ProgramData\Microsoft\Windows Defender\Definition Updates\{687F5E57-AFF8-44F4-9A13-6AD92D0FBE1D}\mpengine.dll
+FileVersion: 1.1.25110.1 (7b5fe375a4b370cefb38462a55bc18be6f5c04d7)
+Description: Microsoft Malware Protection Engine
+Product: Microsoft Malware Protection
+Company: Microsoft Corporation
+OriginalFileName: mpengine.dll
+Hashes: SHA256=928E171C60A44BB326776D2A356412AE98D78469BDF8C94EBFBFA09F8EC4B4B3
+Signed: true
+Signature: Microsoft Windows
+SignatureStatus: Valid
+User: NT AUTHORITY\SYSTEM"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.052
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\qjliwexm\Tests\powershell-yaml.Tests.ps1
+Hashes: SHA256=29602F1E025EA0986C5286718E4E5F090F3B813BFD81A7876AEFAFCF943DEABD
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.046
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\qjliwexm\lib\netstandard2.1\YamlDotNet.dll
+Hashes: SHA256=D7543A03A69F14CA1E302AA2BBB09777200B72E0C6DB0D0EB7614593F5C33E0F
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.046
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\qjliwexm\lib\netstandard2.1\PowerShellYamlSerializer.dll
+Hashes: SHA256=C9193F2FB5AFA40AF61D908589FDD0929AB58472BE215FC2AFB692194D53210D
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.042
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\qjliwexm\lib\net47\YamlDotNet.dll
+Hashes: SHA256=D35C770D92632BD94BBA4203DB05EEE5EBCE6E6EA6D92E7EBE8997A942B5321C
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.042
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\qjliwexm\lib\net47\PowerShellYamlSerializer.dll
+Hashes: SHA256=A5BDD33675629CA88CF05CD08150A19A69BC20B21CBE1D1E5E55FE63A332062A
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:47:02 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:02.038
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\qjliwexm\build.ps1
+Hashes: SHA256=1B239ED96F566421B9AD8B49EF36B2586D3DAD41D4555397B539C4691B729124
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:01 PM","22","Dns query:
+RuleName: DnsQuery
+UtcTime: 2025-12-16 21:47:00.374
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+QueryName: cdn.powershellgallery.com
+QueryStatus: 0
+QueryResults: type: 5 tm-psgallery-prod-eastus.trafficmanager.net;type: 5 cdn.powershellgallery.com.edgesuite.net;type: 5 a1144.dscd.akamai.net;::ffff:23.49.251.238;::ffff:23.49.251.245;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:47:00 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:47:00.664
+ProcessGuid: {f995aebf-d312-6941-0d01-000000000e00}
+ProcessId: 8552
+User: NT AUTHORITY\NETWORK SERVICE
+Image: C:\Windows\System32\svchost.exe
+TargetFilename: C:\Windows\ServiceProfiles\NetworkService\AppData\Local\Microsoft\Windows\DeliveryOptimization\Cache\706dde37-4b65-4338-bf12-d9f03fbd6001\content.phf
+Hashes: SHA256=A7B678DFC7A54244D9DF8B2E185B8577CCC030485D510143EACC1014C4E569D7
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:47:00 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:47:00.633
+ProcessGuid: {f995aebf-d324-6941-4d01-000000000e00}
+ProcessId: 9772
+Image: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MsMpEng.exe
+TargetFilename: C:\ProgramData\Microsoft\Windows Defender\Definition Updates\{687F5E57-AFF8-44F4-9A13-6AD92D0FBE1D}\mpengine.dll
+CreationUtcTime: 2025-12-16 21:47:00.630
+User: NT AUTHORITY\SYSTEM"
+"12/16/2025 9:47:00 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:59.171
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50026
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.38
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:59 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:57.846
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50025
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.38
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:59 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:57.726
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50024
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.38
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:59 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:46:59.124
+ProcessGuid: {f995aebf-d312-6941-0d01-000000000e00}
+ProcessId: 8552
+User: NT AUTHORITY\NETWORK SERVICE
+Image: C:\Windows\System32\svchost.exe
+TargetFilename: C:\Windows\ServiceProfiles\NetworkService\AppData\Local\Microsoft\Windows\DeliveryOptimization\Cache\e8c3c484-17b8-44bb-be4e-b2183e5a47fc\content.phf
+Hashes: SHA256=69D08E20EF3CB4812800DB092AC86E2B105AFF245375B8A12BB0119B9C26EB17
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:46:58 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:46:58.108
+ProcessGuid: {f995aebf-d312-6941-0d01-000000000e00}
+ProcessId: 8552
+User: NT AUTHORITY\NETWORK SERVICE
+Image: C:\Windows\System32\svchost.exe
+TargetFilename: C:\Windows\ServiceProfiles\NetworkService\AppData\Local\Microsoft\Windows\DeliveryOptimization\Cache\b7210017-e567-487d-afaf-5ac02d194436\content.phf
+Hashes: SHA256=05F076172ACF67842E79B2FAB978C181832CF19BF9C1ADDA615709E47F7B86B2
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:46:56 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:54.800
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50022
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.38
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:56 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:54.754
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50021
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.38
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:56 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:54.692
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50020
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.38
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:56 PM","22","Dns query:
+RuleName: DnsQuery
+UtcTime: 2025-12-16 21:46:54.689
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+QueryName: www.powershellgallery.com
+QueryStatus: 0
+QueryResults: type: 5 frontdoor-powershellgallery-cthqd0epb9c7c8fe.z01.azurefd.net;type: 5 mr-z01.tm-azurefd.net;type: 5 shed.dual-low.part-0010.t-0009.t-msedge.net;type: 5 part-0010.t-0009.t-msedge.net;::ffff:13.107.246.38;::ffff:13.107.213.38;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:55 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:52.565
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50014
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 23.43.85.154
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:55 PM","22","Dns query:
+RuleName: DnsQuery
+UtcTime: 2025-12-16 21:46:52.532
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+QueryName: cdn.oneget.org
+QueryStatus: 0
+QueryResults: type: 5 tm-onegetcdn.trafficmanager.net;type: 5 cdn.oneget.org.edgesuite.net;type: 5 a155.dscd.akamai.net;::ffff:23.43.85.154;::ffff:23.43.85.143;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:54 PM","22","Dns query:
+RuleName: DnsQuery
+UtcTime: 2025-12-16 21:46:52.172
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+QueryName: go.microsoft.com
+QueryStatus: 0
+QueryResults: type: 5 go.microsoft.com.edgekey.net;type: 5 e11290.dspg.akamaiedge.net;::ffff:23.44.17.219;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:54 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:46:54.026
+ProcessGuid: {f995aebf-d32f-6941-6d01-000000000e00}
+ProcessId: 7216
+User: NT AUTHORITY\NETWORK SERVICE
+Image: C:\Windows\system32\sppsvc.exe
+TargetFilename: C:\Windows\System32\spp\store\2.0\cache\cache.dat
+Hashes: SHA256=4F741EF71611206154407B1D1BB143CB685E509255F0F38F4C73BE09B51464EB
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:46:53 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:52.198
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50013
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 23.44.17.219
+DestinationHostname: a23-44-17-219.deploy.static.akamaitechnologies.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:51 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:46:51.560
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\qjpqtpkx\qjpqtpkx.dll
+Hashes: SHA256=08448A1D2BBBE132053711867F9D7962B15FDD9D0A629E6F0BDCCADF74017049
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:46:51 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:46:51.546
+ProcessGuid: {f995aebf-d34b-6941-3402-000000000e00}
+ProcessId: 9648
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\qjpqtpkx\qjpqtpkx.dll
+Hashes: SHA256=E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:46:51 PM","7","Image loaded:
+RuleName: ImageLoad
+UtcTime: 2025-12-16 21:46:51.471
+ProcessGuid: {f995aebf-d34b-6941-3402-000000000e00}
+ProcessId: 9648
+Image: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+ImageLoaded: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll
+FileVersion: 4.8.9310.0 built by: NET481REL1LAST_C
+Description: Microsoft .NET Runtime Common Language Runtime - WorkStation
+Product: Microsoft? .NET Framework
+Company: Microsoft Corporation
+OriginalFileName: clr.dll
+Hashes: SHA256=8AA62B9BE054D79B6575BEF1DCEDCB2A707741E0245EC876AF4FA0DAB71594FF
+Signed: true
+Signature: Microsoft Corporation
+SignatureStatus: Valid
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:51 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:46:51.423
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\hpb0qzkm\hpb0qzkm.dll
+Hashes: SHA256=378202D16641E2D71610610A97A48CF0AE9A1453D18C81D5511F274B8123C783
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:46:51 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:46:51.412
+ProcessGuid: {f995aebf-d34b-6941-3202-000000000e00}
+ProcessId: 9720
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\hpb0qzkm\hpb0qzkm.dll
+Hashes: SHA256=E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:46:51 PM","7","Image loaded:
+RuleName: ImageLoad
+UtcTime: 2025-12-16 21:46:51.335
+ProcessGuid: {f995aebf-d34b-6941-3202-000000000e00}
+ProcessId: 9720
+Image: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+ImageLoaded: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll
+FileVersion: 4.8.9310.0 built by: NET481REL1LAST_C
+Description: Microsoft .NET Runtime Common Language Runtime - WorkStation
+Product: Microsoft? .NET Framework
+Company: Microsoft Corporation
+OriginalFileName: clr.dll
+Hashes: SHA256=8AA62B9BE054D79B6575BEF1DCEDCB2A707741E0245EC876AF4FA0DAB71594FF
+Signed: true
+Signature: Microsoft Corporation
+SignatureStatus: Valid
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:51 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:46:51.296
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\mimudppa\mimudppa.dll
+Hashes: SHA256=BB48B7A78FD898B373FE506C4E2E50A783FFDE503256BFAC7A0C96BEB74D210C
+IsExecutable: true
+Archived: true"
+"12/16/2025 9:46:51 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:46:51.284
+ProcessGuid: {f995aebf-d34a-6941-3002-000000000e00}
+ProcessId: 10220
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\mimudppa\mimudppa.dll
+Hashes: SHA256=E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:46:50 PM","7","Image loaded:
+RuleName: ImageLoad
+UtcTime: 2025-12-16 21:46:50.844
+ProcessGuid: {f995aebf-d34a-6941-3002-000000000e00}
+ProcessId: 10220
+Image: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+ImageLoaded: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll
+FileVersion: 4.8.9310.0 built by: NET481REL1LAST_C
+Description: Microsoft .NET Runtime Common Language Runtime - WorkStation
+Product: Microsoft? .NET Framework
+Company: Microsoft Corporation
+OriginalFileName: clr.dll
+Hashes: SHA256=8AA62B9BE054D79B6575BEF1DCEDCB2A707741E0245EC876AF4FA0DAB71594FF
+Signed: true
+Signature: Microsoft Corporation
+SignatureStatus: Valid
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:49 PM","22","Dns query:
+RuleName: DnsQuery
+UtcTime: 2025-12-16 21:46:47.177
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+QueryName: codeload.github.com
+QueryStatus: 0
+QueryResults: ::ffff:140.82.112.9;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:49 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:47.201
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50011
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 140.82.112.9
+DestinationHostname: lb-140-82-112-9-iad.github.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:49 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:47.082
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50010
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 140.82.113.4
+DestinationHostname: lb-140-82-113-4-iad.github.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:48 PM","22","Dns query:
+RuleName: DnsQuery
+UtcTime: 2025-12-16 21:46:47.054
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+QueryName: github.com
+QueryStatus: 0
+QueryResults: ::ffff:140.82.113.4;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:48 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:46.765
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.104
+SourceHostname: runnervm8j6r3.ubskotnc0ogejgnjnab5l43iwg.gx.internal.cloudapp.net
+SourcePort: 50009
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 185.199.110.133
+DestinationHostname: cdn-185-199-110-133.github.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:47 PM","22","Dns query:
+RuleName: DnsQuery
+UtcTime: 2025-12-16 21:46:46.747
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+QueryName: raw.githubusercontent.com
+QueryStatus: 0
+QueryResults: ::ffff:185.199.110.133;::ffff:185.199.111.133;::ffff:185.199.108.133;::ffff:185.199.109.133;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:47 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:46:47.177
+ProcessGuid: {f995aebf-d334-6941-7401-000000000e00}
+ProcessId: 1980
+User: runnervm8j6r3\runneradmin
+Image: C:\actions-runner\cached\2.330.0\bin\Runner.Worker.exe
+TargetFilename: C:\actions-runner\cached\2.330.0\_diag\pages\58f22c36-37c8-4d04-9e19-282756eabd0b_e8f2a1f3-c6a5-4d58-9496-afa711f30830_1.log
+Hashes: SHA256=3ECB9FC9C16EC387E6F4F96A3E8B0395F63C5E7B677EB0921659A372C3B3FD5C
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:46:46 PM","12","Registry object added or deleted:
+RuleName: RegistryEvent
+EventType: CreateKey
+UtcTime: 2025-12-16 21:46:46.767
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetObject: HKLM\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:46 PM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-16 21:46:46.462
+ProcessGuid: {f995aebf-d346-6941-2f02-000000000e00}
+ProcessId: 6240
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_atogfefo.0vt.ps1
+Hashes: SHA256=96AD1146EB96877EAB5942AE0736B82D8B5E2039A80D3D6932665C1A4C87DCF7
+IsExecutable: false
+Archived: true"
+"12/16/2025 9:46:39 PM","7","Image loaded:
+RuleName: ImageLoad
+UtcTime: 2025-12-16 21:46:39.700
+ProcessGuid: {f995aebf-d33f-6941-2a02-000000000e00}
+ProcessId: 10212
+Image: C:\Windows\Sysmon64.exe
+ImageLoaded: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MpOAV.dll
+FileVersion: 4.18.25110.5 (4a6978a838df7287d907bb2ee8a2eeb2373b186e)
+Description: IOfficeAntiVirus Module
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: MpOAV.dll
+Hashes: SHA256=0EF8AE9CC8E3722C0AE09B55531BBA2F2A3422CCF4A1BB9B37ABDB4808AAC232
+Signed: true
+Signature: Microsoft Windows
+SignatureStatus: Valid
+User: NT AUTHORITY\SYSTEM"
+"12/16/2025 9:46:39 PM","4","Sysmon service state changed:
+UtcTime: 2025-12-16 21:46:39.741
+State: Started
+Version: 15.15
+SchemaVersion: 4.90"
+"12/16/2025 9:46:39 PM","16","Sysmon config state changed:
+UtcTime: 2025-12-16 21:46:39.610
+Configuration: D:\a\sysmon\sysmon\sysmon\sysmon-srv.xml
+ConfigurationFileHash: SHA256=91A3DE8A9A011FA1FC081B16B0613771EBF41E3624B17613437AA3B1E198B6A3"

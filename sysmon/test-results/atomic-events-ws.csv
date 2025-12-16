@@ -1,0 +1,3091 @@
+"TimeCreated","Id","Message"
+"12/16/2025 9:48:25 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:25.848
+SourceProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+SourceProcessId: 2000
+SourceThreadId: 5160
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d3a9-6941-1203-000000000e00}
+TargetProcessId: 9748
+TargetImage: C:\Windows\system32\whoami.exe
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:25.848
+ProcessGuid: {f995aebf-d3a9-6941-1203-000000000e00}
+ProcessId: 9748
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: ""C:\Windows\system32\whoami.exe""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=23240EF9F8B0A9A324110B1C2331DE31DC1B0E08F5359CB707E51A939AF56CD3
+ParentProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ParentProcessId: 2000
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:25.831
+SourceProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+SourceProcessId: 2000
+SourceThreadId: 5160
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d3a9-6941-1103-000000000e00}
+TargetProcessId: 4176
+TargetImage: C:\Windows\system32\HOSTNAME.EXE
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:25.831
+ProcessGuid: {f995aebf-d3a9-6941-1103-000000000e00}
+ProcessId: 4176
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ParentProcessId: 2000
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:25.585
+SourceProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+SourceProcessId: 2000
+SourceThreadId: 5160
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d3a9-6941-1003-000000000e00}
+TargetProcessId: 4516
+TargetImage: C:\Windows\system32\whoami.exe
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:25.587
+ProcessGuid: {f995aebf-d3a9-6941-1003-000000000e00}
+ProcessId: 4516
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: ""C:\Windows\system32\whoami.exe""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=23240EF9F8B0A9A324110B1C2331DE31DC1B0E08F5359CB707E51A939AF56CD3
+ParentProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ParentProcessId: 2000
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:25.569
+SourceProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+SourceProcessId: 2000
+SourceThreadId: 5160
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d3a9-6941-0f03-000000000e00}
+TargetProcessId: 8288
+TargetImage: C:\Windows\system32\HOSTNAME.EXE
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:25.569
+ProcessGuid: {f995aebf-d3a9-6941-0f03-000000000e00}
+ProcessId: 8288
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ParentProcessId: 2000
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:25.208
+SourceProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+SourceProcessId: 2000
+SourceThreadId: 5160
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d3a9-6941-0e03-000000000e00}
+TargetProcessId: 6084
+TargetImage: C:\Windows\system32\whoami.exe
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:25.208
+ProcessGuid: {f995aebf-d3a9-6941-0e03-000000000e00}
+ProcessId: 6084
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: ""C:\Windows\system32\whoami.exe""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=23240EF9F8B0A9A324110B1C2331DE31DC1B0E08F5359CB707E51A939AF56CD3
+ParentProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ParentProcessId: 2000
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:25.190
+SourceProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+SourceProcessId: 2000
+SourceThreadId: 5160
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d3a9-6941-0d03-000000000e00}
+TargetProcessId: 7444
+TargetImage: C:\Windows\system32\HOSTNAME.EXE
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:25 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:25.190
+ProcessGuid: {f995aebf-d3a9-6941-0d03-000000000e00}
+ProcessId: 7444
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ParentProcessId: 2000
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:23 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:23.936
+SourceProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+SourceProcessId: 2000
+SourceThreadId: 5160
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d3a7-6941-0c03-000000000e00}
+TargetProcessId: 5024
+TargetImage: C:\Windows\system32\whoami.exe
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:23 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:23.936
+ProcessGuid: {f995aebf-d3a7-6941-0c03-000000000e00}
+ProcessId: 5024
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: ""C:\Windows\system32\whoami.exe""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=23240EF9F8B0A9A324110B1C2331DE31DC1B0E08F5359CB707E51A939AF56CD3
+ParentProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ParentProcessId: 2000
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:23 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:23.918
+SourceProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+SourceProcessId: 2000
+SourceThreadId: 5160
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d3a7-6941-0b03-000000000e00}
+TargetProcessId: 2076
+TargetImage: C:\Windows\system32\HOSTNAME.EXE
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:23 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:23.919
+ProcessGuid: {f995aebf-d3a7-6941-0b03-000000000e00}
+ProcessId: 2076
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ParentProcessId: 2000
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:23 PM","22","Dns query:
+RuleName: -
+UtcTime: 2025-12-16 21:48:21.826
+ProcessGuid: {f995aebf-d332-6941-3e02-000000000e00}
+ProcessId: 8888
+QueryName: productionresultssa5.blob.core.windows.net
+QueryStatus: 0
+QueryResults: type: 5 blob.bn3prdstrz12a.store.core.windows.net;type: 5 blob.bn3prdstrz12a.trafficmanager.net;::ffff:20.209.178.193;::ffff:20.209.112.225;::ffff:20.209.113.193;
+Image: C:\actions-runner\extracted\bin\Runner.Worker.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:23 PM","22","Dns query:
+RuleName: -
+UtcTime: 2025-12-16 21:48:21.173
+ProcessGuid: {f995aebf-d332-6941-3e02-000000000e00}
+ProcessId: 8888
+QueryName: results-receiver.actions.githubusercontent.com
+QueryStatus: 0
+QueryResults: type: 5 glb-db52c2cf8be544.github.com;::ffff:140.82.112.22;
+Image: C:\actions-runner\extracted\bin\Runner.Worker.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:22 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:22.030
+SourceProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+SourceProcessId: 2000
+SourceThreadId: 5160
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d3a6-6941-0803-000000000e00}
+TargetProcessId: 5812
+TargetImage: C:\Windows\system32\whoami.exe
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:22 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:22.029
+ProcessGuid: {f995aebf-d3a6-6941-0803-000000000e00}
+ProcessId: 5812
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: ""C:\Windows\system32\whoami.exe""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=23240EF9F8B0A9A324110B1C2331DE31DC1B0E08F5359CB707E51A939AF56CD3
+ParentProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ParentProcessId: 2000
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:22 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:22.004
+SourceProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+SourceProcessId: 2000
+SourceThreadId: 5160
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d3a6-6941-0703-000000000e00}
+TargetProcessId: 9996
+TargetImage: C:\Windows\system32\HOSTNAME.EXE
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:22 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:22.005
+ProcessGuid: {f995aebf-d3a6-6941-0703-000000000e00}
+ProcessId: 9996
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ParentProcessId: 2000
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:21 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:21.770
+SourceProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+SourceProcessId: 2000
+SourceThreadId: 5160
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d3a5-6941-0603-000000000e00}
+TargetProcessId: 7436
+TargetImage: C:\Windows\system32\HOSTNAME.EXE
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:21 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:21.770
+ProcessGuid: {f995aebf-d3a5-6941-0603-000000000e00}
+ProcessId: 7436
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ParentProcessId: 2000
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:21 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:21.665
+SourceProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+SourceProcessId: 2000
+SourceThreadId: 5160
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d3a5-6941-0503-000000000e00}
+TargetProcessId: 7324
+TargetImage: C:\Windows\system32\HOSTNAME.EXE
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:21 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:21.666
+ProcessGuid: {f995aebf-d3a5-6941-0503-000000000e00}
+ProcessId: 7324
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ParentProcessId: 2000
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:21 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:21.143
+SourceProcessGUID: {f995aebf-d332-6941-3e02-000000000e00}
+SourceProcessId: 8888
+SourceThreadId: 6480
+SourceImage: C:\actions-runner\extracted\bin\Runner.Worker.exe
+TargetProcessGUID: {f995aebf-d3a5-6941-0403-000000000e00}
+TargetProcessId: 2000
+TargetImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\actions-runner\extracted\bin\System.Diagnostics.Process.dll+da06|C:\actions-runner\extracted\bin\System.Diagnostics.Process.dll+1947f|UNKNOWN(00007FFE085A09EF)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:21 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:21.144
+ProcessGuid: {f995aebf-d3a5-6941-0403-000000000e00}
+ProcessId: 2000
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+FileVersion: 10.0.26100.5074 (WinBuild.160101.0800)
+Description: Windows PowerShell
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: PowerShell.EXE
+CommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1'""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=0FF6F2C94BC7E2833A5F7E16DE1622E5DBA70396F31C7D5F56381870317E8C46
+ParentProcessGuid: {f995aebf-d332-6941-3e02-000000000e00}
+ParentProcessId: 8888
+ParentImage: C:\actions-runner\extracted\bin\Runner.Worker.exe
+ParentCommandLine: ""C:\actions-runner\extracted\bin\Runner.Worker.exe"" spawnclient 1920 1932
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:21 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:21.141
+ProcessGuid: {f995aebf-d332-6941-3e02-000000000e00}
+ProcessId: 8888
+Image: C:\actions-runner\extracted\bin\Runner.Worker.exe
+TargetFilename: D:\a\_temp\40f54978-c712-4e8d-b537-6821e38a29f5.ps1
+CreationUtcTime: 2025-12-16 21:48:21.141
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:21 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:21.116
+SourceProcessGUID: {f995aebf-d332-6941-3e02-000000000e00}
+SourceProcessId: 8888
+SourceThreadId: 7988
+SourceImage: C:\actions-runner\extracted\bin\Runner.Worker.exe
+TargetProcessGUID: {f995aebf-d3a5-6941-0303-000000000e00}
+TargetProcessId: 7668
+TargetImage: C:\Windows\system32\chcp.COM
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\actions-runner\extracted\bin\System.Diagnostics.Process.dll+da06|C:\actions-runner\extracted\bin\System.Diagnostics.Process.dll+1947f|UNKNOWN(00007FFE085A09EF)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.555
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1651\src\T1651-1\AWSSSMAttack.ps1
+CreationUtcTime: 2025-12-16 21:48:20.555
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.536
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1648\src\T1648-1\LambdaAttack.ps1
+CreationUtcTime: 2025-12-16 21:48:20.536
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.500
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1614.001\bin\LanguageKeyboardLayout.exe
+CreationUtcTime: 2025-12-16 21:48:20.500
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.454
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1595.003\src\WebServerScan.ps1
+CreationUtcTime: 2025-12-16 21:48:20.454
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.436
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1574.012\src\x64\Release\atomicNotepad.dll
+CreationUtcTime: 2025-12-16 21:48:20.436
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.419
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1574.012\bin\T1574.012x64.dll
+CreationUtcTime: 2025-12-16 21:48:20.417
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.407
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1574.009\bin\WindowsServiceExample.exe
+CreationUtcTime: 2025-12-16 21:48:20.407
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.383
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1574.001\bin\preloader.dll
+CreationUtcTime: 2025-12-16 21:48:20.383
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.381
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1574.001\bin\libcurl.dll
+CreationUtcTime: 2025-12-16 21:48:20.381
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.373
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1574.001\bin\GUP.exe
+CreationUtcTime: 2025-12-16 21:48:20.373
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.363
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1572\src\T1572-doh-domain-length.ps1
+CreationUtcTime: 2025-12-16 21:48:20.363
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.361
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1572\src\T1572-doh-beacon.ps1
+CreationUtcTime: 2025-12-16 21:48:20.361
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.323
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1566.001\bin\PhishingAttachment.xlsm
+CreationUtcTime: 2025-12-16 21:48:20.321
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.133
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1564.004\src\test.ps1
+CreationUtcTime: 2025-12-16 21:48:20.133
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.072
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1562.004\bin\AtomicTest.exe
+CreationUtcTime: 2025-12-16 21:48:20.072
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.058
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1562.002\bin\phant0m.exe
+CreationUtcTime: 2025-12-16 21:48:20.058
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:20 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:20.030
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1559.002\src\PowerShell_Script_For_DDE_Document.ps1
+CreationUtcTime: 2025-12-16 21:48:20.030
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.986
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1556.002\bin\AtomicRedTeamPWFilter.dll
+CreationUtcTime: 2025-12-16 21:48:19.986
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.956
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1555.003\bin\WebBrowserPassView.exe
+CreationUtcTime: 2025-12-16 21:48:19.956
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.929
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1553.004\src\RemoteCertTrust.ps1
+CreationUtcTime: 2025-12-16 21:48:19.929
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.917
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1553.003\bin\GTSIPProvider.dll
+CreationUtcTime: 2025-12-16 21:48:19.917
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.867
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1548.002\src\T1548.002.bat
+CreationUtcTime: 2025-12-16 21:48:19.867
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.832
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1547.012\src\build.bat
+CreationUtcTime: 2025-12-16 21:48:19.832
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.826
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1547.012\bin\AtomicTest.dll
+CreationUtcTime: 2025-12-16 21:48:19.826
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.820
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1547.010\src\build.bat
+CreationUtcTime: 2025-12-16 21:48:19.820
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.814
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1547.010\bin\PortMonitor.dll
+CreationUtcTime: 2025-12-16 21:48:19.814
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.779
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1547.003\src\build.bat
+CreationUtcTime: 2025-12-16 21:48:19.778
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.772
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1547.003\bin\AtomicTest.dll
+CreationUtcTime: 2025-12-16 21:48:19.772
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.764
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1547.002\src\package\build.bat
+CreationUtcTime: 2025-12-16 21:48:19.764
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.756
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1547.002\bin\package.dll
+CreationUtcTime: 2025-12-16 21:48:19.756
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.750
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1547.001\src\vbsstartup.vbs
+CreationUtcTime: 2025-12-16 21:48:19.750
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.748
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1547.001\src\jsestartup.jse
+CreationUtcTime: 2025-12-16 21:48:19.746
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.746
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1547.001\src\batstartup.bat
+CreationUtcTime: 2025-12-16 21:48:19.746
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.744
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1547.001\src\Discovery.bat
+CreationUtcTime: 2025-12-16 21:48:19.744
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.739
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1546\src\ErrorHandler.cmd
+CreationUtcTime: 2025-12-16 21:48:19.739
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.727
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1546\bin\AltWinSock2DLL.dll
+CreationUtcTime: 2025-12-16 21:48:19.726
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.717
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1546.015\bin\T1546.015_calc.dll
+CreationUtcTime: 2025-12-16 21:48:19.717
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.715
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1546.015\bin\AtomicTest.dll
+CreationUtcTime: 2025-12-16 21:48:19.715
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.689
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1546.011\bin\AtomicTest.exe
+CreationUtcTime: 2025-12-16 21:48:19.687
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.687
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1546.011\bin\AtomicTest.dll
+CreationUtcTime: 2025-12-16 21:48:19.687
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.673
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1546.010\bin\T1546.010x86.dll
+CreationUtcTime: 2025-12-16 21:48:19.673
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.672
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1546.010\bin\T1546.010.dll
+CreationUtcTime: 2025-12-16 21:48:19.672
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.666
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1546.009\src\build.bat
+CreationUtcTime: 2025-12-16 21:48:19.666
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.659
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1546.009\bin\AtomicTest.dll
+CreationUtcTime: 2025-12-16 21:48:19.659
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.639
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1546.007\bin\NetshHelper.dll
+CreationUtcTime: 2025-12-16 21:48:19.639
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.601
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1543.003\bin\W64Time.dll
+CreationUtcTime: 2025-12-16 21:48:19.601
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.599
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1543.003\bin\AtomicService.exe
+CreationUtcTime: 2025-12-16 21:48:19.599
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.411
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1526\src\AzureDiscovery.ps1
+CreationUtcTime: 2025-12-16 21:48:19.409
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.409
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1526\src\AWSDiscovery.ps1
+CreationUtcTime: 2025-12-16 21:48:19.409
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.180
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1219\bin\GoToCleanup.ps1
+CreationUtcTime: 2025-12-16 21:48:19.180
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.171
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218\src\x64\T1218.dll
+CreationUtcTime: 2025-12-16 21:48:19.171
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.166
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218\src\Win32\T1218.dll
+CreationUtcTime: 2025-12-16 21:48:19.166
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.164
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218\src\Win32\T1218-2.dll
+CreationUtcTime: 2025-12-16 21:48:19.164
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.150
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218\bin\calc.dll
+CreationUtcTime: 2025-12-16 21:48:19.150
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.144
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.011\src\index.hta
+CreationUtcTime: 2025-12-16 21:48:19.144
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.144
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.011\src\akteullen.vbs
+CreationUtcTime: 2025-12-16 21:48:19.144
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.126
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.010\bin\AllTheThingsx86.dll
+CreationUtcTime: 2025-12-16 21:48:19.126
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.126
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.010\bin\AllTheThingsx64.dll
+CreationUtcTime: 2025-12-16 21:48:19.126
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.114
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\uninstall.ps1
+CreationUtcTime: 2025-12-16 21:48:19.114
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.113
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\powershell.bat
+CreationUtcTime: 2025-12-16 21:48:19.113
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.111
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\nsbin.bat
+CreationUtcTime: 2025-12-16 21:48:19.110
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.105
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\net.r_eg.DllExport.Configurator.dll
+CreationUtcTime: 2025-12-16 21:48:19.104
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.104
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\msbuild.bat
+CreationUtcTime: 2025-12-16 21:48:19.104
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.102
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\install.ps1
+CreationUtcTime: 2025-12-16 21:48:19.102
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.101
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\init.ps1
+CreationUtcTime: 2025-12-16 21:48:19.101
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.100
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\gnt.bat
+CreationUtcTime: 2025-12-16 21:48:19.100
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.089
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\coreclr\mscordbi.dll
+CreationUtcTime: 2025-12-16 21:48:19.089
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.075
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\coreclr\mscordaccore.dll
+CreationUtcTime: 2025-12-16 21:48:19.075
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.075
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\coreclr\ildasmrc.dll
+CreationUtcTime: 2025-12-16 21:48:19.074
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.069
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\coreclr\ildasm.exe
+CreationUtcTime: 2025-12-16 21:48:19.069
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.063
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\coreclr\ilasm.exe
+CreationUtcTime: 2025-12-16 21:48:19.063
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.023
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\coreclr\coreclr.dll
+CreationUtcTime: 2025-12-16 21:48:19.021
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.010
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\System.Management.Automation.dll
+CreationUtcTime: 2025-12-16 21:48:19.010
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.006
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\RGiesecke.DllExport.dll
+CreationUtcTime: 2025-12-16 21:48:19.006
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:19 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:19.001
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\RGiesecke.DllExport.MSBuild.dll
+CreationUtcTime: 2025-12-16 21:48:19.001
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.997
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\NSBin.dll
+CreationUtcTime: 2025-12-16 21:48:18.997
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.994
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\Mono.Cecil.dll
+CreationUtcTime: 2025-12-16 21:48:18.994
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.994
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\Microsoft.Management.Infrastructure.dll
+CreationUtcTime: 2025-12-16 21:48:18.992
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.992
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\Microsoft.Build.Utilities.v4.0.dll
+CreationUtcTime: 2025-12-16 21:48:18.990
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.988
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\tools\Microsoft.Build.Framework.dll
+CreationUtcTime: 2025-12-16 21:48:18.988
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.980
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.40\packages\DllExport.1.5.2\lib\net20\DllExport.dll
+CreationUtcTime: 2025-12-16 21:48:18.980
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.942
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.20\packages\UnmanagedExports.1.2.7\tools\uninstall.ps1
+CreationUtcTime: 2025-12-16 21:48:18.942
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.942
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.20\packages\UnmanagedExports.1.2.7\tools\install.ps1
+CreationUtcTime: 2025-12-16 21:48:18.942
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.940
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.20\packages\UnmanagedExports.1.2.7\tools\init.ps1
+CreationUtcTime: 2025-12-16 21:48:18.940
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.934
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.20\packages\UnmanagedExports.1.2.7\tools\RGiesecke.DllExport.dll
+CreationUtcTime: 2025-12-16 21:48:18.934
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.931
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.20\packages\UnmanagedExports.1.2.7\tools\RGiesecke.DllExport.MSBuild.dll
+CreationUtcTime: 2025-12-16 21:48:18.930
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.926
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.20\packages\UnmanagedExports.1.2.7\tools\Mono.Cecil.dll
+CreationUtcTime: 2025-12-16 21:48:18.926
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.922
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\odbcconf net.20\packages\UnmanagedExports.1.2.7\lib\net\RGiesecke.DllExport.Metadata.dll
+CreationUtcTime: 2025-12-16 21:48:18.922
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.900
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\src\Win32\T1218-2.dll
+CreationUtcTime: 2025-12-16 21:48:18.900
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.897
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.008\bin\o.dll
+CreationUtcTime: 2025-12-16 21:48:18.897
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.880
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.007\bin\MSIRunner.dll
+CreationUtcTime: 2025-12-16 21:48:18.879
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.873
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.005\src\powershell.ps1
+CreationUtcTime: 2025-12-16 21:48:18.873
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.871
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.005\src\T1218.005.hta
+CreationUtcTime: 2025-12-16 21:48:18.871
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.865
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1218.004\src\InstallUtilTestHarness.ps1
+CreationUtcTime: 2025-12-16 21:48:18.863
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.804
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1204.002\src\click-fix.bat
+CreationUtcTime: 2025-12-16 21:48:18.804
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.798
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1204.002\src\Invoke-MalDoc.ps1
+CreationUtcTime: 2025-12-16 21:48:18.798
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.794
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1204.002\bin\mirrorblast_emulation.xlsm
+CreationUtcTime: 2025-12-16 21:48:18.794
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.687
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1137.002\bin\officetest_x86.dll
+CreationUtcTime: 2025-12-16 21:48:18.687
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.685
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1137.002\bin\officetest_x64.dll
+CreationUtcTime: 2025-12-16 21:48:18.685
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.655
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1134.004\src\PPID-Spoof.ps1
+CreationUtcTime: 2025-12-16 21:48:18.655
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.653
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1134.004\bin\calc.dll
+CreationUtcTime: 2025-12-16 21:48:18.653
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.647
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1134.002\src\GetToken.ps1
+CreationUtcTime: 2025-12-16 21:48:18.647
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.640
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1134.001\bin\BadPotato.exe
+CreationUtcTime: 2025-12-16 21:48:18.640
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.570
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1114.001\src\Get-Inbox.ps1
+CreationUtcTime: 2025-12-16 21:48:18.570
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.544
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1110.003\src\parse_net_users.bat
+CreationUtcTime: 2025-12-16 21:48:18.544
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.492
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1106\bin\x64\Syscall.exe
+CreationUtcTime: 2025-12-16 21:48:18.490
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.479
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1105\src\T1105.bat
+CreationUtcTime: 2025-12-16 21:48:18.479
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.477
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1105\src\T1105-download-file.vbs
+CreationUtcTime: 2025-12-16 21:48:18.477
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.467
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1105\bin\libcurl.dll
+CreationUtcTime: 2025-12-16 21:48:18.467
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.455
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1105\bin\GUP.exe
+CreationUtcTime: 2025-12-16 21:48:18.455
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.417
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1090.003\src\Psiphon.bat
+CreationUtcTime: 2025-12-16 21:48:18.417
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.390
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1087.002\bin\AdFind.exe
+CreationUtcTime: 2025-12-16 21:48:18.390
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.374
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1082\src\griffon_recon.vbs
+CreationUtcTime: 2025-12-16 21:48:18.372
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.346
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1074.001\src\Discovery.bat
+CreationUtcTime: 2025-12-16 21:48:18.346
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.300
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1071\bin\telnet_server.exe
+CreationUtcTime: 2025-12-16 21:48:18.300
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.271
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1071\bin\telnet_client.exe
+CreationUtcTime: 2025-12-16 21:48:18.271
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.265
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1071.004\src\T1071-dns-domain-length.ps1
+CreationUtcTime: 2025-12-16 21:48:18.265
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.263
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1071.004\src\T1071-dns-beacon.ps1
+CreationUtcTime: 2025-12-16 21:48:18.263
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.189
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1059.005\src\sys_info.vbs
+CreationUtcTime: 2025-12-16 21:48:18.189
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.173
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1059.003\src\t1059.003_cmd.cmd
+CreationUtcTime: 2025-12-16 21:48:18.173
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.160
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1059.001\src\test.ps1
+CreationUtcTime: 2025-12-16 21:48:18.160
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.158
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1059.001\src\Invoke-DownloadCradle.ps1
+CreationUtcTime: 2025-12-16 21:48:18.158
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.152
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1059.001\bin\SOAPHound.exe
+CreationUtcTime: 2025-12-16 21:48:18.152
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.142
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1056.004\src\x64\T1056.004.dll
+CreationUtcTime: 2025-12-16 21:48:18.142
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.139
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1056.004\src\Win32\T1056.004.dll
+CreationUtcTime: 2025-12-16 21:48:18.139
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.123
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1056.004\bin\T1056.004x86.dll
+CreationUtcTime: 2025-12-16 21:48:18.123
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.119
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1056.004\bin\T1056.004x64.dll
+CreationUtcTime: 2025-12-16 21:48:18.119
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.108
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1056.001\src\Get-Keystrokes.ps1
+CreationUtcTime: 2025-12-16 21:48:18.108
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.094
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\src\x64\RedVanity\build.bat
+CreationUtcTime: 2025-12-16 21:48:18.094
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.088
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\src\x64\RWXInjection\build.bat
+CreationUtcTime: 2025-12-16 21:48:18.088
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.086
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\src\x64\InjectView\build.bat
+CreationUtcTime: 2025-12-16 21:48:18.086
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.041
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\vuln_dll\msys-2.0.dll
+CreationUtcTime: 2025-12-16 21:48:18.041
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.035
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\uuid_injection.exe
+CreationUtcTime: 2025-12-16 21:48:18.033
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.031
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\searchVuln.exe
+CreationUtcTime: 2025-12-16 21:48:18.031
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.027
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\redVanity.exe
+CreationUtcTime: 2025-12-16 21:48:18.027
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:18 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:18.005
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\UuidFromStringA.exe
+CreationUtcTime: 2025-12-16 21:48:18.005
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.983
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\RtlCreateUserThread.exe
+CreationUtcTime: 2025-12-16 21:48:17.983
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.979
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\RWXinjectionLocal.exe
+CreationUtcTime: 2025-12-16 21:48:17.979
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.977
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\InjectView.exe
+CreationUtcTime: 2025-12-16 21:48:17.977
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.955
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\EtwpCreateEtwThread.exe
+CreationUtcTime: 2025-12-16 21:48:17.955
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.934
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\CreateThreadNative.exe
+CreationUtcTime: 2025-12-16 21:48:17.934
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.914
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\CreateThread.exe
+CreationUtcTime: 2025-12-16 21:48:17.912
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.890
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\CreateRemoteThreadNative.exe
+CreationUtcTime: 2025-12-16 21:48:17.890
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.870
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055\bin\x64\CreateRemoteThread.exe
+CreationUtcTime: 2025-12-16 21:48:17.870
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.861
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.015\src\build.bat
+CreationUtcTime: 2025-12-16 21:48:17.861
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.844
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.015\bin\listPlanting.exe
+CreationUtcTime: 2025-12-16 21:48:17.844
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.833
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.012\src\Start-Hollow.ps1
+CreationUtcTime: 2025-12-16 21:48:17.833
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.807
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.012\bin\x64\CreateProcessWithPipe.exe
+CreationUtcTime: 2025-12-16 21:48:17.807
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.782
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.012\bin\x64\CreateProcess.exe
+CreationUtcTime: 2025-12-16 21:48:17.782
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.773
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.011\src\vsdevcmd_x86.bat
+CreationUtcTime: 2025-12-16 21:48:17.773
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.771
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.011\src\vsdevcmd_x64.bat
+CreationUtcTime: 2025-12-16 21:48:17.771
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.751
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.011\src\build_x86.bat
+CreationUtcTime: 2025-12-16 21:48:17.750
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.750
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.011\src\build_x64.bat
+CreationUtcTime: 2025-12-16 21:48:17.750
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.745
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.011\bin\xbin.exe
+CreationUtcTime: 2025-12-16 21:48:17.745
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.739
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.011\bin\T1055.011_x86.exe
+CreationUtcTime: 2025-12-16 21:48:17.739
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.735
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.011\bin\T1055.011_x64.exe
+CreationUtcTime: 2025-12-16 21:48:17.735
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.729
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.004\src\x64\T1055.dll
+CreationUtcTime: 2025-12-16 21:48:17.729
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.724
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.004\src\Win32\T1055.dll
+CreationUtcTime: 2025-12-16 21:48:17.724
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.694
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.004\bin\x64\NtQueueApcThreadEx.exe
+CreationUtcTime: 2025-12-16 21:48:17.694
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.674
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.004\bin\x64\EarlyBird.exe
+CreationUtcTime: 2025-12-16 21:48:17.674
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.670
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.004\bin\T1055.exe
+CreationUtcTime: 2025-12-16 21:48:17.670
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.666
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.003\src\build.bat
+CreationUtcTime: 2025-12-16 21:48:17.664
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.660
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.003\bin\InjectContext.exe
+CreationUtcTime: 2025-12-16 21:48:17.660
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.654
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.002\src\build.bat
+CreationUtcTime: 2025-12-16 21:48:17.654
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.648
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.002\bin\RedInjection.exe
+CreationUtcTime: 2025-12-16 21:48:17.648
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.642
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.001\src\x64\T1055.001.dll
+CreationUtcTime: 2025-12-16 21:48:17.642
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.639
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1055.001\src\Win32\T1055.001.dll
+CreationUtcTime: 2025-12-16 21:48:17.639
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.585
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1047\bin\calc.dll
+CreationUtcTime: 2025-12-16 21:48:17.585
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.527
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1036.007\src\T1036.007_masquerading.vbs
+CreationUtcTime: 2025-12-16 21:48:17.527
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.527
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1036.007\src\T1036.007_masquerading.ps1
+CreationUtcTime: 2025-12-16 21:48:17.525
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.507
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1036.003\src\T1036.003_test.bat
+CreationUtcTime: 2025-12-16 21:48:17.505
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.505
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1036.003\src\T1036.003_masquerading.vbs
+CreationUtcTime: 2025-12-16 21:48:17.505
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.500
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1036.003\bin\T1036.003.exe
+CreationUtcTime: 2025-12-16 21:48:17.500
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.486
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1027\src\T1027-cc-macro.xlsm
+CreationUtcTime: 2025-12-16 21:48:17.486
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.472
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1027.007\src\build.bat
+CreationUtcTime: 2025-12-16 21:48:17.472
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.455
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1027.007\bin\ninja_syscall1.exe
+CreationUtcTime: 2025-12-16 21:48:17.455
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.246
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1027.004\bin\T1027.004_DynamicCompile.exe
+CreationUtcTime: 2025-12-16 21:48:17.246
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:17 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:17.183
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1016\src\qakbot.bat
+CreationUtcTime: 2025-12-16 21:48:17.183
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:16 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:16.433
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\atomics\T1003.001\src\Out-Minidump.ps1
+CreationUtcTime: 2025-12-16 21:48:16.433
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:15 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:15.723
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\atomic-red-team-master\.devcontainer\setup.ps1
+CreationUtcTime: 2025-12-16 21:48:15.723
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:06 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:48:05.327
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51424
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 140.82.113.4
+DestinationHostname: lb-140-82-113-4-iad.github.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:48:05 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:05.127
+SourceProcessGUID: {f995aebf-d33f-6941-f402-000000000e00}
+SourceProcessId: 6816
+SourceThreadId: 9888
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d395-6941-0203-000000000e00}
+TargetProcessId: 7304
+TargetImage: C:\Windows\system32\HOSTNAME.EXE
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:05 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:05.127
+ProcessGuid: {f995aebf-d395-6941-0203-000000000e00}
+ProcessId: 7304
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ParentProcessId: 6816
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\8292f423-33a6-4bd8-81f2-94644a38db85.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:05 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:48:05.031
+SourceProcessGUID: {f995aebf-d33f-6941-f402-000000000e00}
+SourceProcessId: 6816
+SourceThreadId: 9888
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d395-6941-0103-000000000e00}
+TargetProcessId: 6604
+TargetImage: C:\Windows\system32\HOSTNAME.EXE
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:05 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:48:05.031
+ProcessGuid: {f995aebf-d395-6941-0103-000000000e00}
+ProcessId: 6604
+Image: C:\Windows\System32\HOSTNAME.EXE
+FileVersion: 10.0.26100.2161 (WinBuild.160101.0800)
+Description: Hostname APP
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: hostname.exe
+CommandLine: ""C:\Windows\system32\HOSTNAME.EXE""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8FF283FB7A282A9B2B30235016669DFE795665BCBB254FD17AC31FA9308D89D9
+ParentProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ParentProcessId: 6816
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\8292f423-33a6-4bd8-81f2-94644a38db85.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:04 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:04.774
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\Documents\WindowsPowerShell\Modules\powershell-yaml\0.4.12\build.ps1
+CreationUtcTime: 2025-12-16 21:48:04.774
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:04 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:04.774
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\Documents\WindowsPowerShell\Modules\powershell-yaml\0.4.12\Tests\powershell-yaml.Tests.ps1
+CreationUtcTime: 2025-12-16 21:48:04.774
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:04 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:04.772
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\Documents\WindowsPowerShell\Modules\powershell-yaml\0.4.12\lib\netstandard2.1\YamlDotNet.dll
+CreationUtcTime: 2025-12-16 21:48:04.770
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:04 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:04.770
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\Documents\WindowsPowerShell\Modules\powershell-yaml\0.4.12\lib\netstandard2.1\PowerShellYamlSerializer.dll
+CreationUtcTime: 2025-12-16 21:48:04.770
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:04 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:04.764
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\Documents\WindowsPowerShell\Modules\powershell-yaml\0.4.12\lib\net47\YamlDotNet.dll
+CreationUtcTime: 2025-12-16 21:48:04.764
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:48:04 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:48:04.764
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\Documents\WindowsPowerShell\Modules\powershell-yaml\0.4.12\lib\net47\PowerShellYamlSerializer.dll
+CreationUtcTime: 2025-12-16 21:48:04.764
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:51 PM","22","Dns query:
+RuleName: -
+UtcTime: 2025-12-16 21:46:49.673
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+QueryName: cdn.powershellgallery.com
+QueryStatus: 0
+QueryResults: type: 5 tm-psgallery-prod-eastus.trafficmanager.net;type: 5 cdn.powershellgallery.com.edgesuite.net;type: 5 a1144.dscd.akamai.net;::ffff:23.40.179.60;::ffff:23.40.179.32;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:50 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:49.683
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51393
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 23.40.179.60
+DestinationHostname: a23-40-179-60.deploy.static.akamaitechnologies.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:50 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:49.576
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51392
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.41
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:50 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:49.552
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51391
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.41
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:49 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:48.435
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51389
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.41
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:49 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:48.350
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51388
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.41
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:46 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:45.301
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51387
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.41
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:46 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:45.288
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51386
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.41
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:46 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:45.259
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51385
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 13.107.246.41
+DestinationHostname: -
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:46 PM","22","Dns query:
+RuleName: -
+UtcTime: 2025-12-16 21:46:45.259
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+QueryName: www.powershellgallery.com
+QueryStatus: 0
+QueryResults: type: 5 frontdoor-powershellgallery-cthqd0epb9c7c8fe.z01.azurefd.net;type: 5 mr-z01.tm-azurefd.net;type: 5 shed.dual-low.part-0013.t-0009.t-msedge.net;type: 5 part-0013.t-0009.t-msedge.net;::ffff:13.107.246.41;::ffff:13.107.213.41;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:46 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:43.807
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51384
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 23.49.251.230
+DestinationHostname: a23-49-251-230.deploy.static.akamaitechnologies.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:45 PM","22","Dns query:
+RuleName: -
+UtcTime: 2025-12-16 21:46:43.796
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+QueryName: cdn.oneget.org
+QueryStatus: 0
+QueryResults: type: 5 tm-onegetcdn.trafficmanager.net;type: 5 cdn.oneget.org.edgesuite.net;type: 5 a155.dscd.akamai.net;::ffff:23.49.251.230;::ffff:23.49.251.236;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:45 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:43.718
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51383
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 23.221.242.10
+DestinationHostname: a23-221-242-10.deploy.static.akamaitechnologies.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:43 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:46:43.057
+SourceProcessGUID: {f995aebf-d33f-6941-f402-000000000e00}
+SourceProcessId: 6816
+SourceThreadId: 9888
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d343-6941-f902-000000000e00}
+TargetProcessId: 8484
+TargetImage: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7943bd|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+794070|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+793b60|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7a49e8|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7a3c60|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7a5496|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7a450a|C:\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.P521220ea#\d46785c8f773797fc91c7ba77282da00\Microsoft.PowerShell.Commands.Utility.ni.dll+97622e|C:\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.P521220ea#\d46785c8f773797fc91c7ba77282da00\Microsoft.PowerShell.Commands.Utility.ni.dll+9759b0|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10daa00|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:43 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:46:43.057
+ProcessGuid: {f995aebf-d343-6941-f902-000000000e00}
+ProcessId: 8484
+Image: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+FileVersion: 4.8.9232.0 built by: NET481REL1LAST_C
+Description: Visual C# Command Line Compiler
+Product: Microsoft? .NET Framework
+Company: Microsoft Corporation
+OriginalFileName: csc.exe
+CommandLine: ""C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe"" /noconfig /fullpaths @""C:\Users\runneradmin\AppData\Local\Temp\i2w312fa\i2w312fa.cmdline""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=AAE1DB57F898CA8BDA18590C56F86CED6D0EAD80C22033B76FDFE9119706F116
+ParentProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ParentProcessId: 6816
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\8292f423-33a6-4bd8-81f2-94644a38db85.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:42 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:46:42.944
+SourceProcessGUID: {f995aebf-d33f-6941-f402-000000000e00}
+SourceProcessId: 6816
+SourceThreadId: 9888
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d342-6941-f702-000000000e00}
+TargetProcessId: 876
+TargetImage: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7943bd|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+794070|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+793b60|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7a49e8|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7a3c60|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7a5496|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7a450a|C:\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.P521220ea#\d46785c8f773797fc91c7ba77282da00\Microsoft.PowerShell.Commands.Utility.ni.dll+97622e|C:\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.P521220ea#\d46785c8f773797fc91c7ba77282da00\Microsoft.PowerShell.Commands.Utility.ni.dll+9759b0|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10daa00|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:42 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:46:42.945
+ProcessGuid: {f995aebf-d342-6941-f702-000000000e00}
+ProcessId: 876
+Image: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+FileVersion: 4.8.9232.0 built by: NET481REL1LAST_C
+Description: Visual C# Command Line Compiler
+Product: Microsoft? .NET Framework
+Company: Microsoft Corporation
+OriginalFileName: csc.exe
+CommandLine: ""C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe"" /noconfig /fullpaths @""C:\Users\runneradmin\AppData\Local\Temp\onn2gucd\onn2gucd.cmdline""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=AAE1DB57F898CA8BDA18590C56F86CED6D0EAD80C22033B76FDFE9119706F116
+ParentProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ParentProcessId: 6816
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\8292f423-33a6-4bd8-81f2-94644a38db85.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:42 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:46:42.543
+SourceProcessGUID: {f995aebf-d33f-6941-f402-000000000e00}
+SourceProcessId: 6816
+SourceThreadId: 9888
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-d342-6941-f502-000000000e00}
+TargetProcessId: 8416
+TargetImage: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7943bd|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+794070|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+793b60|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7a49e8|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7a3c60|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7a5496|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+7a450a|C:\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.P521220ea#\d46785c8f773797fc91c7ba77282da00\Microsoft.PowerShell.Commands.Utility.ni.dll+97622e|C:\Windows\assembly\NativeImages_v4.0.30319_64\Microsoft.P521220ea#\d46785c8f773797fc91c7ba77282da00\Microsoft.PowerShell.Commands.Utility.ni.dll+9759b0|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10daa00|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FFE0FC03401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:42 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:46:42.529
+ProcessGuid: {f995aebf-d342-6941-f502-000000000e00}
+ProcessId: 8416
+Image: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
+FileVersion: 4.8.9232.0 built by: NET481REL1LAST_C
+Description: Visual C# Command Line Compiler
+Product: Microsoft? .NET Framework
+Company: Microsoft Corporation
+OriginalFileName: csc.exe
+CommandLine: ""C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe"" /noconfig /fullpaths @""C:\Users\runneradmin\AppData\Local\Temp\puz325uo\puz325uo.cmdline""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=AAE1DB57F898CA8BDA18590C56F86CED6D0EAD80C22033B76FDFE9119706F116
+ParentProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ParentProcessId: 6816
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\8292f423-33a6-4bd8-81f2-94644a38db85.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:42 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:39.930
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51377
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 140.82.114.10
+DestinationHostname: lb-140-82-114-10-iad.github.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:42 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:39.850
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51376
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 140.82.113.4
+DestinationHostname: lb-140-82-113-4-iad.github.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:42 PM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-16 21:46:39.644
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: false
+SourceIp: 10.1.0.135
+SourceHostname: runnervm8j6r3.530sfc1j1x4exldi14v4jjn2ng.cx.internal.cloudapp.net
+SourcePort: 51375
+SourcePortName: -
+DestinationIsIpv6: false
+DestinationIp: 185.199.109.133
+DestinationHostname: cdn-185-199-109-133.github.com
+DestinationPort: 443
+DestinationPortName: https"
+"12/16/2025 9:46:41 PM","22","Dns query:
+RuleName: -
+UtcTime: 2025-12-16 21:46:39.926
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+QueryName: codeload.github.com
+QueryStatus: 0
+QueryResults: ::ffff:140.82.114.10;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","22","Dns query:
+RuleName: -
+UtcTime: 2025-12-16 21:46:39.846
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+QueryName: github.com
+QueryStatus: 0
+QueryResults: ::ffff:140.82.113.4;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","22","Dns query:
+RuleName: -
+UtcTime: 2025-12-16 21:46:39.636
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+QueryName: raw.githubusercontent.com
+QueryStatus: 0
+QueryResults: ::ffff:185.199.109.133;::ffff:185.199.110.133;::ffff:185.199.111.133;::ffff:185.199.108.133;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.751
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\sandbox\setupsandbox.ps1
+CreationUtcTime: 2025-12-16 21:46:41.751
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.666
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\install-atomicsfolder.ps1
+CreationUtcTime: 2025-12-16 21:46:41.666
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.650
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\install-atomicredteam.ps1
+CreationUtcTime: 2025-12-16 21:46:41.650
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.634
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\docker\setup.ps1
+CreationUtcTime: 2025-12-16 21:46:41.634
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.569
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\config.ps1
+CreationUtcTime: 2025-12-16 21:46:41.567
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.519
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\New-Atomic.ps1
+CreationUtcTime: 2025-12-16 21:46:41.519
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.504
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\Invoke-WebRequestVerifyHash.ps1
+CreationUtcTime: 2025-12-16 21:46:41.504
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.487
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\Invoke-SetupAtomicRunner.ps1
+CreationUtcTime: 2025-12-16 21:46:41.487
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.471
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\Invoke-RunnerScheduleMethods.ps1
+CreationUtcTime: 2025-12-16 21:46:41.471
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.456
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\Invoke-KillProcessTree.ps1
+CreationUtcTime: 2025-12-16 21:46:41.456
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.440
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\Invoke-KickoffAtomicRunner.ps1
+CreationUtcTime: 2025-12-16 21:46:41.440
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.424
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\Invoke-FetchFromZip.ps1
+CreationUtcTime: 2025-12-16 21:46:41.424
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.406
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\Invoke-AtomicTest.ps1
+CreationUtcTime: 2025-12-16 21:46:41.406
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.388
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\Invoke-AtomicRunner.ps1
+CreationUtcTime: 2025-12-16 21:46:41.388
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.372
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\Get-PreferredIPAddress.ps1
+CreationUtcTime: 2025-12-16 21:46:41.372
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.356
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\Get-AtomicTechnique.ps1
+CreationUtcTime: 2025-12-16 21:46:41.356
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.307
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Public\AtomicRunnerService.ps1
+CreationUtcTime: 2025-12-16 21:46:41.307
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.275
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Private\Write-PrereqResults.ps1
+CreationUtcTime: 2025-12-16 21:46:41.275
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.261
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Private\Write-KeyValue.ps1
+CreationUtcTime: 2025-12-16 21:46:41.259
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.242
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Private\Show-Details.ps1
+CreationUtcTime: 2025-12-16 21:46:41.242
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.222
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Private\Replace-InputArgs.ps1
+CreationUtcTime: 2025-12-16 21:46:41.222
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.202
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Private\Invoke-Process.ps1
+CreationUtcTime: 2025-12-16 21:46:41.202
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.180
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Private\Invoke-ExecuteCommand.ps1
+CreationUtcTime: 2025-12-16 21:46:41.180
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.160
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Private\Invoke-CheckPrereqs.ps1
+CreationUtcTime: 2025-12-16 21:46:41.160
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.140
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Private\Get-TargetInfo.ps1
+CreationUtcTime: 2025-12-16 21:46:41.138
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.122
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Private\Get-PrereqExecutor.ps1
+CreationUtcTime: 2025-12-16 21:46:41.118
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:41 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:41.102
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\AtomicRedTeam\tmp\invoke-atomicredteam-master\Private\AtomicClassSchema.ps1
+CreationUtcTime: 2025-12-16 21:46:41.102
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:39 PM","12","Registry object added or deleted:
+RuleName: RegistryEvent
+EventType: CreateKey
+UtcTime: 2025-12-16 21:46:39.646
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetObject: HKLM\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:39 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:46:39.282
+SourceProcessGUID: {f995aebf-d332-6941-3e02-000000000e00}
+SourceProcessId: 8888
+SourceThreadId: 4844
+SourceImage: C:\actions-runner\extracted\bin\Runner.Worker.exe
+TargetProcessGUID: {f995aebf-d33f-6941-f402-000000000e00}
+TargetProcessId: 6816
+TargetImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\actions-runner\extracted\bin\System.Diagnostics.Process.dll+da06|C:\actions-runner\extracted\bin\System.Diagnostics.Process.dll+1947f|UNKNOWN(00007FFE085A09EF)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:39 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:46:39.282
+ProcessGuid: {f995aebf-d33f-6941-f402-000000000e00}
+ProcessId: 6816
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+FileVersion: 10.0.26100.5074 (WinBuild.160101.0800)
+Description: Windows PowerShell
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: PowerShell.EXE
+CommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\8292f423-33a6-4bd8-81f2-94644a38db85.ps1'""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-cd30-6941-4bc3-0b0000000000}
+LogonId: 0xBC34B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=0FF6F2C94BC7E2833A5F7E16DE1622E5DBA70396F31C7D5F56381870317E8C46
+ParentProcessGuid: {f995aebf-d332-6941-3e02-000000000e00}
+ParentProcessId: 8888
+ParentImage: C:\actions-runner\extracted\bin\Runner.Worker.exe
+ParentCommandLine: ""C:\actions-runner\extracted\bin\Runner.Worker.exe"" spawnclient 1920 1932
+ParentUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:39 PM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-16 21:46:39.280
+ProcessGuid: {f995aebf-d332-6941-3e02-000000000e00}
+ProcessId: 8888
+Image: C:\actions-runner\extracted\bin\Runner.Worker.exe
+TargetFilename: D:\a\_temp\8292f423-33a6-4bd8-81f2-94644a38db85.ps1
+CreationUtcTime: 2025-12-16 21:46:39.280
+User: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:39 PM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-16 21:46:39.252
+SourceProcessGUID: {f995aebf-d332-6941-3e02-000000000e00}
+SourceProcessId: 8888
+SourceThreadId: 7988
+SourceImage: C:\actions-runner\extracted\bin\Runner.Worker.exe
+TargetProcessGUID: {f995aebf-d33f-6941-f302-000000000e00}
+TargetProcessId: 2332
+TargetImage: C:\Windows\system32\chcp.COM
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\actions-runner\extracted\bin\System.Diagnostics.Process.dll+da06|C:\actions-runner\extracted\bin\System.Diagnostics.Process.dll+1947f|UNKNOWN(00007FFE085A09EF)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/16/2025 9:46:35 PM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-16 21:46:35.339
+ProcessGuid: {f995aebf-d33b-6941-f202-000000000e00}
+ProcessId: 7836
+Image: C:\Windows\System32\wbem\WmiPrvSE.exe
+FileVersion: 10.0.26100.7019 (WinBuild.160101.0800)
+Description: WMI Provider Host
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: Wmiprvse.exe
+CommandLine: C:\Windows\system32\wbem\wmiprvse.exe -Embedding
+CurrentDirectory: C:\Windows\system32\
+User: NT AUTHORITY\SYSTEM
+LogonGuid: {f995aebf-cd16-6941-e703-000000000000}
+LogonId: 0x3E7
+TerminalSessionId: 0
+IntegrityLevel: System
+Hashes: SHA256=240C985EED57DEE92E0415F86CE67439E24179EA3281D57A395A90E92F6844D5
+ParentProcessGuid: {f995aebf-cd16-6941-0e00-000000000e00}
+ParentProcessId: 512
+ParentImage: C:\Windows\System32\svchost.exe
+ParentCommandLine: C:\Windows\system32\svchost.exe -k DcomLaunch -p
+ParentUser: NT AUTHORITY\SYSTEM"
+"12/16/2025 9:46:33 PM","7","Image loaded:
+RuleName: ImageLoad
+UtcTime: 2025-12-16 21:46:33.149
+ProcessGuid: {f995aebf-d339-6941-f002-000000000e00}
+ProcessId: 3288
+Image: C:\Windows\Sysmon64.exe
+ImageLoaded: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MpOAV.dll
+FileVersion: 4.18.25110.5 (4a6978a838df7287d907bb2ee8a2eeb2373b186e)
+Description: IOfficeAntiVirus Module
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: MpOAV.dll
+Hashes: SHA256=0EF8AE9CC8E3722C0AE09B55531BBA2F2A3422CCF4A1BB9B37ABDB4808AAC232
+Signed: true
+Signature: Microsoft Windows
+SignatureStatus: Valid
+User: NT AUTHORITY\SYSTEM"
+"12/16/2025 9:46:33 PM","4","Sysmon service state changed:
+UtcTime: 2025-12-16 21:46:33.203
+State: Started
+Version: 15.15
+SchemaVersion: 4.90"
+"12/16/2025 9:46:33 PM","16","Sysmon config state changed:
+UtcTime: 2025-12-16 21:46:33.055
+Configuration: D:\a\sysmon\sysmon\sysmon\sysmon-ws.xml
+ConfigurationFileHash: SHA256=6B72FAED68DF4CC406081FC6445D7CF6151C47A64165C5D03302A715BCE3DD7C"
