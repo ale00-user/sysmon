@@ -198,8 +198,17 @@ jobs:
       - name: Install Sysmon
         shell: powershell
         run: |
-          .\Sysmon\Sysmon64.exe -accepteula -i "sysmon\sysmon-${{ matrix.config }}.xml" 2>&1
+          $ErrorActionPreference = 'SilentlyContinue'
+          & .\Sysmon\Sysmon64.exe -accepteula -i "sysmon\sysmon-${{ matrix.config }}.xml" *>&1 | Write-Host
           Start-Sleep -Seconds 5
+          $service = Get-Service -Name Sysmon64 -ErrorAction SilentlyContinue
+          if ($service -and $service.Status -eq 'Running') {
+            Write-Host '[OK] Sysmon installed'
+            exit 0
+          } else {
+            Write-Host '[FAIL] Sysmon not running'
+            exit 1
+          }
 
       - name: Install Atomic Red Team
         shell: powershell
