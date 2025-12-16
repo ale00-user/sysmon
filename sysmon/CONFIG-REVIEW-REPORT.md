@@ -351,14 +351,14 @@ Tutte le configurazioni usano mask espanse per credential theft detection:
 
 | Config | Base Events | Atomic Events | Detection Rate |
 |--------|-------------|---------------|----------------|
-| ws | 53 | N/A* | - |
+| ws | 53 | TBD | TBD |
 | srv | 64 | 83 | 87%+ |
 | dc | 500 | 1000 | 95%+ |
-| sql | 47 | N/A* | - |
-| exch | 72 | N/A* | - |
+| sql | 47 | TBD | TBD |
+| exch | 72 | TBD | TBD |
 | iis | 53 | 89 | 90%+ |
 
-*N/A: Atomic Red Team tests non eseguiti nel workflow CI
+**Update:** Workflow GitHub Actions aggiornato per eseguire Atomic Red Team su TUTTE le 6 configurazioni.
 
 ---
 

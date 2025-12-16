@@ -183,7 +183,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        config: [srv, dc, iis]
+        config: [ws, srv, dc, sql, exch, iis]
 
     steps:
       - uses: actions/checkout@v4
