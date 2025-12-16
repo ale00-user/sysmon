@@ -12,49 +12,94 @@
   <HashAlgorithms>sha256</HashAlgorithms>
   <EventFiltering>
 
-    <!-- EVENT ID 1: PROCESS CREATE -->
+    <!-- EVENT ID 1: PROCESS CREATE
+         IIS: Refactored with AND rules for w3wp.exe/inetinfo.exe precision
+         ============================================ -->
     <RuleGroup name="ProcessCreate" groupRelation="or">
       <ProcessCreate onmatch="include">
-        <!-- CRITICAL: IIS worker spawning processes = WEBSHELL/RCE -->
-        <ParentImage condition="is">C:\Windows\System32\inetsrv\w3wp.exe</ParentImage>
-        <ParentImage condition="is">C:\Windows\SysWOW64\inetsrv\w3wp.exe</ParentImage>
-        <ParentImage condition="is">C:\Windows\System32\inetsrv\inetinfo.exe</ParentImage>
+        <!-- ===== CRITICAL: w3wp.exe spawning processes = WEBSHELL/RCE ===== -->
+        <!-- Any child process from w3wp.exe is HIGH PRIORITY -->
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\w3wp.exe</ParentImage>
+          <Image condition="image">cmd.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\w3wp.exe</ParentImage>
+          <Image condition="image">powershell.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\w3wp.exe</ParentImage>
+          <Image condition="image">pwsh.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\w3wp.exe</ParentImage>
+          <Image condition="image">whoami.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\w3wp.exe</ParentImage>
+          <Image condition="image">net.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\w3wp.exe</ParentImage>
+          <Image condition="image">net1.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\w3wp.exe</ParentImage>
+          <Image condition="image">hostname.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\w3wp.exe</ParentImage>
+          <Image condition="image">systeminfo.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\w3wp.exe</ParentImage>
+          <Image condition="image">ipconfig.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\w3wp.exe</ParentImage>
+          <Image condition="image">certutil.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\w3wp.exe</ParentImage>
+          <Image condition="image">bitsadmin.exe</Image>
+        </Rule>
 
-        <!-- PowerShell/CMD -->
-        <Image condition="image">powershell.exe</Image>
-        <Image condition="image">pwsh.exe</Image>
-        <Image condition="image">cmd.exe</Image>
+        <!-- ===== inetinfo.exe spawning processes ===== -->
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\inetinfo.exe</ParentImage>
+          <Image condition="image">cmd.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <ParentImage condition="end with">\inetinfo.exe</ParentImage>
+          <Image condition="image">powershell.exe</Image>
+        </Rule>
+
+        <!-- ===== Processes from suspicious locations (always monitor) ===== -->
+        <Image condition="begin with">C:\inetpub\</Image>
+        <Image condition="begin with">C:\Windows\Temp\</Image>
+        <Image condition="begin with">C:\Users\</Image>
+        <Image condition="begin with">C:\Temp\</Image>
+
+        <!-- ===== PowerShell download cradles (always suspicious) ===== -->
         <CommandLine condition="contains">-enc</CommandLine>
+        <CommandLine condition="contains">-encodedcommand</CommandLine>
         <CommandLine condition="contains">downloadstring</CommandLine>
         <CommandLine condition="contains">Invoke-</CommandLine>
+        <CommandLine condition="contains">IEX</CommandLine>
+        <CommandLine condition="contains">Net.WebClient</CommandLine>
 
-        <!-- Discovery -->
-        <Image condition="image">whoami.exe</Image>
-        <Image condition="image">net.exe</Image>
-        <Image condition="image">systeminfo.exe</Image>
-        <Image condition="image">tasklist.exe</Image>
-        <Image condition="image">ipconfig.exe</Image>
-        <Image condition="image">netstat.exe</Image>
-        <Image condition="image">hostname.exe</Image>
-
-        <!-- Credential Access -->
+        <!-- ===== Credential Access (always monitor) ===== -->
         <Image condition="image">procdump.exe</Image>
+        <Image condition="image">procdump64.exe</Image>
         <CommandLine condition="contains">comsvcs.dll</CommandLine>
+        <CommandLine condition="contains">MiniDump</CommandLine>
+        <Image condition="image">vssadmin.exe</Image>
 
-        <!-- LOLBins -->
-        <Image condition="image">certutil.exe</Image>
-        <Image condition="image">mshta.exe</Image>
-        <Image condition="image">regsvr32.exe</Image>
-        <Image condition="image">rundll32.exe</Image>
-        <Image condition="image">bitsadmin.exe</Image>
-        <Image condition="image">wscript.exe</Image>
-        <Image condition="image">cscript.exe</Image>
-
-        <!-- Lateral -->
+        <!-- ===== Lateral Movement ===== -->
         <Image condition="image">psexec.exe</Image>
         <Image condition="image">psexesvc.exe</Image>
 
-        <!-- Service/Task -->
+        <!-- ===== Persistence (always monitor) ===== -->
         <Image condition="image">schtasks.exe</Image>
         <Image condition="image">sc.exe</Image>
       </ProcessCreate>
@@ -63,13 +108,16 @@
     <RuleGroup name="ProcessCreate_Exclude" groupRelation="or">
       <ProcessCreate onmatch="exclude">
         <Image condition="begin with">C:\Program Files\SplunkUniversalForwarder\</Image>
+        <ParentImage condition="is">C:\Program Files\SplunkUniversalForwarder\bin\splunkd.exe</ParentImage>
       </ProcessCreate>
     </RuleGroup>
 
-    <!-- EVENT ID 11: FILE CREATE - WEBSHELL DETECTION -->
+    <!-- EVENT ID 11: FILE CREATE - WEBSHELL DETECTION
+         IIS: Path-scoped exe/dll to reduce patching noise
+         ============================================ -->
     <RuleGroup name="FileCreate" groupRelation="or">
       <FileCreate onmatch="include">
-        <!-- CRITICAL: Web file types -->
+        <!-- ===== CRITICAL: Web file types (ALWAYS monitor) ===== -->
         <TargetFilename condition="end with">.aspx</TargetFilename>
         <TargetFilename condition="end with">.ashx</TargetFilename>
         <TargetFilename condition="end with">.asmx</TargetFilename>
@@ -79,24 +127,81 @@
         <TargetFilename condition="end with">.jspx</TargetFilename>
         <TargetFilename condition="end with">.cfm</TargetFilename>
 
-        <!-- Config files (potential webshell hiding) -->
-        <TargetFilename condition="end with">.config</TargetFilename>
+        <!-- Config files in web paths -->
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\inetpub\</TargetFilename>
+          <TargetFilename condition="end with">.config</TargetFilename>
+        </Rule>
 
-        <!-- Webroot paths -->
-        <TargetFilename condition="begin with">C:\inetpub\</TargetFilename>
-        <TargetFilename condition="begin with">D:\inetpub\</TargetFilename>
-        <TargetFilename condition="begin with">D:\wwwroot\</TargetFilename>
-        <TargetFilename condition="begin with">E:\wwwroot\</TargetFilename>
+        <!-- ===== EXECUTABLES IN SUSPICIOUS PATHS ONLY (AND rules) ===== -->
+        <!-- exe/dll in inetpub = webshell dropping binary -->
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\inetpub\</TargetFilename>
+          <TargetFilename condition="end with">.exe</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\inetpub\</TargetFilename>
+          <TargetFilename condition="end with">.dll</TargetFilename>
+        </Rule>
 
-        <!-- Executables -->
-        <TargetFilename condition="end with">.exe</TargetFilename>
-        <TargetFilename condition="end with">.dll</TargetFilename>
-        <TargetFilename condition="end with">.bat</TargetFilename>
-        <TargetFilename condition="end with">.ps1</TargetFilename>
+        <!-- exe/dll in temp directories -->
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.exe</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.dll</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.exe</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.dll</TargetFilename>
+        </Rule>
 
-        <!-- System -->
-        <TargetFilename condition="begin with">C:\Windows\system32\</TargetFilename>
-        <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+        <!-- exe/dll in user profiles -->
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+          <TargetFilename condition="end with">.exe</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+          <TargetFilename condition="end with">.dll</TargetFilename>
+        </Rule>
+
+        <!-- exe/dll in ProgramData -->
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\ProgramData\</TargetFilename>
+          <TargetFilename condition="end with">.exe</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\ProgramData\</TargetFilename>
+          <TargetFilename condition="end with">.dll</TargetFilename>
+        </Rule>
+
+        <!-- ===== SCRIPTS IN SUSPICIOUS PATHS ===== -->
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\inetpub\</TargetFilename>
+          <TargetFilename condition="end with">.ps1</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\inetpub\</TargetFilename>
+          <TargetFilename condition="end with">.bat</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+          <TargetFilename condition="end with">.ps1</TargetFilename>
+        </Rule>
+        <Rule groupRelation="and">
+          <TargetFilename condition="begin with">C:\Users\</TargetFilename>
+          <TargetFilename condition="end with">.ps1</TargetFilename>
+        </Rule>
+
+        <!-- ===== Windows Tasks (persistence) ===== -->
+        <TargetFilename condition="begin with">C:\Windows\Tasks\</TargetFilename>
       </FileCreate>
     </RuleGroup>
 
@@ -105,6 +210,12 @@
         <!-- IIS Logs -->
         <TargetFilename condition="begin with">C:\inetpub\logs\</TargetFilename>
         <TargetFilename condition="end with">.log</TargetFilename>
+
+        <!-- Patching processes -->
+        <Image condition="is">C:\Windows\System32\TiWorker.exe</Image>
+        <Image condition="is">C:\Windows\System32\wuauclt.exe</Image>
+        <TargetFilename condition="contains">\WinSxS\</TargetFilename>
+        <TargetFilename condition="contains">\SoftwareDistribution\</TargetFilename>
       </FileCreate>
     </RuleGroup>
 
@@ -200,13 +311,41 @@
       </ImageLoad>
     </RuleGroup>
 
-    <!-- EVENT ID 10: PROCESS ACCESS -->
+    <!-- EVENT ID 10: PROCESS ACCESS
+         IIS: Expanded LSASS masks + CallTrace for high-signal detection
+         ============================================ -->
     <RuleGroup name="ProcessAccess" groupRelation="or">
       <ProcessAccess onmatch="include">
+        <!-- CallTrace from UNKNOWN = injection/shellcode -->
+        <CallTrace condition="begin with">UNKNOWN</CallTrace>
+
+        <!-- LSASS access with expanded masks -->
         <Rule groupRelation="and">
           <TargetImage condition="end with">lsass.exe</TargetImage>
-          <GrantedAccess condition="contains any">0x1010;0x1fffff</GrantedAccess>
+          <GrantedAccess condition="contains any">0x40;0x1000;0x1010;0x1038;0x1410;0x1438;0x143a;0x1fffff</GrantedAccess>
         </Rule>
+
+        <!-- w3wp.exe process injection attempts -->
+        <Rule groupRelation="and">
+          <TargetImage condition="end with">\w3wp.exe</TargetImage>
+          <GrantedAccess condition="contains any">0x1fffff</GrantedAccess>
+        </Rule>
+      </ProcessAccess>
+    </RuleGroup>
+
+    <RuleGroup name="ProcessAccess_Exclude" groupRelation="or">
+      <ProcessAccess onmatch="exclude">
+        <!-- Legitimate system processes -->
+        <SourceImage condition="is">C:\Windows\system32\wbem\wmiprvse.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\svchost.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\csrss.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\lsass.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\services.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\wininit.exe</SourceImage>
+
+        <!-- Windows Defender -->
+        <SourceImage condition="begin with">C:\ProgramData\Microsoft\Windows Defender\</SourceImage>
+        <SourceImage condition="begin with">C:\Program Files\Windows Defender\</SourceImage>
       </ProcessAccess>
     </RuleGroup>
 
@@ -221,29 +360,93 @@
       </PipeEvent>
     </RuleGroup>
 
-    <!-- EVENT ID 19-21: WMI -->
+    <!-- EVENT ID 19-21: WMI EVENTS -->
     <RuleGroup name="WmiEvent" groupRelation="or">
       <WmiEvent onmatch="include">
         <Operation condition="is">Created</Operation>
         <Operation condition="is">Modified</Operation>
+        <Operation condition="is">Deleted</Operation>
       </WmiEvent>
     </RuleGroup>
 
-    <!-- EVENT ID 8: REMOTE THREAD -->
+    <!-- EVENT ID 8: CREATE REMOTE THREAD
+         IIS: Include-based for sensitive targets + suspicious sources
+         ============================================ -->
     <RuleGroup name="CreateRemoteThread" groupRelation="or">
-      <CreateRemoteThread onmatch="exclude">
-        <SourceImage condition="is">C:\Windows\system32\svchost.exe</SourceImage>
-        <SourceImage condition="is">C:\Windows\system32\csrss.exe</SourceImage>
+      <CreateRemoteThread onmatch="include">
+        <!-- Sensitive target processes -->
+        <TargetImage condition="end with">\lsass.exe</TargetImage>
+        <TargetImage condition="end with">\w3wp.exe</TargetImage>
+        <TargetImage condition="end with">\winlogon.exe</TargetImage>
+        <TargetImage condition="end with">\csrss.exe</TargetImage>
+
+        <!-- Suspicious source processes (LOLBins) -->
+        <SourceImage condition="image">powershell.exe</SourceImage>
+        <SourceImage condition="image">pwsh.exe</SourceImage>
+        <SourceImage condition="image">rundll32.exe</SourceImage>
+        <SourceImage condition="image">mshta.exe</SourceImage>
+        <SourceImage condition="image">wscript.exe</SourceImage>
+        <SourceImage condition="image">cscript.exe</SourceImage>
+        <SourceImage condition="image">regsvr32.exe</SourceImage>
+
+        <!-- Suspicious source paths -->
+        <SourceImage condition="begin with">C:\Users\</SourceImage>
+        <SourceImage condition="begin with">C:\Windows\Temp\</SourceImage>
+        <SourceImage condition="begin with">C:\inetpub\</SourceImage>
+        <SourceImage condition="begin with">C:\Temp\</SourceImage>
       </CreateRemoteThread>
     </RuleGroup>
 
-    <!-- EVENT ID 22: DNS -->
+    <RuleGroup name="CreateRemoteThread_Exclude" groupRelation="or">
+      <CreateRemoteThread onmatch="exclude">
+        <!-- System processes -->
+        <SourceImage condition="is">C:\Windows\system32\svchost.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\csrss.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\lsass.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\services.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\wininit.exe</SourceImage>
+        <SourceImage condition="is">C:\Windows\system32\wbem\WmiPrvSE.exe</SourceImage>
+
+        <!-- Windows Defender -->
+        <SourceImage condition="begin with">C:\ProgramData\Microsoft\Windows Defender\Platform\</SourceImage>
+        <SourceImage condition="end with">\MsMpEng.exe</SourceImage>
+
+        <!-- CrowdStrike -->
+        <SourceImage condition="begin with">C:\Program Files\CrowdStrike\</SourceImage>
+
+        <!-- Carbon Black -->
+        <SourceImage condition="begin with">C:\Program Files\Carbon Black\</SourceImage>
+
+        <!-- SentinelOne -->
+        <SourceImage condition="begin with">C:\Program Files\SentinelOne\</SourceImage>
+      </CreateRemoteThread>
+    </RuleGroup>
+
+    <!-- EVENT ID 22: DNS QUERY
+         IIS: Include-based for suspicious processes only
+         ============================================ -->
     <RuleGroup name="DnsQuery" groupRelation="or">
-      <DnsQuery onmatch="exclude">
-        <QueryName condition="end with">.arpa</QueryName>
-        <QueryName condition="end with">.windowsupdate.com</QueryName>
-        <QueryName condition="end with">.update.microsoft.com</QueryName>
-        <Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\</Image>
+      <DnsQuery onmatch="include">
+        <!-- w3wp.exe making DNS = potential C2 from webshell -->
+        <Image condition="end with">\w3wp.exe</Image>
+
+        <!-- LOLBins making DNS queries -->
+        <Image condition="image">powershell.exe</Image>
+        <Image condition="image">pwsh.exe</Image>
+        <Image condition="image">cmd.exe</Image>
+        <Image condition="image">mshta.exe</Image>
+        <Image condition="image">wscript.exe</Image>
+        <Image condition="image">cscript.exe</Image>
+        <Image condition="image">rundll32.exe</Image>
+        <Image condition="image">regsvr32.exe</Image>
+        <Image condition="image">certutil.exe</Image>
+        <Image condition="image">bitsadmin.exe</Image>
+
+        <!-- Processes from webroot or suspicious paths -->
+        <Image condition="begin with">C:\inetpub\</Image>
+        <Image condition="begin with">C:\Windows\Temp\</Image>
+        <Image condition="begin with">C:\Users\</Image>
+        <Image condition="begin with">C:\Temp\</Image>
       </DnsQuery>
     </RuleGroup>
 
@@ -287,6 +490,99 @@
       <FileCreateStreamHash onmatch="exclude">
         <TargetFilename condition="end with">:Zone.Identifier</TargetFilename>
       </FileCreateStreamHash>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 6: DRIVER LOAD
+         Detects unsigned/suspicious kernel drivers - T1543.003, T1014
+         ============================================ -->
+    <RuleGroup name="DriverLoad" groupRelation="or">
+      <DriverLoad onmatch="include">
+        <!-- Unsigned drivers = suspicious -->
+        <Signed condition="is">false</Signed>
+
+        <!-- Drivers from suspicious locations -->
+        <ImageLoaded condition="begin with">C:\Users\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\Windows\Temp\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\Temp\</ImageLoaded>
+        <ImageLoaded condition="begin with">C:\inetpub\</ImageLoaded>
+
+        <!-- Known vulnerable drivers (BYOVD attacks) -->
+        <ImageLoaded condition="end with">\gdrv.sys</ImageLoaded>
+        <ImageLoaded condition="end with">\dbutil_2_3.sys</ImageLoaded>
+        <ImageLoaded condition="end with">\RTCore64.sys</ImageLoaded>
+        <ImageLoaded condition="end with">\RTCore32.sys</ImageLoaded>
+        <ImageLoaded condition="end with">\PROCEXP152.SYS</ImageLoaded>
+      </DriverLoad>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 9: RAW ACCESS READ
+         Detects raw disk access - T1006
+         ============================================ -->
+    <RuleGroup name="RawAccessRead" groupRelation="or">
+      <RawAccessRead onmatch="include">
+        <Device condition="begin with">\Device\HarddiskVolume</Device>
+      </RawAccessRead>
+    </RuleGroup>
+
+    <RuleGroup name="RawAccessRead_Exclude" groupRelation="or">
+      <RawAccessRead onmatch="exclude">
+        <!-- Windows Defender -->
+        <Image condition="begin with">C:\ProgramData\Microsoft\Windows Defender\</Image>
+        <!-- Volume Shadow Copy Service -->
+        <Image condition="is">C:\Windows\System32\vssvc.exe</Image>
+      </RawAccessRead>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 25: PROCESS TAMPERING
+         Detects process hollowing, herpaderping - T1055.012
+         ============================================ -->
+    <RuleGroup name="ProcessTampering" groupRelation="or">
+      <ProcessTampering onmatch="include">
+        <Type condition="contains">Image</Type>
+      </ProcessTampering>
+    </RuleGroup>
+
+    <!-- ============================================
+         EVENT ID 26: FILE DELETE DETECTED
+         Detects anti-forensics and evidence deletion - T1070.004
+         ============================================ -->
+    <RuleGroup name="FileDelete" groupRelation="or">
+      <FileDelete onmatch="include">
+        <!-- Webshell deletion (covering tracks) -->
+        <TargetFilename condition="end with">.aspx</TargetFilename>
+        <TargetFilename condition="end with">.ashx</TargetFilename>
+        <TargetFilename condition="end with">.asp</TargetFilename>
+
+        <!-- Executables deleted -->
+        <TargetFilename condition="end with">.exe</TargetFilename>
+        <TargetFilename condition="end with">.dll</TargetFilename>
+
+        <!-- Scripts deleted -->
+        <TargetFilename condition="end with">.ps1</TargetFilename>
+        <TargetFilename condition="end with">.bat</TargetFilename>
+
+        <!-- Deletions in suspicious locations -->
+        <TargetFilename condition="begin with">C:\inetpub\</TargetFilename>
+        <TargetFilename condition="begin with">C:\Windows\Temp\</TargetFilename>
+        <TargetFilename condition="begin with">C:\Temp\</TargetFilename>
+
+        <!-- Log deletion (anti-forensics) -->
+        <TargetFilename condition="end with">.log</TargetFilename>
+        <TargetFilename condition="end with">.evtx</TargetFilename>
+      </FileDelete>
+    </RuleGroup>
+
+    <RuleGroup name="FileDelete_Exclude" groupRelation="or">
+      <FileDelete onmatch="exclude">
+        <!-- IIS log rotation -->
+        <TargetFilename condition="begin with">C:\inetpub\logs\</TargetFilename>
+        <!-- Windows cleanup -->
+        <Image condition="is">C:\Windows\System32\cleanmgr.exe</Image>
+        <Image condition="is">C:\Windows\System32\TiWorker.exe</Image>
+      </FileDelete>
     </RuleGroup>
 
   </EventFiltering>

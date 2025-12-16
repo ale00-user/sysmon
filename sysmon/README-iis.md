@@ -38,19 +38,23 @@ Attack indicator:
 
 | Event ID | Name | Status | Notes |
 |----------|------|--------|-------|
-| 1 | ProcessCreate | Active | w3wp.exe parent focus |
+| 1 | ProcessCreate | Active | AND rules for w3wp/inetinfo |
 | 2 | FileCreateTime | Active | Webshell timestomping |
 | 3 | NetworkConnect | Active | Reverse shell ports |
 | 5 | ProcessTerminate | Active | IIS crash + EDR |
+| 6 | DriverLoad | Active | Unsigned/BYOVD drivers |
 | 7 | ImageLoad | Active | DLL injection into w3wp |
-| 8 | CreateRemoteThread | Active | Injection detection |
-| 10 | ProcessAccess | Active | LSASS protection |
-| 11 | FileCreate | Active | Web file types in webroots |
+| 8 | CreateRemoteThread | Active | Include-based on targets |
+| 9 | RawAccessRead | Active | Raw disk access |
+| 10 | ProcessAccess | Active | 8 LSASS masks + CallTrace |
+| 11 | FileCreate | Active | Path-scoped with AND rules |
 | 13 | RegistryEvent | Active | Persistence + IIS keys |
 | 15 | FileCreateStreamHash | Active | ADS detection |
 | 17/18 | PipeEvent | Active | C2 frameworks |
-| 19/20/21 | WmiEvent | Active | WMI persistence |
-| 22 | DnsQuery | Active | Minimal exclusions |
+| 19/20/21 | WmiEvent | Active | WMI persistence + Deleted |
+| 22 | DnsQuery | Active | Include-based (LOLBins/w3wp) |
+| 25 | ProcessTampering | Active | Hollowing/herpaderping |
+| 26 | FileDelete | Active | Webshell cleanup detection |
 
 ## IIS-Specific Detections
 
@@ -111,6 +115,22 @@ Attack indicator:
 <TargetObject condition="contains">Microsoft\InetStp\</TargetObject>
 <TargetObject condition="contains">\W3SVC\</TargetObject>
 ```
+
+## Security Fixes Applied (v2.1)
+
+### Volume Optimization
+1. **ProcessCreate** - AND rules for w3wp.exe→child detection (11 explicit rules)
+2. **DnsQuery** - Include-based: only w3wp.exe, LOLBins, suspicious paths
+3. **FileCreate** - exe/dll/scripts restricted to inetpub, Users, Temp, ProgramData
+4. **CreateRemoteThread** - Include-based on sensitive targets (lsass, w3wp, winlogon) + AV/EDR exclusions
+
+### Detection Improvements
+5. **ProcessAccess** - CallTrace UNKNOWN + 8 LSASS masks (0x40, 0x1000, 0x1010, 0x1038, 0x1410, 0x1438, 0x143a, 0x1fffff)
+6. **Added Event 6** - DriverLoad for BYOVD/rootkit detection
+7. **Added Event 9** - RawAccessRead for raw disk access
+8. **Added Event 25** - ProcessTampering for hollowing/herpaderping
+9. **Added Event 26** - FileDelete for webshell cleanup tracking
+10. **WmiEvent** - Added Deleted operation
 
 ## MITRE ATT&CK Coverage
 
@@ -232,6 +252,6 @@ Malicious web.config can execute code without .aspx:
 ```
 
 ---
-**Version:** 2.0
+**Version:** 2.1
 **Last Updated:** December 2025
 **Threat Level:** HIGH - Internet-Facing Asset
