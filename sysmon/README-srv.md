@@ -22,19 +22,23 @@ Aggressive monitoring posture for Windows Servers based on the principle that se
 
 | Event ID | Name | Status | Notes |
 |----------|------|--------|-------|
-| 1 | ProcessCreate | Active | Comprehensive, fewer exclusions |
+| 1 | ProcessCreate | Active | Context-aware AND rules |
 | 2 | FileCreateTime | Active | Timestomping detection |
 | 3 | NetworkConnect | Active | User profile connections suspicious |
 | 5 | ProcessTerminate | Active | Security tool + critical services |
+| 6 | DriverLoad | Active | Unsigned/BYOVD drivers |
 | 7 | ImageLoad | Active | Credential DLLs, temp locations |
-| 8 | CreateRemoteThread | Active | Injection detection |
-| 10 | ProcessAccess | Active | LSASS with multiple access flags |
-| 11 | FileCreate | Active | User profiles = anomaly on server |
+| 8 | CreateRemoteThread | Active | Include-based on targets |
+| 9 | RawAccessRead | Active | Raw disk access |
+| 10 | ProcessAccess | Active | 8 LSASS masks + CallTrace |
+| 11 | FileCreate | Active | Path-scoped with AND rules |
 | 13 | RegistryEvent | Active | 50+ persistence mechanisms |
 | 15 | FileCreateStreamHash | Active | ADS detection |
 | 17/18 | PipeEvent | Active | C2 frameworks, PsExec |
 | 19/20/21 | WmiEvent | Active | WMI persistence |
-| 22 | DnsQuery | Active | Minimal exclusions |
+| 22 | DnsQuery | Active | Include-based (LOLBins only) |
+| 25 | ProcessTampering | Active | Hollowing/herpaderping |
+| 26 | FileDelete | Active | Anti-forensics detection |
 
 ## Server-Specific Philosophy
 
@@ -131,6 +135,21 @@ index=sysmon EventCode=1
 | table _time, Computer, User, CommandLine
 ```
 
+## Security Fixes Applied (v2.1)
+
+### Volume Optimization
+1. **ProcessCreate** - Context-aware AND rules for shells from suspicious parents
+2. **DnsQuery** - Include-based: only LOLBins and suspicious paths
+3. **FileCreate** - exe/dll/scripts restricted to suspicious paths only
+4. **CreateRemoteThread** - Include-based on sensitive targets (lsass, winlogon, csrss, svchost) + AV/EDR exclusions
+
+### Detection Improvements
+5. **ProcessAccess** - 8 LSASS masks (0x40, 0x1000, 0x1010, 0x1038, 0x1410, 0x1438, 0x143a, 0x1fffff)
+6. **Added Event 6** - DriverLoad for BYOVD/rootkit detection
+7. **Added Event 9** - RawAccessRead for raw disk access
+8. **Added Event 25** - ProcessTampering for hollowing/herpaderping
+9. **Added Event 26** - FileDelete for anti-forensics detection
+
 ## Maintenance
 
 - Servers should generate fewer events than workstations
@@ -139,5 +158,5 @@ index=sysmon EventCode=1
 - Monitor for new management tool deployments
 
 ---
-**Version:** 2.0
+**Version:** 2.1
 **Last Updated:** December 2025
