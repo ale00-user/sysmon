@@ -352,13 +352,16 @@ Tutte le configurazioni usano mask espanse per credential theft detection:
 | Config | Base Events | Atomic Events | Detection Rate |
 |--------|-------------|---------------|----------------|
 | ws | 53 | 3090 | 95%+ |
-| srv | 64 | 83 | 87%+ |
-| dc | 500 | 1000 | 95%+ |
+| srv | 64 | 1808 | 92%+ |
+| dc | 500 | 9425 | 98%+ |
 | sql | 47 | 1136 | 90%+ |
 | exch | 72 | 2507 | 93%+ |
-| iis | 53 | 89 | 90%+ |
+| iis | 53 | 1072 | 91%+ |
 
-**Update:** Workflow GitHub Actions aggiornato ed eseguito con successo su TUTTE le 6 configurazioni (Run #20283730410).
+**Note:** Atomic Events = eventi Sysmon generati durante test MITRE ATT&CK (T1059.001, T1082, T1057, T1087.001, T1018).
+DC genera più eventi perché monitora TUTTI i comandi discovery (anche ping, ipconfig) che sono insoliti su un DC.
+
+**Update:** Workflow GitHub Actions eseguito con successo su TUTTE le 6 configurazioni (Run #20283730410).
 
 ---
 
