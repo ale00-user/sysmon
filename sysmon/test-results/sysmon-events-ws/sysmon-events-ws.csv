@@ -1,0 +1,761 @@
+"TimeCreated","Id","Message"
+"12/17/2025 7:50:28 AM","22","Dns query:
+RuleName: -
+UtcTime: 2025-12-17 07:50:28.334
+ProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ProcessId: 2264
+QueryName: test.local
+QueryStatus: 9003
+QueryResults: type: 6 a.root-servers.net;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:23 AM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-17 07:50:22.104
+ProcessGuid: {f995aebf-60bb-6942-5602-000000000e00}
+ProcessId: 8668
+Image: C:\Windows\System32\certutil.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: true
+SourceIp: 0:0:0:0:0:0:0:1
+SourceHostname: runnervm8j6r3
+SourcePort: 62154
+SourcePortName: -
+DestinationIsIpv6: true
+DestinationIp: 0:0:0:0:0:0:0:1
+DestinationHostname: runnervm8j6r3
+DestinationPort: 80
+DestinationPortName: http"
+"12/17/2025 7:50:23 AM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-17 07:50:23.049
+SourceProcessGUID: {f995aebf-608b-6942-3c02-000000000e00}
+SourceProcessId: 2264
+SourceThreadId: 2764
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetProcessGUID: {f995aebf-5ff2-6942-0d00-000000000e00}
+TargetProcessId: 1000
+TargetImage: C:\Windows\system32\lsass.exe
+GrantedAccess: 0x1F3FFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+162184|C:\Windows\System32\KERNELBASE.dll+3fba6|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+34fab0|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2cd8fe|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2cc4a5|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b2fae|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b2675|UNKNOWN(00007FF8D1879E33)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:50:21 AM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-17 07:50:20.009
+ProcessGuid: {f995aebf-60bb-6942-5602-000000000e00}
+ProcessId: 8668
+Image: C:\Windows\System32\certutil.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: true
+SourceIp: 0:0:0:0:0:0:0:1
+SourceHostname: runnervm8j6r3
+SourcePort: 62153
+SourcePortName: -
+DestinationIsIpv6: true
+DestinationIp: 0:0:0:0:0:0:0:1
+DestinationHostname: runnervm8j6r3
+DestinationPort: 80
+DestinationPortName: http"
+"12/17/2025 7:50:21 AM","22","Dns query:
+RuleName: -
+UtcTime: 2025-12-17 07:50:20.127
+ProcessGuid: {f995aebf-60bc-6942-5802-000000000e00}
+ProcessId: 8660
+QueryName: runnervm8j6r3
+QueryStatus: 0
+QueryResults: fe80::92b0:4b9c:2cf9:cd11;fe80::f8ee:786a:b95b:62e0;::ffff:10.1.0.109;::ffff:172.29.192.1;
+Image: C:\Windows\System32\inetsrv\w3wp.exe
+User: IIS APPPOOL\DefaultAppPool"
+"12/17/2025 7:50:20 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:50:20.054
+ProcessGuid: {f995aebf-60bc-6942-5802-000000000e00}
+ProcessId: 8660
+Image: C:\Windows\System32\inetsrv\w3wp.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: IIS Worker Process
+Product: Internet Information Services
+Company: Microsoft Corporation
+OriginalFileName: w3wp.exe
+CommandLine: c:\windows\system32\inetsrv\w3wp.exe -ap ""DefaultAppPool"" -v ""v4.0"" -l ""webengine4.dll"" -a \\.\pipe\iisipm2cb5b064-bafc-4177-9966-2aa8f31f530d -h ""C:\inetpub\temp\apppools\DefaultAppPool\DefaultAppPool.config"" -w """" -m 0 -t 20 -ta 0
+CurrentDirectory: c:\windows\system32\inetsrv\
+User: IIS APPPOOL\DefaultAppPool
+LogonGuid: {f995aebf-60bc-6942-6e21-270000000000}
+LogonId: 0x27216E
+TerminalSessionId: 0
+IntegrityLevel: High
+Hashes: SHA256=D107FBBCE897A65A7700DD735131A38ADF24585C62840A148061BA19AF768858
+ParentProcessGuid: {f995aebf-5ff6-6942-4b00-000000000e00}
+ParentProcessId: 3660
+ParentImage: C:\Windows\System32\svchost.exe
+ParentCommandLine: C:\Windows\system32\svchost.exe -k iissvcs
+ParentUser: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:50:20 AM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-17 07:50:20.041
+SourceProcessGUID: {f995aebf-5ff3-6942-1200-000000000e00}
+SourceProcessId: 1144
+SourceThreadId: 1296
+SourceImage: C:\Windows\system32\svchost.exe
+TargetProcessGUID: {f995aebf-5ff2-6942-0d00-000000000e00}
+TargetProcessId: 1000
+TargetImage: C:\Windows\system32\lsass.exe
+GrantedAccess: 0x1000
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+162184|C:\Windows\System32\KERNELBASE.dll+c464b|c:\windows\system32\lsm.dll+f406|c:\windows\system32\lsm.dll+ee2d|C:\Windows\System32\RPCRT4.dll+d3663|C:\Windows\System32\RPCRT4.dll+d570e|C:\Windows\System32\RPCRT4.dll+8a1ec|C:\Windows\System32\RPCRT4.dll+880f7|C:\Windows\System32\RPCRT4.dll+51ab4|C:\Windows\System32\RPCRT4.dll+52ac8|C:\Windows\System32\RPCRT4.dll+3fc54|C:\Windows\System32\RPCRT4.dll+5001c|C:\Windows\System32\RPCRT4.dll+5601c|C:\Windows\System32\RPCRT4.dll+551a3|C:\Windows\System32\RPCRT4.dll+54148|C:\Windows\SYSTEM32\ntdll.dll+77ffe|C:\Windows\SYSTEM32\ntdll.dll+76123|C:\Windows\System32\KERNEL32.DLL+2e8d7|C:\Windows\SYSTEM32\ntdll.dll+8c53c
+SourceUser: NT AUTHORITY\SYSTEM
+TargetUser: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:50:20 AM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-17 07:50:20.041
+SourceProcessGUID: {f995aebf-5ff3-6942-1200-000000000e00}
+SourceProcessId: 1144
+SourceThreadId: 1296
+SourceImage: C:\Windows\system32\svchost.exe
+TargetProcessGUID: {f995aebf-5ff2-6942-0d00-000000000e00}
+TargetProcessId: 1000
+TargetImage: C:\Windows\system32\lsass.exe
+GrantedAccess: 0x1000
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+162184|C:\Windows\System32\KERNELBASE.dll+c464b|c:\windows\system32\lsm.dll+ed09|C:\Windows\System32\RPCRT4.dll+d3663|C:\Windows\System32\RPCRT4.dll+d570e|C:\Windows\System32\RPCRT4.dll+8a1ec|C:\Windows\System32\RPCRT4.dll+880f7|C:\Windows\System32\RPCRT4.dll+51ab4|C:\Windows\System32\RPCRT4.dll+52ac8|C:\Windows\System32\RPCRT4.dll+3fc54|C:\Windows\System32\RPCRT4.dll+5001c|C:\Windows\System32\RPCRT4.dll+5601c|C:\Windows\System32\RPCRT4.dll+551a3|C:\Windows\System32\RPCRT4.dll+54148|C:\Windows\SYSTEM32\ntdll.dll+77ffe|C:\Windows\SYSTEM32\ntdll.dll+76123|C:\Windows\System32\KERNEL32.DLL+2e8d7|C:\Windows\SYSTEM32\ntdll.dll+8c53c
+SourceUser: NT AUTHORITY\SYSTEM
+TargetUser: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:50:19 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:50:19.940
+ProcessGuid: {f995aebf-60bb-6942-5602-000000000e00}
+ProcessId: 8668
+Image: C:\Windows\System32\certutil.exe
+FileVersion: 10.0.26100.7019 (WinBuild.160101.0800)
+Description: CertUtil.exe
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: CertUtil.exe
+CommandLine: ""C:\Windows\system32\certutil.exe"" -urlcache -split -f http://localhost/test 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=52749F37FF21AF7FA72C2F6256DF11740BB88B61EB5B6BF946D37A44A201435F
+ParentProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ParentProcessId: 2264
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:15 AM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-17 07:50:15.908
+SourceProcessGUID: {f995aebf-5ff3-6942-1200-000000000e00}
+SourceProcessId: 1144
+SourceThreadId: 1296
+SourceImage: C:\Windows\system32\svchost.exe
+TargetProcessGUID: {f995aebf-5ff2-6942-0d00-000000000e00}
+TargetProcessId: 1000
+TargetImage: C:\Windows\system32\lsass.exe
+GrantedAccess: 0x1000
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+162184|C:\Windows\System32\KERNELBASE.dll+c464b|c:\windows\system32\lsm.dll+f406|c:\windows\system32\lsm.dll+ee2d|C:\Windows\System32\RPCRT4.dll+d3663|C:\Windows\System32\RPCRT4.dll+d570e|C:\Windows\System32\RPCRT4.dll+8a1ec|C:\Windows\System32\RPCRT4.dll+880f7|C:\Windows\System32\RPCRT4.dll+51ab4|C:\Windows\System32\RPCRT4.dll+52ac8|C:\Windows\System32\RPCRT4.dll+3fc54|C:\Windows\System32\RPCRT4.dll+5001c|C:\Windows\System32\RPCRT4.dll+5601c|C:\Windows\System32\RPCRT4.dll+551a3|C:\Windows\System32\RPCRT4.dll+54148|C:\Windows\SYSTEM32\ntdll.dll+77ffe|C:\Windows\SYSTEM32\ntdll.dll+76123|C:\Windows\System32\KERNEL32.DLL+2e8d7|C:\Windows\SYSTEM32\ntdll.dll+8c53c
+SourceUser: NT AUTHORITY\SYSTEM
+TargetUser: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:50:15 AM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-17 07:50:15.908
+SourceProcessGUID: {f995aebf-5ff3-6942-1200-000000000e00}
+SourceProcessId: 1144
+SourceThreadId: 1296
+SourceImage: C:\Windows\system32\svchost.exe
+TargetProcessGUID: {f995aebf-5ff2-6942-0d00-000000000e00}
+TargetProcessId: 1000
+TargetImage: C:\Windows\system32\lsass.exe
+GrantedAccess: 0x1000
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+162184|C:\Windows\System32\KERNELBASE.dll+c464b|c:\windows\system32\lsm.dll+ed09|C:\Windows\System32\RPCRT4.dll+d3663|C:\Windows\System32\RPCRT4.dll+d570e|C:\Windows\System32\RPCRT4.dll+8a1ec|C:\Windows\System32\RPCRT4.dll+880f7|C:\Windows\System32\RPCRT4.dll+51ab4|C:\Windows\System32\RPCRT4.dll+52ac8|C:\Windows\System32\RPCRT4.dll+3fc54|C:\Windows\System32\RPCRT4.dll+5001c|C:\Windows\System32\RPCRT4.dll+5601c|C:\Windows\System32\RPCRT4.dll+551a3|C:\Windows\System32\RPCRT4.dll+54148|C:\Windows\SYSTEM32\ntdll.dll+77ffe|C:\Windows\SYSTEM32\ntdll.dll+76123|C:\Windows\System32\KERNEL32.DLL+2e8d7|C:\Windows\SYSTEM32\ntdll.dll+8c53c
+SourceUser: NT AUTHORITY\SYSTEM
+TargetUser: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:50:14 AM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-17 07:50:14.712
+SourceProcessGUID: {f995aebf-5ff3-6942-1200-000000000e00}
+SourceProcessId: 1144
+SourceThreadId: 1296
+SourceImage: C:\Windows\system32\svchost.exe
+TargetProcessGUID: {f995aebf-5ff2-6942-0d00-000000000e00}
+TargetProcessId: 1000
+TargetImage: C:\Windows\system32\lsass.exe
+GrantedAccess: 0x1000
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+162184|C:\Windows\System32\KERNELBASE.dll+c464b|c:\windows\system32\lsm.dll+f406|c:\windows\system32\lsm.dll+ee2d|C:\Windows\System32\RPCRT4.dll+d3663|C:\Windows\System32\RPCRT4.dll+d570e|C:\Windows\System32\RPCRT4.dll+8a1ec|C:\Windows\System32\RPCRT4.dll+880f7|C:\Windows\System32\RPCRT4.dll+51ab4|C:\Windows\System32\RPCRT4.dll+52ac8|C:\Windows\System32\RPCRT4.dll+3fc54|C:\Windows\System32\RPCRT4.dll+5001c|C:\Windows\System32\RPCRT4.dll+5601c|C:\Windows\System32\RPCRT4.dll+551a3|C:\Windows\System32\RPCRT4.dll+54148|C:\Windows\SYSTEM32\ntdll.dll+77ffe|C:\Windows\SYSTEM32\ntdll.dll+76123|C:\Windows\System32\KERNEL32.DLL+2e8d7|C:\Windows\SYSTEM32\ntdll.dll+8c53c
+SourceUser: NT AUTHORITY\SYSTEM
+TargetUser: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:50:14 AM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-17 07:50:14.712
+SourceProcessGUID: {f995aebf-5ff3-6942-1200-000000000e00}
+SourceProcessId: 1144
+SourceThreadId: 1296
+SourceImage: C:\Windows\system32\svchost.exe
+TargetProcessGUID: {f995aebf-5ff2-6942-0d00-000000000e00}
+TargetProcessId: 1000
+TargetImage: C:\Windows\system32\lsass.exe
+GrantedAccess: 0x1000
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+162184|C:\Windows\System32\KERNELBASE.dll+c464b|c:\windows\system32\lsm.dll+ed09|C:\Windows\System32\RPCRT4.dll+d3663|C:\Windows\System32\RPCRT4.dll+d570e|C:\Windows\System32\RPCRT4.dll+8a1ec|C:\Windows\System32\RPCRT4.dll+880f7|C:\Windows\System32\RPCRT4.dll+51ab4|C:\Windows\System32\RPCRT4.dll+52ac8|C:\Windows\System32\RPCRT4.dll+3fc54|C:\Windows\System32\RPCRT4.dll+5001c|C:\Windows\System32\RPCRT4.dll+5601c|C:\Windows\System32\RPCRT4.dll+551a3|C:\Windows\System32\RPCRT4.dll+54148|C:\Windows\SYSTEM32\ntdll.dll+77ffe|C:\Windows\SYSTEM32\ntdll.dll+76123|C:\Windows\System32\KERNEL32.DLL+2e8d7|C:\Windows\SYSTEM32\ntdll.dll+8c53c
+SourceUser: NT AUTHORITY\SYSTEM
+TargetUser: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:50:13 AM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-17 07:50:13.319
+SourceProcessGUID: {f995aebf-5ff3-6942-1200-000000000e00}
+SourceProcessId: 1144
+SourceThreadId: 1296
+SourceImage: C:\Windows\system32\svchost.exe
+TargetProcessGUID: {f995aebf-5ff2-6942-0d00-000000000e00}
+TargetProcessId: 1000
+TargetImage: C:\Windows\system32\lsass.exe
+GrantedAccess: 0x1000
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+162184|C:\Windows\System32\KERNELBASE.dll+c464b|c:\windows\system32\lsm.dll+f406|c:\windows\system32\lsm.dll+ee2d|C:\Windows\System32\RPCRT4.dll+d3663|C:\Windows\System32\RPCRT4.dll+d570e|C:\Windows\System32\RPCRT4.dll+8a1ec|C:\Windows\System32\RPCRT4.dll+880f7|C:\Windows\System32\RPCRT4.dll+51ab4|C:\Windows\System32\RPCRT4.dll+52ac8|C:\Windows\System32\RPCRT4.dll+3fc54|C:\Windows\System32\RPCRT4.dll+5001c|C:\Windows\System32\RPCRT4.dll+5601c|C:\Windows\System32\RPCRT4.dll+551a3|C:\Windows\System32\RPCRT4.dll+54148|C:\Windows\SYSTEM32\ntdll.dll+77ffe|C:\Windows\SYSTEM32\ntdll.dll+76123|C:\Windows\System32\KERNEL32.DLL+2e8d7|C:\Windows\SYSTEM32\ntdll.dll+8c53c
+SourceUser: NT AUTHORITY\SYSTEM
+TargetUser: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:50:13 AM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-17 07:50:13.319
+SourceProcessGUID: {f995aebf-5ff3-6942-1200-000000000e00}
+SourceProcessId: 1144
+SourceThreadId: 1296
+SourceImage: C:\Windows\system32\svchost.exe
+TargetProcessGUID: {f995aebf-5ff2-6942-0d00-000000000e00}
+TargetProcessId: 1000
+TargetImage: C:\Windows\system32\lsass.exe
+GrantedAccess: 0x1000
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+162184|C:\Windows\System32\KERNELBASE.dll+c464b|c:\windows\system32\lsm.dll+ed09|C:\Windows\System32\RPCRT4.dll+d3663|C:\Windows\System32\RPCRT4.dll+d570e|C:\Windows\System32\RPCRT4.dll+8a1ec|C:\Windows\System32\RPCRT4.dll+880f7|C:\Windows\System32\RPCRT4.dll+51ab4|C:\Windows\System32\RPCRT4.dll+52ac8|C:\Windows\System32\RPCRT4.dll+3fc54|C:\Windows\System32\RPCRT4.dll+5001c|C:\Windows\System32\RPCRT4.dll+5601c|C:\Windows\System32\RPCRT4.dll+551a3|C:\Windows\System32\RPCRT4.dll+54148|C:\Windows\SYSTEM32\ntdll.dll+77ffe|C:\Windows\SYSTEM32\ntdll.dll+76123|C:\Windows\System32\KERNEL32.DLL+2e8d7|C:\Windows\SYSTEM32\ntdll.dll+8c53c
+SourceUser: NT AUTHORITY\SYSTEM
+TargetUser: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:50:13 AM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-17 07:50:11.623
+ProcessGuid: {f995aebf-60b2-6942-5402-000000000e00}
+ProcessId: 5192
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: true
+SourceIp: 0:0:0:0:0:0:0:1
+SourceHostname: runnervm8j6r3
+SourcePort: 62147
+SourcePortName: -
+DestinationIsIpv6: true
+DestinationIp: 0:0:0:0:0:0:0:1
+DestinationHostname: runnervm8j6r3
+DestinationPort: 445
+DestinationPortName: microsoft-ds"
+"12/17/2025 7:50:10 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:50:10.817
+ProcessGuid: {f995aebf-60b2-6942-5402-000000000e00}
+ProcessId: 5192
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+FileVersion: 10.0.26100.5074 (WinBuild.160101.0800)
+Description: Windows PowerShell
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: PowerShell.EXE
+CommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"" -c ""Test-NetConnection -ComputerName localhost -Port 445"" 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=0FF6F2C94BC7E2833A5F7E16DE1622E5DBA70396F31C7D5F56381870317E8C46
+ParentProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ParentProcessId: 2264
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:10 AM","12","Registry object added or deleted:
+RuleName: T1546.012,IFEO
+EventType: DeleteValue
+UtcTime: 2025-12-17 07:50:10.803
+ProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ProcessId: 2264
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetObject: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe\Debugger
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:08 AM","13","Registry value set:
+RuleName: T1546.012,IFEO
+EventType: SetValue
+UtcTime: 2025-12-17 07:50:08.732
+ProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ProcessId: 2264
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetObject: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe\Debugger
+Details: cmd.exe
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:08 AM","12","Registry object added or deleted:
+RuleName: T1546.012,IFEO
+EventType: CreateKey
+UtcTime: 2025-12-17 07:50:08.727
+ProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ProcessId: 2264
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetObject: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:06 AM","12","Registry object added or deleted:
+RuleName: T1547.001,RunKey
+EventType: DeleteValue
+UtcTime: 2025-12-17 07:50:06.689
+ProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ProcessId: 2264
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetObject: HKU\S-1-5-21-3430515368-916141482-256631409-500\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\SysmonTest_272680316
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:04 AM","13","Registry value set:
+RuleName: T1547.001,RunKey
+EventType: SetValue
+UtcTime: 2025-12-17 07:50:04.624
+ProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ProcessId: 2264
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetObject: HKU\S-1-5-21-3430515368-916141482-256631409-500\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\SysmonTest_272680316
+Details: C:\test.exe
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:00 AM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-17 07:50:00.470
+ProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ProcessId: 2264
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\test_startup.bat
+CreationUtcTime: 2025-12-17 07:50:00.470
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:58 AM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-17 07:49:58.400
+ProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ProcessId: 2264
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Windows\Temp\SysmonTest\test_script.ps1
+CreationUtcTime: 2025-12-17 07:49:58.400
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:55 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:55.326
+ProcessGuid: {f995aebf-60a3-6942-5002-000000000e00}
+ProcessId: 5696
+Image: C:\Windows\System32\schtasks.exe
+FileVersion: 10.0.26100.6725 (WinBuild.160101.0800)
+Description: Task Scheduler Configuration Tool
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: schtasks.exe
+CommandLine: ""C:\Windows\system32\schtasks.exe"" /query 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=B96AF3066F0B9DE8A460F77BAAE006C5372A266BE18C561DAA7C7AE8635D399D
+ParentProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ParentProcessId: 2264
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:52 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:52.219
+ProcessGuid: {f995aebf-60a0-6942-4e02-000000000e00}
+ProcessId: 6508
+Image: C:\Windows\System32\certutil.exe
+FileVersion: 10.0.26100.7019 (WinBuild.160101.0800)
+Description: CertUtil.exe
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: CertUtil.exe
+CommandLine: ""C:\Windows\system32\certutil.exe"" -? 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=52749F37FF21AF7FA72C2F6256DF11740BB88B61EB5B6BF946D37A44A201435F
+ParentProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ParentProcessId: 2264
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:51 AM","13","Registry value set:
+RuleName: RegistryEvent
+EventType: SetValue
+UtcTime: 2025-12-17 07:49:51.458
+ProcessGuid: {f995aebf-609e-6942-4c02-000000000e00}
+ProcessId: 1848
+Image: C:\Windows\explorer.exe
+TargetObject: HKU\S-1-5-21-3430515368-916141482-256631409-500\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Cached\{C2B136E2-D50E-405C-8784-363C582BF43E} {ADD8BA80-002B-11D0-8F0F-00C04FD7D062} 0xFFFF
+Details: Binary Data
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:51 AM","12","Registry object added or deleted:
+RuleName: RegistryEvent
+EventType: CreateKey
+UtcTime: 2025-12-17 07:49:51.458
+ProcessGuid: {f995aebf-609e-6942-4c02-000000000e00}
+ProcessId: 1848
+Image: C:\Windows\explorer.exe
+TargetObject: HKU\S-1-5-21-3430515368-916141482-256631409-500\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Cached
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:50 AM","13","Registry value set:
+RuleName: RegistryEvent
+EventType: SetValue
+UtcTime: 2025-12-17 07:49:50.194
+ProcessGuid: {f995aebf-609e-6942-4b02-000000000e00}
+ProcessId: 6624
+Image: C:\Windows\system32\rundll32.exe
+TargetObject: HKU\S-1-5-21-3430515368-916141482-256631409-500\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Cached\{11DBB47C-A525-400B-9E80-A54615A090C0} {7F9185B0-CB92-43C5-80A9-92277A4F7B54} 0xFFFF
+Details: Binary Data
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:50 AM","12","Registry object added or deleted:
+RuleName: RegistryEvent
+EventType: CreateKey
+UtcTime: 2025-12-17 07:49:50.194
+ProcessGuid: {f995aebf-609e-6942-4b02-000000000e00}
+ProcessId: 6624
+Image: C:\Windows\system32\rundll32.exe
+TargetObject: HKU\S-1-5-21-3430515368-916141482-256631409-500\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Cached
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:50 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:50.134
+ProcessGuid: {f995aebf-609e-6942-4b02-000000000e00}
+ProcessId: 6624
+Image: C:\Windows\System32\rundll32.exe
+FileVersion: 10.0.26100.7019 (WinBuild.160101.0800)
+Description: Windows host process (Rundll32)
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: RUNDLL32.EXE
+CommandLine: ""C:\Windows\system32\rundll32.exe"" shell32.dll,Control_RunDLL 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=2F2321D2A3EEEC2CDD7D921645C121BED75872435926EE97F3D53E7EE7662BF0
+ParentProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ParentProcessId: 2264
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:47 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:47.067
+ProcessGuid: {f995aebf-609b-6942-4a02-000000000e00}
+ProcessId: 7104
+Image: C:\Windows\System32\mshta.exe
+FileVersion: 11.00.26100.2454 (WinBuild.160101.0800)
+Description: Microsoft (R) HTML Application host
+Product: Internet Explorer
+Company: Microsoft Corporation
+OriginalFileName: MSHTA.EXE
+CommandLine: ""C:\Windows\system32\mshta.exe"" about:blank 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=1F1AABE87E5E93A8FFF769BF3614DD559C51C80FC045E11868F3843D9A004D1E
+ParentProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ParentProcessId: 2264
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:44 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:44.981
+ProcessGuid: {f995aebf-6098-6942-4902-000000000e00}
+ProcessId: 8380
+Image: C:\Windows\System32\regsvr32.exe
+FileVersion: 10.0.26100.7019 (WinBuild.160101.0800)
+Description: Microsoft(C) Register Server
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: REGSVR32.EXE
+CommandLine: ""C:\Windows\system32\regsvr32.exe"" /s /n /u /i:test scrobj.dll 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8D1F34DB7D8297E71184CA0EEDD1A291C3930BD3214BC1CCCFA102891AD9DA52
+ParentProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ParentProcessId: 2264
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:41 AM","7","Image loaded:
+RuleName: ImageLoad
+UtcTime: 2025-12-17 07:49:41.974
+ProcessGuid: {f995aebf-6095-6942-4802-000000000e00}
+ProcessId: 7572
+Image: C:\Windows\System32\net1.exe
+ImageLoaded: C:\Windows\System32\samlib.dll
+FileVersion: 10.0.26100.7019 (WinBuild.160101.0800)
+Description: SAM Library DLL
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: SAMLib.DLL
+Hashes: SHA256=13B0BB662EE434ED5CEE876D95886F4FB5E77C636E7DC645CD7E9BE634665497
+Signed: true
+Signature: Microsoft Windows
+SignatureStatus: Valid
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:41 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:41.961
+ProcessGuid: {f995aebf-6095-6942-4802-000000000e00}
+ProcessId: 7572
+Image: C:\Windows\System32\net1.exe
+FileVersion: 10.0.26100.7019 (WinBuild.160101.0800)
+Description: Net Command
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: net1.exe
+CommandLine: C:\Windows\system32\net1 user 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8489DB35375D890314EB8F7CD9E0CBD3866475F4E252865F00F649B0A02FD757
+ParentProcessGuid: {f995aebf-6095-6942-4602-000000000e00}
+ParentProcessId: 4880
+ParentImage: C:\Windows\System32\net.exe
+ParentCommandLine: ""C:\Windows\system32\net.exe"" user 
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:41 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:41.907
+ProcessGuid: {f995aebf-6095-6942-4602-000000000e00}
+ProcessId: 4880
+Image: C:\Windows\System32\net.exe
+FileVersion: 10.0.26100.7019 (WinBuild.160101.0800)
+Description: Net Command
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: net.exe
+CommandLine: ""C:\Windows\system32\net.exe"" user 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=BB3E638C8B5B6EF80847E364AEEF2796CAD25D3539CF9B41D3820FA48943E777
+ParentProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ParentProcessId: 2264
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:38 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:38.828
+ProcessGuid: {f995aebf-6092-6942-4202-000000000e00}
+ProcessId: 5040
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: ""C:\Windows\system32\whoami.exe"" 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=23240EF9F8B0A9A324110B1C2331DE31DC1B0E08F5359CB707E51A939AF56CD3
+ParentProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ParentProcessId: 2264
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:35 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:35.781
+ProcessGuid: {f995aebf-608f-6942-4002-000000000e00}
+ProcessId: 3588
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+FileVersion: 10.0.26100.5074 (WinBuild.160101.0800)
+Description: Windows PowerShell
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: PowerShell.EXE
+CommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"" -c ""Write-Host 'IEX test'"" 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=0FF6F2C94BC7E2833A5F7E16DE1622E5DBA70396F31C7D5F56381870317E8C46
+ParentProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ParentProcessId: 2264
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:32 AM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-17 07:49:32.537
+SourceProcessGUID: {f995aebf-608c-6942-3d02-000000000e00}
+SourceProcessId: 7592
+SourceThreadId: 3532
+SourceImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+TargetProcessGUID: {f995aebf-608c-6942-3f02-000000000e00}
+TargetProcessId: 3500
+TargetImage: C:\Windows\system32\whoami.exe
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+351876|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b3c89|C:\Windows\assembly\NativeImages_v4.0.30319_64\System\22f4d83e48c2201947e262d4bca638b9\System.ni.dll+2b35f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+11c64f9|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+10dabba|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187f2d|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+1187beb|C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Manaa57fc8cc#\4a7766a1c9970ca229a03b7aa442caed\System.Management.Automation.ni.dll+125f1ff|UNKNOWN(00007FF8D17C3401)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:32 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:32.535
+ProcessGuid: {f995aebf-608c-6942-3f02-000000000e00}
+ProcessId: 3500
+Image: C:\Windows\System32\whoami.exe
+FileVersion: 10.0.26100.1882 (WinBuild.160101.0800)
+Description: whoami - displays logged on user information
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: whoami.exe
+CommandLine: ""C:\Windows\system32\whoami.exe""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=23240EF9F8B0A9A324110B1C2331DE31DC1B0E08F5359CB707E51A939AF56CD3
+ParentProcessGuid: {f995aebf-608c-6942-3d02-000000000e00}
+ParentProcessId: 7592
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"" -enc dwBoAG8AYQBtAGkA 
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:32 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:32.307
+ProcessGuid: {f995aebf-608c-6942-3d02-000000000e00}
+ProcessId: 7592
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+FileVersion: 10.0.26100.5074 (WinBuild.160101.0800)
+Description: Windows PowerShell
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: PowerShell.EXE
+CommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"" -enc dwBoAG8AYQBtAGkA 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=0FF6F2C94BC7E2833A5F7E16DE1622E5DBA70396F31C7D5F56381870317E8C46
+ParentProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ParentProcessId: 2264
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:31 AM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-17 07:49:31.698
+SourceProcessGUID: {f995aebf-607b-6942-8701-000000000e00}
+SourceProcessId: 9928
+SourceThreadId: 7040
+SourceImage: C:\actions-runner\extracted\bin\Runner.Worker.exe
+TargetProcessGUID: {f995aebf-608b-6942-3c02-000000000e00}
+TargetProcessId: 2264
+TargetImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\actions-runner\extracted\bin\System.Diagnostics.Process.dll+da06|C:\actions-runner\extracted\bin\System.Diagnostics.Process.dll+1947f|UNKNOWN(00007FF8BD962278)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:31 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:31.691
+ProcessGuid: {f995aebf-608b-6942-3c02-000000000e00}
+ProcessId: 2264
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+FileVersion: 10.0.26100.5074 (WinBuild.160101.0800)
+Description: Windows PowerShell
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: PowerShell.EXE
+CommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1'""
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-600f-6942-1bef-0b0000000000}
+LogonId: 0xBEF1B
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=0FF6F2C94BC7E2833A5F7E16DE1622E5DBA70396F31C7D5F56381870317E8C46
+ParentProcessGuid: {f995aebf-607b-6942-8701-000000000e00}
+ParentProcessId: 9928
+ParentImage: C:\actions-runner\extracted\bin\Runner.Worker.exe
+ParentCommandLine: ""C:\actions-runner\extracted\bin\Runner.Worker.exe"" spawnclient 1916 1928
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:31 AM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-17 07:49:31.688
+ProcessGuid: {f995aebf-607b-6942-8701-000000000e00}
+ProcessId: 9928
+Image: C:\actions-runner\extracted\bin\Runner.Worker.exe
+TargetFilename: D:\a\_temp\02be7b7d-f7da-4731-ac63-ed892de3ee38.ps1
+CreationUtcTime: 2025-12-17 07:49:31.688
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:31 AM","10","Process accessed:
+RuleName: ProcessAccess
+UtcTime: 2025-12-17 07:49:31.655
+SourceProcessGUID: {f995aebf-607b-6942-8701-000000000e00}
+SourceProcessId: 9928
+SourceThreadId: 7040
+SourceImage: C:\actions-runner\extracted\bin\Runner.Worker.exe
+TargetProcessGUID: {f995aebf-608b-6942-3b02-000000000e00}
+TargetProcessId: 2016
+TargetImage: C:\Windows\system32\chcp.COM
+GrantedAccess: 0x1FFFFF
+CallTrace: C:\Windows\SYSTEM32\ntdll.dll+1636d4|C:\Windows\System32\KERNELBASE.dll+96a8a|C:\Windows\System32\KERNELBASE.dll+940e6|C:\Windows\System32\KERNEL32.DLL+3c6d4|C:\actions-runner\extracted\bin\System.Diagnostics.Process.dll+da06|C:\actions-runner\extracted\bin\System.Diagnostics.Process.dll+1947f|UNKNOWN(00007FF8BD962278)
+SourceUser: runnervm8j6r3\runneradmin
+TargetUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:25 AM","7","Image loaded:
+RuleName: ImageLoad
+UtcTime: 2025-12-17 07:49:25.069
+ProcessGuid: {f995aebf-6085-6942-3902-000000000e00}
+ProcessId: 8232
+Image: C:\Windows\Sysmon64.exe
+ImageLoaded: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.25110.5-0\MpOAV.dll
+FileVersion: 4.18.25110.5 (4a6978a838df7287d907bb2ee8a2eeb2373b186e)
+Description: IOfficeAntiVirus Module
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: MpOAV.dll
+Hashes: SHA256=0EF8AE9CC8E3722C0AE09B55531BBA2F2A3422CCF4A1BB9B37ABDB4808AAC232
+Signed: true
+Signature: Microsoft Windows
+SignatureStatus: Valid
+User: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:49:25 AM","4","Sysmon service state changed:
+UtcTime: 2025-12-17 07:49:25.121
+State: Started
+Version: 15.15
+SchemaVersion: 4.90"
+"12/17/2025 7:49:24 AM","16","Sysmon config state changed:
+UtcTime: 2025-12-17 07:49:24.972
+Configuration: D:\a\sysmon\sysmon\sysmon\sysmon-ws.xml
+ConfigurationFileHash: SHA256=6B72FAED68DF4CC406081FC6445D7CF6151C47A64165C5D03302A715BCE3DD7C"

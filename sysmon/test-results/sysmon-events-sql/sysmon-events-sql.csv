@@ -1,0 +1,518 @@
+"TimeCreated","Id","Message"
+"12/17/2025 7:50:25 AM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-17 07:50:25.613
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Windows\Temp\sysmon_delete_test.txt
+Hashes: SHA256=F68E37DC9CABF2EE8B94D6A5D28AD04BE246CCC2E82911F8F1AC390DCF0EE364
+IsExecutable: false
+Archived: true"
+"12/17/2025 7:50:24 AM","22","Dns query:
+RuleName: DnsQuery
+UtcTime: 2025-12-17 07:50:23.286
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+QueryName: test.local
+QueryStatus: 9003
+QueryResults: type: 6 a.root-servers.net;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:17 AM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-17 07:50:16.817
+ProcessGuid: {f995aebf-60b6-6942-0903-000000000e00}
+ProcessId: 2256
+Image: C:\Windows\System32\certutil.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: true
+SourceIp: 0:0:0:0:0:0:0:1
+SourceHostname: runnervm8j6r3
+SourcePort: 52167
+SourcePortName: -
+DestinationIsIpv6: true
+DestinationIp: 0:0:0:0:0:0:0:1
+DestinationHostname: runnervm8j6r3
+DestinationPort: 80
+DestinationPortName: http"
+"12/17/2025 7:50:17 AM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-17 07:50:15.066
+ProcessGuid: {f995aebf-60b6-6942-0903-000000000e00}
+ProcessId: 2256
+Image: C:\Windows\System32\certutil.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: true
+SourceIp: 0:0:0:0:0:0:0:1
+SourceHostname: runnervm8j6r3
+SourcePort: 52166
+SourcePortName: -
+DestinationIsIpv6: true
+DestinationIp: 0:0:0:0:0:0:0:1
+DestinationHostname: runnervm8j6r3
+DestinationPort: 80
+DestinationPortName: http"
+"12/17/2025 7:50:16 AM","22","Dns query:
+RuleName: DnsQuery
+UtcTime: 2025-12-17 07:50:15.063
+ProcessGuid: {f995aebf-60b6-6942-0903-000000000e00}
+ProcessId: 2256
+QueryName: localhost
+QueryStatus: 0
+QueryResults: ::1;::ffff:127.0.0.1;
+Image: C:\Windows\System32\certutil.exe
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:15 AM","12","Registry object added or deleted:
+RuleName: RegistryEvent
+EventType: CreateKey
+UtcTime: 2025-12-17 07:50:15.554
+ProcessGuid: {f995aebf-5ac2-6942-ce00-000000000e00}
+ProcessId: 6208
+Image: C:\Windows\system32\sihost.exe
+TargetObject: HKU\S-1-5-21-3430515368-916141482-256631409-500\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:14 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:50:14.979
+ProcessGuid: {f995aebf-60b6-6942-0903-000000000e00}
+ProcessId: 2256
+Image: C:\Windows\System32\certutil.exe
+FileVersion: 10.0.26100.7019 (WinBuild.160101.0800)
+Description: CertUtil.exe
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: CertUtil.exe
+CommandLine: ""C:\Windows\system32\certutil.exe"" -urlcache -split -f http://localhost/test 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-5ac1-6942-0294-0b0000000000}
+LogonId: 0xB9402
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=52749F37FF21AF7FA72C2F6256DF11740BB88B61EB5B6BF946D37A44A201435F
+ParentProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ParentProcessId: 6844
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\746e126b-10e7-4049-ac0c-8ae19abb0be2.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:08 AM","22","Dns query:
+RuleName: DnsQuery
+UtcTime: 2025-12-17 07:50:08.305
+ProcessGuid: {f995aebf-60ad-6942-0503-000000000e00}
+ProcessId: 9712
+QueryName: localhost
+QueryStatus: 1460
+QueryResults: -
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:08 AM","22","Dns query:
+RuleName: DnsQuery
+UtcTime: 2025-12-17 07:50:07.041
+ProcessGuid: {f995aebf-60ad-6942-0503-000000000e00}
+ProcessId: 9712
+QueryName: localhost
+QueryStatus: 0
+QueryResults: ::ffff:127.0.0.1;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:08 AM","22","Dns query:
+RuleName: DnsQuery
+UtcTime: 2025-12-17 07:50:06.652
+ProcessGuid: {f995aebf-60ad-6942-0503-000000000e00}
+ProcessId: 9712
+QueryName: localhost
+QueryStatus: 0
+QueryResults: ::1;::ffff:127.0.0.1;
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:08 AM","3","Network connection detected:
+RuleName: NetworkConnect
+UtcTime: 2025-12-17 07:50:06.732
+ProcessGuid: {f995aebf-60ad-6942-0503-000000000e00}
+ProcessId: 9712
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+User: runnervm8j6r3\runneradmin
+Protocol: tcp
+Initiated: true
+SourceIsIpv6: true
+SourceIp: 0:0:0:0:0:0:0:1
+SourceHostname: runnervm8j6r3
+SourcePort: 52160
+SourcePortName: -
+DestinationIsIpv6: true
+DestinationIp: 0:0:0:0:0:0:0:1
+DestinationHostname: runnervm8j6r3
+DestinationPort: 445
+DestinationPortName: microsoft-ds"
+"12/17/2025 7:50:06 AM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-17 07:50:06.002
+ProcessGuid: {f995aebf-60ad-6942-0503-000000000e00}
+ProcessId: 9712
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_0hjanzbl.5ol.ps1
+Hashes: SHA256=96AD1146EB96877EAB5942AE0736B82D8B5E2039A80D3D6932665C1A4C87DCF7
+IsExecutable: false
+Archived: true"
+"12/17/2025 7:50:05 AM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-17 07:50:05.982
+ProcessGuid: {f995aebf-60ad-6942-0503-000000000e00}
+ProcessId: 9712
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_0hjanzbl.5ol.ps1
+CreationUtcTime: 2025-12-17 07:50:05.982
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:05 AM","12","Registry object added or deleted:
+RuleName: RegistryEvent
+EventType: DeleteValue
+UtcTime: 2025-12-17 07:50:05.861
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetObject: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe\Debugger
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:03 AM","13","Registry value set:
+RuleName: RegistryEvent
+EventType: SetValue
+UtcTime: 2025-12-17 07:50:03.802
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetObject: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe\Debugger
+Details: cmd.exe
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:03 AM","12","Registry object added or deleted:
+RuleName: RegistryEvent
+EventType: CreateKey
+UtcTime: 2025-12-17 07:50:03.798
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetObject: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:50:01 AM","12","Registry object added or deleted:
+RuleName: RegistryEvent
+EventType: DeleteValue
+UtcTime: 2025-12-17 07:50:01.740
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetObject: HKU\S-1-5-21-3430515368-916141482-256631409-500\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\SysmonTest_1310376921
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:59 AM","13","Registry value set:
+RuleName: RegistryEvent
+EventType: SetValue
+UtcTime: 2025-12-17 07:49:59.670
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetObject: HKU\S-1-5-21-3430515368-916141482-256631409-500\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\SysmonTest_1310376921
+Details: C:\test.exe
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:57 AM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-17 07:49:57.590
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\test_startup.bat
+Hashes: SHA256=D1A3E8EF9139D835783604AB0186DF5BE7CFC1421FF8D92982DDE608D570E8EF
+IsExecutable: false
+Archived: true"
+"12/17/2025 7:49:55 AM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-17 07:49:55.541
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\test_startup.bat
+CreationUtcTime: 2025-12-17 07:49:55.541
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:55 AM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-17 07:49:55.535
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Windows\Temp\SysmonTest\test_script.ps1
+Hashes: SHA256=67AFB867BF350DF72CCFF918DE7087B354D4B0CB3073EC549F2FD9A60DB05AEC
+IsExecutable: false
+Archived: true"
+"12/17/2025 7:49:53 AM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-17 07:49:53.440
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Windows\Temp\SysmonTest\test_script.ps1
+CreationUtcTime: 2025-12-17 07:49:53.440
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:50 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:50.348
+ProcessGuid: {f995aebf-609e-6942-0103-000000000e00}
+ProcessId: 8796
+Image: C:\Windows\System32\schtasks.exe
+FileVersion: 10.0.26100.6725 (WinBuild.160101.0800)
+Description: Task Scheduler Configuration Tool
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: schtasks.exe
+CommandLine: ""C:\Windows\system32\schtasks.exe"" /query 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-5ac1-6942-0294-0b0000000000}
+LogonId: 0xB9402
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=B96AF3066F0B9DE8A460F77BAAE006C5372A266BE18C561DAA7C7AE8635D399D
+ParentProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ParentProcessId: 6844
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\746e126b-10e7-4049-ac0c-8ae19abb0be2.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:47 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:47.266
+ProcessGuid: {f995aebf-609b-6942-ff02-000000000e00}
+ProcessId: 8532
+Image: C:\Windows\System32\certutil.exe
+FileVersion: 10.0.26100.7019 (WinBuild.160101.0800)
+Description: CertUtil.exe
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: CertUtil.exe
+CommandLine: ""C:\Windows\system32\certutil.exe"" -? 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-5ac1-6942-0294-0b0000000000}
+LogonId: 0xB9402
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=52749F37FF21AF7FA72C2F6256DF11740BB88B61EB5B6BF946D37A44A201435F
+ParentProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ParentProcessId: 6844
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\746e126b-10e7-4049-ac0c-8ae19abb0be2.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:42 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:42.123
+ProcessGuid: {f995aebf-6096-6942-fb02-000000000e00}
+ProcessId: 8080
+Image: C:\Windows\System32\mshta.exe
+FileVersion: 11.00.26100.2454 (WinBuild.160101.0800)
+Description: Microsoft (R) HTML Application host
+Product: Internet Explorer
+Company: Microsoft Corporation
+OriginalFileName: MSHTA.EXE
+CommandLine: ""C:\Windows\system32\mshta.exe"" about:blank 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-5ac1-6942-0294-0b0000000000}
+LogonId: 0xB9402
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=1F1AABE87E5E93A8FFF769BF3614DD559C51C80FC045E11868F3843D9A004D1E
+ParentProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ParentProcessId: 6844
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\746e126b-10e7-4049-ac0c-8ae19abb0be2.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:40 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:40.032
+ProcessGuid: {f995aebf-6094-6942-fa02-000000000e00}
+ProcessId: 9104
+Image: C:\Windows\System32\regsvr32.exe
+FileVersion: 10.0.26100.7019 (WinBuild.160101.0800)
+Description: Microsoft(C) Register Server
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: REGSVR32.EXE
+CommandLine: ""C:\Windows\system32\regsvr32.exe"" /s /n /u /i:test scrobj.dll 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-5ac1-6942-0294-0b0000000000}
+LogonId: 0xB9402
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=8D1F34DB7D8297E71184CA0EEDD1A291C3930BD3214BC1CCCFA102891AD9DA52
+ParentProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ParentProcessId: 6844
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\746e126b-10e7-4049-ac0c-8ae19abb0be2.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:37 AM","7","Image loaded:
+RuleName: ImageLoad
+UtcTime: 2025-12-17 07:49:37.064
+ProcessGuid: {f995aebf-6091-6942-f902-000000000e00}
+ProcessId: 8824
+Image: C:\Windows\System32\net1.exe
+ImageLoaded: C:\Windows\System32\samlib.dll
+FileVersion: 10.0.26100.7019 (WinBuild.160101.0800)
+Description: SAM Library DLL
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: SAMLib.DLL
+Hashes: SHA256=13B0BB662EE434ED5CEE876D95886F4FB5E77C636E7DC645CD7E9BE634665497
+Signed: true
+Signature: Microsoft Windows
+SignatureStatus: Valid
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:30 AM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-17 07:49:30.953
+ProcessGuid: {f995aebf-608a-6942-f102-000000000e00}
+ProcessId: 7492
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_j0tfgiic.nv1.ps1
+Hashes: SHA256=96AD1146EB96877EAB5942AE0736B82D8B5E2039A80D3D6932665C1A4C87DCF7
+IsExecutable: false
+Archived: true"
+"12/17/2025 7:49:30 AM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-17 07:49:30.932
+ProcessGuid: {f995aebf-608a-6942-f102-000000000e00}
+ProcessId: 7492
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_j0tfgiic.nv1.ps1
+CreationUtcTime: 2025-12-17 07:49:30.932
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:30 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:30.819
+ProcessGuid: {f995aebf-608a-6942-f102-000000000e00}
+ProcessId: 7492
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+FileVersion: 10.0.26100.5074 (WinBuild.160101.0800)
+Description: Windows PowerShell
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: PowerShell.EXE
+CommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"" -c ""Write-Host 'IEX test'"" 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-5ac1-6942-0294-0b0000000000}
+LogonId: 0xB9402
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=0FF6F2C94BC7E2833A5F7E16DE1622E5DBA70396F31C7D5F56381870317E8C46
+ParentProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ParentProcessId: 6844
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\746e126b-10e7-4049-ac0c-8ae19abb0be2.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:27 AM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-17 07:49:27.522
+ProcessGuid: {f995aebf-6078-6942-3502-000000000e00}
+ProcessId: 6272
+User: runnervm8j6r3\runneradmin
+Image: C:\actions-runner\cached\2.330.0\bin\Runner.Worker.exe
+TargetFilename: C:\actions-runner\cached\2.330.0\_diag\pages\12d5b4de-61b8-47f1-9e3a-c22ba63a38fc_9e04b19f-09e9-42e0-acd8-d707657ea335_1.log
+Hashes: SHA256=FEA65A725735CEBB7799F31F1EAAA03700AE5582037E8EBFB7122B76F394A6F9
+IsExecutable: false
+Archived: true"
+"12/17/2025 7:49:27 AM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-17 07:49:27.406
+ProcessGuid: {f995aebf-6087-6942-ee02-000000000e00}
+ProcessId: 9032
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_t31ufmgi.mwr.ps1
+Hashes: SHA256=96AD1146EB96877EAB5942AE0736B82D8B5E2039A80D3D6932665C1A4C87DCF7
+IsExecutable: false
+Archived: true"
+"12/17/2025 7:49:27 AM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-17 07:49:27.386
+ProcessGuid: {f995aebf-6087-6942-ee02-000000000e00}
+ProcessId: 9032
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_t31ufmgi.mwr.ps1
+CreationUtcTime: 2025-12-17 07:49:27.386
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:27 AM","1","Process Create:
+RuleName: ProcessCreate
+UtcTime: 2025-12-17 07:49:27.235
+ProcessGuid: {f995aebf-6087-6942-ee02-000000000e00}
+ProcessId: 9032
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+FileVersion: 10.0.26100.5074 (WinBuild.160101.0800)
+Description: Windows PowerShell
+Product: Microsoft? Windows? Operating System
+Company: Microsoft Corporation
+OriginalFileName: PowerShell.EXE
+CommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"" -enc dwBoAG8AYQBtAGkA 
+CurrentDirectory: D:\a\sysmon\sysmon\
+User: runnervm8j6r3\runneradmin
+LogonGuid: {f995aebf-5ac1-6942-0294-0b0000000000}
+LogonId: 0xB9402
+TerminalSessionId: 2
+IntegrityLevel: High
+Hashes: SHA256=0FF6F2C94BC7E2833A5F7E16DE1622E5DBA70396F31C7D5F56381870317E8C46
+ParentProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ParentProcessId: 6844
+ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+ParentCommandLine: ""C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE"" -command "". 'D:\a\_temp\746e126b-10e7-4049-ac0c-8ae19abb0be2.ps1'""
+ParentUser: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:26 AM","23","File Delete archived:
+RuleName: FileDelete
+UtcTime: 2025-12-17 07:49:26.769
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+User: runnervm8j6r3\runneradmin
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_v5koowub.215.ps1
+Hashes: SHA256=96AD1146EB96877EAB5942AE0736B82D8B5E2039A80D3D6932665C1A4C87DCF7
+IsExecutable: false
+Archived: true"
+"12/17/2025 7:49:26 AM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-17 07:49:26.739
+ProcessGuid: {f995aebf-6086-6942-ed02-000000000e00}
+ProcessId: 6844
+Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.EXE
+TargetFilename: C:\Users\runneradmin\AppData\Local\Temp\__PSScriptPolicyTest_v5koowub.215.ps1
+CreationUtcTime: 2025-12-17 07:49:26.739
+User: runnervm8j6r3\runneradmin"
+"12/17/2025 7:49:20 AM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-17 07:49:20.551
+ProcessGuid: {f995aebf-5a9b-6942-eb03-000000000000}
+ProcessId: 4
+Image: System
+TargetFilename: C:\Windows\System32\LogFiles\WMI\RtBackup\EtwRTSysmonDnsEtwSession.etl
+CreationUtcTime: 2025-12-17 07:49:20.551
+User: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:49:20 AM","11","File created:
+RuleName: FileCreate
+UtcTime: 2025-12-17 07:49:20.551
+ProcessGuid: {f995aebf-5a9b-6942-eb03-000000000000}
+ProcessId: 4
+Image: System
+TargetFilename: C:\Windows\System32\LogFiles\WMI\RtBackup\EtwRTSYSMON TRACE.etl
+CreationUtcTime: 2025-12-17 07:49:20.551
+User: NT AUTHORITY\SYSTEM"
+"12/17/2025 7:49:20 AM","4","Sysmon service state changed:
+UtcTime: 2025-12-17 07:49:20.555
+State: Started
+Version: 15.15
+SchemaVersion: 4.90"
+"12/17/2025 7:49:20 AM","16","Sysmon config state changed:
+UtcTime: 2025-12-17 07:49:20.416
+Configuration: D:\a\sysmon\sysmon\sysmon\sysmon-sql.xml
+ConfigurationFileHash: SHA256=38C50770670FDE959EA61863CBE7968130868AB131F891D9905DA0C78D2C4A4B"
