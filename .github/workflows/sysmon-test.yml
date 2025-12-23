@@ -706,6 +706,7 @@ jobs:
           }
 
           $results = @()
+          $rawEventData = @()
           $totalDetected = 0
           $totalMissing = 0
 
@@ -733,6 +734,123 @@ jobs:
                 Write-Host "[OK] Event $eventId : $description ($count events)" -ForegroundColor Green
                 $status = "DETECTED"
                 $totalDetected++
+
+                # Output RAW EVENT DATA for each event type
+                Write-Host "`n    --- RAW EVENT DATA (Event $eventId) ---" -ForegroundColor Magenta
+                foreach ($evt in $events | Select-Object -First 3) {
+                  Write-Host "    TimeCreated: $($evt.TimeCreated)"
+
+                  # Parse XML for detailed fields
+                  $xml = [xml]$evt.ToXml()
+                  $eventData = $xml.Event.EventData.Data
+
+                  # Extract key fields based on event type
+                  switch ($eventId) {
+                    4625 {  # Failed Logon
+                      $targetUser = ($eventData | Where-Object { $_.Name -eq 'TargetUserName' }).'#text'
+                      $targetDomain = ($eventData | Where-Object { $_.Name -eq 'TargetDomainName' }).'#text'
+                      $logonType = ($eventData | Where-Object { $_.Name -eq 'LogonType' }).'#text'
+                      $failReason = ($eventData | Where-Object { $_.Name -eq 'FailureReason' }).'#text'
+                      $status = ($eventData | Where-Object { $_.Name -eq 'Status' }).'#text'
+                      $ipAddress = ($eventData | Where-Object { $_.Name -eq 'IpAddress' }).'#text'
+                      Write-Host "    TargetUserName: $targetDomain\$targetUser"
+                      Write-Host "    LogonType: $logonType"
+                      Write-Host "    Status: $status"
+                      Write-Host "    IpAddress: $ipAddress"
+                    }
+                    4720 {  # User Created
+                      $targetUser = ($eventData | Where-Object { $_.Name -eq 'TargetUserName' }).'#text'
+                      $targetDomain = ($eventData | Where-Object { $_.Name -eq 'TargetDomainName' }).'#text'
+                      $subjectUser = ($eventData | Where-Object { $_.Name -eq 'SubjectUserName' }).'#text'
+                      Write-Host "    TargetUserName: $targetDomain\$targetUser"
+                      Write-Host "    CreatedBy: $subjectUser"
+                    }
+                    4722 {  # User Enabled
+                      $targetUser = ($eventData | Where-Object { $_.Name -eq 'TargetUserName' }).'#text'
+                      $subjectUser = ($eventData | Where-Object { $_.Name -eq 'SubjectUserName' }).'#text'
+                      Write-Host "    TargetUserName: $targetUser"
+                      Write-Host "    EnabledBy: $subjectUser"
+                    }
+                    4724 {  # Password Reset
+                      $targetUser = ($eventData | Where-Object { $_.Name -eq 'TargetUserName' }).'#text'
+                      $subjectUser = ($eventData | Where-Object { $_.Name -eq 'SubjectUserName' }).'#text'
+                      Write-Host "    TargetUserName: $targetUser"
+                      Write-Host "    ResetBy: $subjectUser"
+                    }
+                    4725 {  # User Disabled
+                      $targetUser = ($eventData | Where-Object { $_.Name -eq 'TargetUserName' }).'#text'
+                      $subjectUser = ($eventData | Where-Object { $_.Name -eq 'SubjectUserName' }).'#text'
+                      Write-Host "    TargetUserName: $targetUser"
+                      Write-Host "    DisabledBy: $subjectUser"
+                    }
+                    4732 {  # Member Added to Group
+                      $memberName = ($eventData | Where-Object { $_.Name -eq 'MemberName' }).'#text'
+                      $memberSid = ($eventData | Where-Object { $_.Name -eq 'MemberSid' }).'#text'
+                      $targetGroup = ($eventData | Where-Object { $_.Name -eq 'TargetUserName' }).'#text'
+                      $subjectUser = ($eventData | Where-Object { $_.Name -eq 'SubjectUserName' }).'#text'
+                      Write-Host "    MemberAdded: $memberName ($memberSid)"
+                      Write-Host "    TargetGroup: $targetGroup"
+                      Write-Host "    AddedBy: $subjectUser"
+                    }
+                    4733 {  # Member Removed from Group
+                      $memberName = ($eventData | Where-Object { $_.Name -eq 'MemberName' }).'#text'
+                      $targetGroup = ($eventData | Where-Object { $_.Name -eq 'TargetUserName' }).'#text'
+                      $subjectUser = ($eventData | Where-Object { $_.Name -eq 'SubjectUserName' }).'#text'
+                      Write-Host "    MemberRemoved: $memberName"
+                      Write-Host "    TargetGroup: $targetGroup"
+                      Write-Host "    RemovedBy: $subjectUser"
+                    }
+                    4697 {  # Service Installed
+                      $serviceName = ($eventData | Where-Object { $_.Name -eq 'ServiceName' }).'#text'
+                      $serviceFile = ($eventData | Where-Object { $_.Name -eq 'ServiceFileName' }).'#text'
+                      $serviceType = ($eventData | Where-Object { $_.Name -eq 'ServiceType' }).'#text'
+                      $subjectUser = ($eventData | Where-Object { $_.Name -eq 'SubjectUserName' }).'#text'
+                      Write-Host "    ServiceName: $serviceName"
+                      Write-Host "    ServiceFileName: $serviceFile"
+                      Write-Host "    ServiceType: $serviceType"
+                      Write-Host "    InstalledBy: $subjectUser"
+                    }
+                    4698 {  # Scheduled Task Created
+                      $taskName = ($eventData | Where-Object { $_.Name -eq 'TaskName' }).'#text'
+                      $taskContent = ($eventData | Where-Object { $_.Name -eq 'TaskContent' }).'#text'
+                      $subjectUser = ($eventData | Where-Object { $_.Name -eq 'SubjectUserName' }).'#text'
+                      Write-Host "    TaskName: $taskName"
+                      Write-Host "    CreatedBy: $subjectUser"
+                      if ($taskContent) { Write-Host "    TaskContent: $($taskContent.Substring(0, [Math]::Min(200, $taskContent.Length)))..." }
+                    }
+                    4699 {  # Scheduled Task Deleted
+                      $taskName = ($eventData | Where-Object { $_.Name -eq 'TaskName' }).'#text'
+                      $subjectUser = ($eventData | Where-Object { $_.Name -eq 'SubjectUserName' }).'#text'
+                      Write-Host "    TaskName: $taskName"
+                      Write-Host "    DeletedBy: $subjectUser"
+                    }
+                    4672 {  # Special Privileges
+                      $subjectUser = ($eventData | Where-Object { $_.Name -eq 'SubjectUserName' }).'#text'
+                      $privileges = ($eventData | Where-Object { $_.Name -eq 'PrivilegeList' }).'#text'
+                      Write-Host "    SubjectUserName: $subjectUser"
+                      Write-Host "    Privileges: $($privileges -replace "`n", ', ')"
+                    }
+                    4648 {  # Explicit Credentials
+                      $subjectUser = ($eventData | Where-Object { $_.Name -eq 'SubjectUserName' }).'#text'
+                      $targetUser = ($eventData | Where-Object { $_.Name -eq 'TargetUserName' }).'#text'
+                      $targetServer = ($eventData | Where-Object { $_.Name -eq 'TargetServerName' }).'#text'
+                      $processName = ($eventData | Where-Object { $_.Name -eq 'ProcessName' }).'#text'
+                      Write-Host "    SubjectUserName: $subjectUser"
+                      Write-Host "    TargetUserName: $targetUser"
+                      Write-Host "    TargetServerName: $targetServer"
+                      Write-Host "    ProcessName: $processName"
+                    }
+                  }
+                  Write-Host "    ---"
+
+                  # Store raw event data for export
+                  $rawEventData += [PSCustomObject]@{
+                    EventID = $eventId
+                    TimeCreated = $evt.TimeCreated
+                    Message = $evt.Message.Substring(0, [Math]::Min(500, $evt.Message.Length))
+                  }
+                }
+                Write-Host ""
               }
               else {
                 Write-Host "[--] Event $eventId : $description (not generated)" -ForegroundColor Yellow
@@ -778,6 +896,45 @@ jobs:
                 Write-Host "[OK] Event $eventId : $description ($count events)" -ForegroundColor Green
                 $status = "DETECTED"
                 $totalDetected++
+
+                # Output RAW EVENT DATA for PowerShell events
+                Write-Host "`n    --- RAW EVENT DATA (Event $eventId) ---" -ForegroundColor Magenta
+                foreach ($evt in $events | Select-Object -First 2) {
+                  Write-Host "    TimeCreated: $($evt.TimeCreated)"
+
+                  $xml = [xml]$evt.ToXml()
+                  $eventData = $xml.Event.EventData.Data
+
+                  switch ($eventId) {
+                    4103 {  # Module Logging
+                      $payload = ($eventData | Where-Object { $_.Name -eq 'Payload' }).'#text'
+                      if ($payload) {
+                        $payloadLines = $payload -split "`n" | Select-Object -First 5
+                        Write-Host "    Payload (first 5 lines):"
+                        foreach ($line in $payloadLines) {
+                          Write-Host "      $($line.Trim())"
+                        }
+                      }
+                    }
+                    4104 {  # Script Block Logging
+                      $scriptBlock = ($eventData | Where-Object { $_.Name -eq 'ScriptBlockText' }).'#text'
+                      $scriptBlockId = ($eventData | Where-Object { $_.Name -eq 'ScriptBlockId' }).'#text'
+                      Write-Host "    ScriptBlockId: $scriptBlockId"
+                      if ($scriptBlock) {
+                        $preview = $scriptBlock.Substring(0, [Math]::Min(300, $scriptBlock.Length))
+                        Write-Host "    ScriptBlockText (preview): $preview..."
+                      }
+                    }
+                  }
+                  Write-Host "    ---"
+
+                  $rawEventData += [PSCustomObject]@{
+                    EventID = $eventId
+                    TimeCreated = $evt.TimeCreated
+                    Message = $evt.Message.Substring(0, [Math]::Min(500, $evt.Message.Length))
+                  }
+                }
+                Write-Host ""
               }
               else {
                 Write-Host "[--] Event $eventId : $description (not generated)" -ForegroundColor Yellow
@@ -819,6 +976,9 @@ jobs:
 
           # Export results
           $results | Export-Csv -Path "windows-event-coverage-${{ matrix.config }}.csv" -NoTypeInformation
+
+          # Export raw event data
+          $rawEventData | Export-Csv -Path "windows-event-raw-${{ matrix.config }}.csv" -NoTypeInformation
 
           # Create markdown report
           $mdContent = @"
@@ -889,6 +1049,7 @@ jobs:
           path: |
             windows-event-coverage-${{ matrix.config }}.csv
             windows-event-report-${{ matrix.config }}.md
+            windows-event-raw-${{ matrix.config }}.csv
             event-generation-results.csv
           if-no-files-found: ignore
 
