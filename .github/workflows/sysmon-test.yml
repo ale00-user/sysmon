@@ -619,14 +619,72 @@ jobs:
           # Export results
           $results | Export-Csv -Path "event-generation-results.csv" -NoTypeInformation
 
+      - name: Enable PowerShell Logging
+        shell: powershell
+        continue-on-error: true
+        run: |
+          Write-Host "Enabling PowerShell logging..."
+          $ErrorActionPreference = 'Continue'
+          & .\sysmon\deploy\enable-powershell-logging.ps1 -Verbose
+          Write-Host "PowerShell logging configured"
+          exit 0
+
+      - name: Generate PowerShell Events
+        shell: powershell
+        run: |
+          Write-Host "Generating PowerShell events (4103, 4104)..."
+          Write-Host "=" * 60
+
+          # Wait for logging to take effect
+          Start-Sleep -Seconds 2
+
+          # ============================================================
+          # TEST: Script Block Logging (4104)
+          # ============================================================
+          Write-Host "`n[TEST] Script Block Logging (Event 4104)..."
+
+          # Execute various PowerShell commands to trigger 4104
+          $testScript = {
+            $env:COMPUTERNAME
+            Get-Process | Select-Object -First 1
+            Get-Service | Select-Object -First 1
+            [System.Net.Dns]::GetHostName()
+          }
+          & $testScript
+          Write-Host "  [+] Executed script block (should trigger 4104)"
+
+          # Encoded command (common attack pattern - should be logged)
+          $encoded = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes("Get-Date"))
+          powershell -EncodedCommand $encoded 2>&1 | Out-Null
+          Write-Host "  [+] Executed encoded command (should trigger 4104)"
+
+          # ============================================================
+          # TEST: Module Logging (4103)
+          # ============================================================
+          Write-Host "`n[TEST] Module Logging (Event 4103)..."
+
+          # Import and use modules to trigger 4103
+          Import-Module Microsoft.PowerShell.Management -Force
+          Get-ChildItem C:\ -ErrorAction SilentlyContinue | Select-Object -First 1 | Out-Null
+          Write-Host "  [+] Used Management module (should trigger 4103)"
+
+          Import-Module Microsoft.PowerShell.Utility -Force
+          Get-Random -Maximum 100 | Out-Null
+          Write-Host "  [+] Used Utility module (should trigger 4103)"
+
+          # Wait for events to be written
+          Start-Sleep -Seconds 3
+
+          Write-Host "`nPowerShell event generation complete"
+
       - name: Verify Windows Events Generated
         shell: powershell
         run: |
           Write-Host "Verifying Windows Security Events were generated..."
           Write-Host "=" * 60
 
-          # Expected events and their descriptions
-          $expectedEvents = @{
+          # Expected Security events and their descriptions
+          $expectedSecurityEvents = @{
             4625 = "Failed Logon (Brute Force Detection)"
             4720 = "User Account Created"
             4722 = "User Account Enabled"
@@ -641,18 +699,26 @@ jobs:
             4648 = "Explicit Credentials Used"
           }
 
+          # Expected PowerShell events
+          $expectedPowerShellEvents = @{
+            4103 = "PowerShell Module Logging"
+            4104 = "PowerShell Script Block Logging"
+          }
+
           $results = @()
           $totalDetected = 0
           $totalMissing = 0
 
-          # Get security events from last 10 minutes
+          # Get events from last 10 minutes
           $startTime = (Get-Date).AddMinutes(-10)
 
           Write-Host "`nChecking for expected events since $startTime..."
           Write-Host "-" * 60
 
-          foreach ($eventId in $expectedEvents.Keys | Sort-Object) {
-            $description = $expectedEvents[$eventId]
+          # Check Security Events
+          Write-Host "`n[Security Log Events]" -ForegroundColor Cyan
+          foreach ($eventId in $expectedSecurityEvents.Keys | Sort-Object) {
+            $description = $expectedSecurityEvents[$eventId]
 
             try {
               $events = Get-WinEvent -FilterHashtable @{
@@ -676,6 +742,7 @@ jobs:
 
               $results += [PSCustomObject]@{
                 EventID = $eventId
+                LogName = "Security"
                 Description = $description
                 Status = $status
                 Count = $count
@@ -685,6 +752,52 @@ jobs:
               Write-Host "[??] Event $eventId : $description (error reading)" -ForegroundColor Red
               $results += [PSCustomObject]@{
                 EventID = $eventId
+                LogName = "Security"
+                Description = $description
+                Status = "ERROR"
+                Count = 0
+              }
+            }
+          }
+
+          # Check PowerShell Events
+          Write-Host "`n[PowerShell Log Events]" -ForegroundColor Cyan
+          foreach ($eventId in $expectedPowerShellEvents.Keys | Sort-Object) {
+            $description = $expectedPowerShellEvents[$eventId]
+
+            try {
+              $events = Get-WinEvent -FilterHashtable @{
+                LogName = 'Microsoft-Windows-PowerShell/Operational'
+                Id = $eventId
+                StartTime = $startTime
+              } -MaxEvents 10 -ErrorAction SilentlyContinue
+
+              $count = if ($events) { $events.Count } else { 0 }
+
+              if ($count -gt 0) {
+                Write-Host "[OK] Event $eventId : $description ($count events)" -ForegroundColor Green
+                $status = "DETECTED"
+                $totalDetected++
+              }
+              else {
+                Write-Host "[--] Event $eventId : $description (not generated)" -ForegroundColor Yellow
+                $status = "NOT_DETECTED"
+                $totalMissing++
+              }
+
+              $results += [PSCustomObject]@{
+                EventID = $eventId
+                LogName = "PowerShell"
+                Description = $description
+                Status = $status
+                Count = $count
+              }
+            }
+            catch {
+              Write-Host "[??] Event $eventId : $description (error reading)" -ForegroundColor Red
+              $results += [PSCustomObject]@{
+                EventID = $eventId
+                LogName = "PowerShell"
                 Description = $description
                 Status = "ERROR"
                 Count = 0
@@ -693,7 +806,7 @@ jobs:
           }
 
           # Calculate coverage
-          $total = $expectedEvents.Count
+          $total = $expectedSecurityEvents.Count + $expectedPowerShellEvents.Count
           $coverageRate = [math]::Round(($totalDetected / $total) * 100, 1)
 
           Write-Host "`n" + "=" * 60
