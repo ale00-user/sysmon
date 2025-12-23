@@ -31,7 +31,8 @@ SECURITY NOTES:
   <HashAlgorithms>MD5,SHA256,IMPHASH</HashAlgorithms>
 
   <!-- Archive directory for file captures (Event ID 23/24/25) -->
-  <ArchiveDirectory>C:\Sysmon\Archive</ArchiveDirectory>
+  <!-- Note: Must be a single path component, not full path -->
+  <ArchiveDirectory>Sysmon</ArchiveDirectory>
 
   <!-- DNS Query caching - reduce duplicate events -->
   <DnsLookup>true</DnsLookup>
