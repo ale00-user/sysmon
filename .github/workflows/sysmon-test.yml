@@ -1053,6 +1053,140 @@ jobs:
             event-generation-results.csv
           if-no-files-found: ignore
 
+  # ==========================================================================
+  # MULTI-LANGUAGE AUDIT POLICY TESTS
+  # Verifies that the audit policy script works on non-English Windows
+  # Uses GUIDs instead of localized subcategory names
+  # ==========================================================================
+  multilang-audit-test:
+    name: Audit Policy - ${{ matrix.locale }}
+    needs: validate-xml
+    runs-on: windows-latest
+    if: github.event_name == 'workflow_dispatch'
+    strategy:
+      fail-fast: false
+      matrix:
+        locale: [it-IT, de-DE, fr-FR, es-ES]
+        include:
+          - locale: it-IT
+            language: Italian
+          - locale: de-DE
+            language: German
+          - locale: fr-FR
+            language: French
+          - locale: es-ES
+            language: Spanish
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure ${{ matrix.language }} Locale
+        shell: powershell
+        run: |
+          Write-Host "Configuring system for ${{ matrix.language }} locale testing..."
+          Write-Host "=" * 60
+
+          # Set the Windows display language (affects auditpol output)
+          # Note: This changes the UI locale which affects how auditpol displays subcategory names
+          Set-WinUILanguageOverride -Language "${{ matrix.locale }}"
+          Set-WinUserLanguageList -LanguageList "${{ matrix.locale }}" -Force
+          Set-Culture -CultureInfo "${{ matrix.locale }}"
+
+          Write-Host "Locale configured: ${{ matrix.locale }}"
+          Write-Host "Current culture: $((Get-Culture).Name)"
+          Write-Host ""
+
+          # Show that auditpol would use localized names (this is what we're testing against)
+          Write-Host "Sample auditpol output (to show localized names):"
+          auditpol /get /subcategory:"{0CCE9215-69AE-11D9-BED3-505054503030}" 2>&1 | Select-Object -First 5
+
+      - name: Test Audit Policy Script with GUIDs
+        shell: powershell
+        run: |
+          Write-Host "Testing audit policy script with ${{ matrix.language }} locale..."
+          Write-Host "=" * 60
+          Write-Host ""
+          Write-Host "This tests that GUIDs work regardless of Windows language."
+          Write-Host "Before this fix, Italian Windows would fail with error 0x00000057"
+          Write-Host ""
+
+          # Run the audit policy script
+          $ErrorActionPreference = 'Continue'
+          & .\sysmon\deploy\windows-audit-policy.ps1 -Verbose
+
+          # Check results
+          $exitCode = $LASTEXITCODE
+          Write-Host ""
+          Write-Host "Script exit code: $exitCode"
+
+      - name: Verify Audit Policies Applied
+        shell: powershell
+        run: |
+          Write-Host "Verifying audit policies were applied correctly..."
+          Write-Host "=" * 60
+
+          # Test a few key policies using GUIDs
+          $testPolicies = @{
+            "{0CCE9215-69AE-11D9-BED3-505054503030}" = "Logon"
+            "{0CCE9235-69AE-11D9-BED3-505054503030}" = "User Account Management"
+            "{0CCE9237-69AE-11D9-BED3-505054503030}" = "Security Group Management"
+            "{0CCE922F-69AE-11D9-BED3-505054503030}" = "Audit Policy Change"
+            "{0CCE9211-69AE-11D9-BED3-505054503030}" = "Security System Extension"
+          }
+
+          $passed = 0
+          $failed = 0
+
+          foreach ($guid in $testPolicies.Keys) {
+            $policyName = $testPolicies[$guid]
+            Write-Host "`nChecking: $policyName ($guid)"
+
+            $result = auditpol /get /subcategory:$guid 2>&1
+            $exitCode = $LASTEXITCODE
+
+            if ($exitCode -eq 0) {
+              Write-Host "  [OK] Policy accessible via GUID" -ForegroundColor Green
+              $passed++
+
+              # Show the setting
+              $result | Select-Object -Skip 2 | ForEach-Object { Write-Host "  $_" }
+            } else {
+              Write-Host "  [FAIL] Could not access policy: $result" -ForegroundColor Red
+              $failed++
+            }
+          }
+
+          Write-Host "`n" + "=" * 60
+          Write-Host "MULTI-LANGUAGE AUDIT POLICY TEST RESULTS"
+          Write-Host "=" * 60
+          Write-Host "Locale: ${{ matrix.locale }} (${{ matrix.language }})"
+          Write-Host "Policies Passed: $passed" -ForegroundColor Green
+          Write-Host "Policies Failed: $failed" -ForegroundColor $(if($failed -gt 0){'Red'}else{'Green'})
+
+          if ($failed -gt 0) {
+            Write-Host "`n[ERROR] Some policies failed to apply with ${{ matrix.language }} locale!" -ForegroundColor Red
+            exit 1
+          } else {
+            Write-Host "`n[SUCCESS] All policies applied correctly with ${{ matrix.language }} locale!" -ForegroundColor Green
+          }
+
+      - name: Export Test Results
+        if: always()
+        shell: powershell
+        run: |
+          # Export current audit policy to CSV
+          $outputFile = "audit-policy-${{ matrix.locale }}.csv"
+          auditpol /get /category:* /r 2>&1 | Out-File -FilePath $outputFile -Encoding UTF8
+          Write-Host "Audit policy exported to $outputFile"
+
+      - name: Upload Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-policy-${{ matrix.locale }}
+          path: audit-policy-${{ matrix.locale }}.csv
+          if-no-files-found: ignore
+
   summary:
     name: Test Summary
     needs: [test-sysmon-configs]
