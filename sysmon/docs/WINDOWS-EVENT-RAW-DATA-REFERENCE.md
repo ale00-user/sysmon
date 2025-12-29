@@ -798,3 +798,46 @@ index=wineventlog EventCode=4104 LogName="Microsoft-Windows-PowerShell/Operation
 
 ### v1.0 (23 Dicembre 2025)
 - Versione iniziale con raw event data da CI/CD
+
+
+index=windows EventCode=4103 Name="'Microsoft-Windows-PowerShell'"
+| where match(Payload, "(?i)(invoke-mimikatz|invoke-expression|downloadstring)")
+| table _time, Computer, Payload
+
+index=windows EventCode=4104 
+| where match(ScriptBlockText, "(?i)(-enc|downloadstring|invoke-expression|frombase64)")
+| table _time, Computer, ScriptBlockId, ScriptBlockText
+
+index=windows EventCode=4672
+| where user!="SYSTEM" AND user!="LOCAL SERVICE"
+| where match(PrivilegeList, "(?i)(SeDebug|SeTcb|SeBackup|SeRestore)")
+| table _time, Computer, user, PrivilegeList
+
+index=windows EventCode=4698
+| where match(TaskContent, "(?i)(powershell|cmd|wscript|cscript|mshta)")
+| table _time, Computer, TaskCategory, Subject_Account_Name
+
+index=windows EventCode=4697
+| where NOT match(ServiceFileName, "(?i)^C:\\(Windows|Program Files)")
+| table _time, ComputerName, ServiceName, ServiceFileName, SubjectUserName
+
+index=windows EventCode=4732
+| where user IN ("Administrators", "Remote Desktop Users", "Backup Operators")
+| table _time, ComputerName, member_id, user, Subject_Account_Name
+
+index=windows EventCode=4725
+| where Subject_Account_Name!="SYSTEM"
+| table _time, ComputerName, user, Subject_Account_Name
+
+index=windows EventCode=4722
+| join user [search index=windows EventCode=4725 earliest=-7d]
+| table _time, user, Subject_Account_Name
+
+index=windows EventCode=4720
+| where Subject_Account_Name!="SYSTEM"
+| table _time, ComputerName, user, Subject_Account_Name
+
+index=windows EventCode=4625
+| stats count by user, src, Logon_Type
+| where count > 5
+| sort -count
